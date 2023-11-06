@@ -12,6 +12,5 @@ export default defineConfig({
     port: 8080,
     strictPort: true,
     host: true,
-    origin: "https://sakurassweets.asion.tk/",
   },
 });
