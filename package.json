@@ -16,9 +16,7 @@
   },
   "lint-staged": {
     "src/**/*.+(ts|tsx|js|jsx)": [
-      "npm run lint",
-      "npm run format:fix",
-      "git add"
+      "npm run format:fix"
     ]
   },
   "dependencies": {
