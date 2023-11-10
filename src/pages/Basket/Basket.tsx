@@ -1,10 +1,9 @@
 const Basket = () => {
-  
-    return (
-      <>
+  return (
+    <>
       <h1>Basket</h1>
-      </>
-    );
-  };
-  
-  export default Basket;
+    </>
+  );
+};
+
+export default Basket;
