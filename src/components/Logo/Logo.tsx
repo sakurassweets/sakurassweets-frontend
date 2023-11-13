@@ -9,7 +9,7 @@ export const Logo = () => {
       <img src={logoIcon} alt="Logo icon" width={27} height={26} />
       <p className={classes.shopTitle}>
         SAKURA’s
-        <p className={classes.shopSumTitle}>sweets</p>
+        <span className={classes.shopSumTitle}>sweets</span>
       </p>
     </NavLink>
   );
