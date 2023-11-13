@@ -2,20 +2,20 @@
   padding: 12px 8px;
   background-color: $nav-color;
 
-  @include twoColumnLayout;
+  @include flex-container;
 
   .info {
-    @include twoColumnLayout;
+    @include flex-container;
     gap: 26px;
   }
 
   .links {
-    @include twoColumnLayout;
+    @include flex-container;
     gap: 16px;
   }
 
   .location {
-    @include twoColumnLayout;
+    @include flex-container;
     gap: 4px;
   }
 }
