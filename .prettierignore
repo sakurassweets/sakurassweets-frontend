@@ -1,0 +1,17 @@
+.github/workflows/build.yml
+.github/*
+
+.husky/
+.husky/*
+
+.eslintrc.cjs
+.prettierrc.json
+vite.config.ts
+tsconfig.node.json
+tsconfig.json
+nginx.conf
+Dockerfile.prod
+Dockerfile
+package-lock.json
+package.json
+README.md
