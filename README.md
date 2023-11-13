@@ -1,27 +1,34 @@
-# React + TypeScript + Vite
+# Sakuras Sweets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Sakuras Sweets! Below are instructions on setting up and running the project locally
 
-Currently, two official plugins are available:
+## Technology stack used
+### Build with:
+<img src="https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white&style=ShieldStyle" /> <img src="https://img.shields.io/badge/React-4FACDF?logo=react&logoColor=white&style=ShieldStyle" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=ShieldStyle" /> <img src="https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white&style=ShieldStyle" /> <img src="https://img.shields.io/badge/CSS-2971A3?logo=css3&logoColor=ColorName&style=ShieldStyle" /> <img src="https://img.shields.io/badge/Node.js-38883D?logo=node.js&logoColor=white&style=ShieldStyle" />
+<img src="https://img.shields.io/badge/WebPack-3178c6?logo=webpack&logoColor=ColorName&style=ShieldStyle" />
+### Version Control and Development Tools used:
+<img src="https://img.shields.io/badge/Git-DC4936?logo=git&logoColor=white&style=ShieldStyle" /> <img src="https://img.shields.io/badge/GitHub-1A1C1E?logo=github&logoColor=white&style=ShieldStyle" /> <img src="https://img.shields.io/badge/Visual Studio Code-0C72C5?logo=visual studio code&logoColor=white&style=ShieldStyle" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [npm](https://www.npmjs.com/) (v6 or later)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installation
+1. Clone the repository: `git clone https://github.com/your-username/sakura-project.git`
+2. Navigate to the project directory: `cd sakura-project`
+3. Install dependencies: `npm install`
 
-- Configure the top-level `parserOptions` property like this:
+## Available Scripts
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+### Development
+Run the project in development mode.
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+$ npm run dev
+```
+- `npm run build ` - build the project for production.
+- `npm run lint` - run ESLint to check and fix linting issues.
+- `npm run preview` - preview the production build locally.
+- `npm run serve` - serve the production build locally.
+- `npm run format:fix` - fix formatting issues using Prettier.
