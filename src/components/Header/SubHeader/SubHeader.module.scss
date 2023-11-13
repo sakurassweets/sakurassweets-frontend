@@ -1,0 +1,21 @@
+.subHeader {
+  padding: 12px 8px;
+  background-color: $nav-color;
+
+  @include twoColumnLayout;
+
+  .info {
+    @include twoColumnLayout;
+    gap: 26px;
+  }
+
+  .links {
+    @include twoColumnLayout;
+    gap: 16px;
+  }
+
+  .location {
+    @include twoColumnLayout;
+    gap: 4px;
+  }
+}

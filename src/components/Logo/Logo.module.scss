@@ -1,0 +1,19 @@
+.logo {
+  max-width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 3px;
+
+  .shopTitle {
+    color: $accent-color-light;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .shopSumTitle {
+    color: $accent-color-medium;
+    font-weight: 500;
+    font-size: 12px;
+  }
+}

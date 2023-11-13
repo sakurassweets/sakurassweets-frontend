@@ -6,7 +6,6 @@ const Navigation = () => {
     <ul className={styles.menu}>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about-us">About Us</NavLink>
-      <NavLink to="/blog">Blog</NavLink>
       <NavLink to="/favorites">Favorites</NavLink>
     </ul>
   );
