@@ -1,0 +1,20 @@
+.headerControl {
+  @include flex-container;
+  gap: 20px;
+}
+
+.controlBtns {
+  @include flex-container;
+  gap: 16px;
+
+  button {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}

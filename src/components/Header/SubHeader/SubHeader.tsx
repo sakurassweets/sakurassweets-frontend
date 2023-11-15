@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import location from '../../../assets/icons/location.svg';
 import classes from './SubHeader.module.scss';
 
-export const SubHeader = () => {
+export const SubHeader: React.FC = () => {
   return (
     <div className={classes.subHeader}>
       <div className={classes.info}>

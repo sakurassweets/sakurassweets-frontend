@@ -1,0 +1,36 @@
+input {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  color: $secondary-text-color;
+}
+
+input[disabled] {
+  cursor: not-allowed;
+}
+
+input:focus {
+  outline: none;
+}
+
+.labelsWrapper {
+  margin-bottom: 5px;
+  @include flex-container;
+}
+
+.inputError {
+  margin-top: 5px;
+  color: #d43728;
+  font-size: 12px;
+}
+
+.inputContainer {
+  @include flex-container;
+  background-color: $primary-text-color;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px;
+  gap: 8px;
+  width: 100%;
+}
