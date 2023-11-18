@@ -27,7 +27,11 @@ export const Input: React.FC<InputProps> = ({
 
   return (
     <div className={containerClasses}>
-      {label && <div className={classes.labelsWrapper}>{<label htmlFor={id}>{label}</label>}</div>}
+      {label && (
+        <label className={classes.labelsWrapper} htmlFor={id}>
+          {label}
+        </label>
+      )}
       <div className={styles}>
         {icon && icon}
         <input name={id} id={id} {...attrs} />

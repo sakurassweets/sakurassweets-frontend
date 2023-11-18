@@ -30,6 +30,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
           img={modalImg}
           onModalSwith={switchToRegistration}
           formType={FormType.Login}
+          onClose={onClose}
         />
       ) : (
         <AuthModaContent
@@ -38,6 +39,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
           buttonSwithTitle={'Увійти'}
           img={modalImg}
           onModalSwith={switchToLogin}
+          onClose={onClose}
         />
       )}
     </Modal>

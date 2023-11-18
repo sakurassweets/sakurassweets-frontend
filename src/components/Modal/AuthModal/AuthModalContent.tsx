@@ -1,8 +1,11 @@
 import { FormType } from '../../../enums/auth.enum';
 import { Button } from '../../Button/Button';
-import { Input } from '../../Input/Input';
-import classes from './AuthModal.module.scss';
+import { FormikHelpers } from 'formik';
+import { authFormValues } from '../../../models/auth';
 
+import classes from './AuthModal.module.scss';
+import { LoginControl } from './AuthControls/LoginControl';
+import { RegisterControl } from './AuthControls/RegisterControl';
 interface AuthModaContentProps {
   title: string;
   buttonTitle: string;
@@ -10,6 +13,12 @@ interface AuthModaContentProps {
   img: string;
   onModalSwith: () => void;
   formType?: string;
+  onClose: () => void;
+}
+
+export interface AuthControlProps {
+  handleSubmit: (values: authFormValues, actions: FormikHelpers<authFormValues>) => void;
+  buttonTitle: string;
 }
 
 export const AuthModaContent: React.FC<AuthModaContentProps> = ({
@@ -20,20 +29,22 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
   onModalSwith,
   ...props
 }) => {
+  const handleSubmit = (values: authFormValues, actions: FormikHelpers<authFormValues>) => {
+    console.log('Form submitted with values:', values);
+    actions.resetForm();
+    props.onClose();
+  };
+
   return (
     <>
       <div className={classes.modalLeft}>
         <div className={classes.modalContent}>
           <h2>{title}</h2>
-          <form className={classes.modalForm}>
-            <Input id={'email'} label={'Ел.пошта'} className={classes.modalInput}></Input>
-            <Input id={'password'} label={'Введіть пароль'} className={classes.modalInput}></Input>
-            {props.formType !== FormType.Login && (
-              <Input id={'password'} label={'Повторіть пароль'} className={classes.modalInput}></Input>
-            )}
-            {props.formType === FormType.Login && <div className="">Забули пароль?</div>}
-            <Button type={'submit'}>{buttonTitle}</Button>
-          </form>
+          {props.formType === FormType.Login ? (
+            <LoginControl handleSubmit={handleSubmit} buttonTitle={buttonTitle} />
+          ) : (
+            <RegisterControl handleSubmit={handleSubmit} buttonTitle={buttonTitle} />
+          )}
           <div className={classes.modalBtnBlock}>
             {props.formType !== FormType.Login && <span>Вже маєте акаунт? </span>}
             <Button className={classes.modalBtn} onClick={onModalSwith}>
