@@ -10,9 +10,13 @@
     height: 48px;
   }
 
-  .searchInput {
+  .inputControl {
     max-width: 410px;
-    width: 100%
+    width: 100%;
+  }
+
+  .searchInput {
+    padding: 12px 12px 12px 40px;
   }
 
   .headerBlock {

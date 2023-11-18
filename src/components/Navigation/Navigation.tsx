@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
 
-const Navigation = () => {
+export const Navigation: React.FC = () => {
   return (
     <ul className={styles.menu}>
       <NavLink to="/">Home</NavLink>
@@ -10,5 +10,3 @@ const Navigation = () => {
     </ul>
   );
 };
-
-export default Navigation;

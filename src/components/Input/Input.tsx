@@ -9,13 +9,24 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: ReactNode;
   closeIcon?: ReactNode;
   className?: string;
+  controlClassName?: string;
 }
 
-export const Input: React.FC<InputProps> = ({ id, className, label, error, icon, closeIcon, ...attrs }) => {
+export const Input: React.FC<InputProps> = ({
+  id,
+  className,
+  controlClassName,
+  label,
+  error,
+  icon,
+  closeIcon,
+  ...attrs
+}) => {
   const styles = classNames(classes.inputContainer, className, { error });
+  const containerClasses = classNames(classes.formControl, controlClassName);
 
   return (
-    <>
+    <div className={containerClasses}>
       {label && <div className={classes.labelsWrapper}>{<label htmlFor={id}>{label}</label>}</div>}
       <div className={styles}>
         {icon && icon}
@@ -23,6 +34,6 @@ export const Input: React.FC<InputProps> = ({ id, className, label, error, icon,
         {closeIcon && closeIcon}
       </div>
       {error && <span className={classes.inputError}>{error}</span>}
-    </>
+    </div>
   );
 };

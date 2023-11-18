@@ -8,7 +8,7 @@ interface ButtonProps {
   className?: string;
   disabled?: boolean;
   active?: boolean;
-  href?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button: React.FC<ButtonProps> = ({ children, onClick, className, disabled, active, ...attrs }) => {

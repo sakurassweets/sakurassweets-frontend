@@ -5,7 +5,11 @@ import userIcon from '../../../assets/icons/user.svg';
 
 import classes from './HeaderControl.module.scss';
 
-export const HeaderControl: React.FC = () => {
+interface HeaderControlProps {
+  openModal: () => void;
+}
+
+export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
   return (
     <div className={classes.headerControl}>
       <div className={classes.language}>EN</div>
@@ -16,7 +20,7 @@ export const HeaderControl: React.FC = () => {
         <Button>
           <img src={cartIcon} alt="Cart Icon" />
         </Button>
-        <Button>
+        <Button onClick={openModal}>
           <img src={userIcon} alt="User Icon" />
         </Button>
       </div>

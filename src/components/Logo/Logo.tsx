@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logoIcon from '../../assets/icons/plumFlower.svg';
 import classes from './Logo.module.scss';
 
-export const Logo = () => {
+export const Logo: React.FC = () => {
   return (
     <NavLink to="/" className={classes.logo}>
       <img src={logoIcon} alt="Logo icon" width={27} height={26} />

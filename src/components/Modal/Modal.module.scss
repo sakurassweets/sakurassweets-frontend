@@ -1,0 +1,91 @@
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContainer {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  background-color: $modal-background-color;
+  border-radius: 24px;
+
+  .modalClose {
+    background-color: transparent;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  }
+
+  .modalImg {
+    width: 330px;
+    object-fit: contain;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+
+  .modalContent {
+    max-width: 304px;
+    width: 100%;
+    color: #dadada;
+
+    h2 {
+      margin-bottom: 32px;
+      color: $primary-text-color;
+      text-align: center;
+    }
+  }
+
+  .modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 12px;
+    margin-bottom: 32px;
+
+    button {
+      height: 48px;
+    }
+
+    .modalInput {
+      background-color: transparent;
+      border: 1px solid #dadada;
+
+      input {
+        background-color: transparent;
+      }
+
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px $modal-background-color inset !important;
+        -webkit-text-fill-color: #dadada !important;
+      }
+    }
+  }
+
+  .modalBtn {
+    background-color: transparent;
+    font-weight: 400;
+    text-decoration-line: underline;
+    line-height: 130%;
+    font-size: 14px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .modalLeft {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
