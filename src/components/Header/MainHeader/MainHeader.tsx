@@ -8,7 +8,7 @@ import searchIcon from '../../../assets/icons/search.svg';
 import closeIcon from '../../../assets/icons/cross.svg';
 import { HeaderControl } from '../HeaderControl/HeaderControl';
 import { useState } from 'react';
-import { Modal } from '../../Modal/Modal';
+import { AuthModal } from '../../Modal/AuthModal/AuthModal';
 
 export const MainHeader: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -44,7 +44,7 @@ export const MainHeader: React.FC = () => {
           <HeaderControl openModal={toggleModal} />
         </div>
       </div>
-      <Modal onClose={onModalClose} open={isModalOpen}></Modal>
+      <AuthModal onClose={onModalClose} open={isModalOpen}></AuthModal>
     </>
   );
 };
