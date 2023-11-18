@@ -18,7 +18,7 @@ export const MainHeader: React.FC = () => {
           <span>Каталог</span>
         </Button>
       </div>
-      <div className={classes.headerBlock2}>
+      <div className={classes.headerBlock}>
         <Input
           id="search"
           type="text"

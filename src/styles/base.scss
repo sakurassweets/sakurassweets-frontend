@@ -28,6 +28,7 @@ a {
 
 button,
 a {
+  transition: 0.1s all ease-in;
   cursor: pointer;
   box-sizing: border-box;
 }

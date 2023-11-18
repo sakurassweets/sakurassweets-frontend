@@ -1,8 +1,11 @@
 input {
-  box-sizing: border-box;
-  width: 100%;
   border: none;
   color: $secondary-text-color;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px $primary-text-color inset !important;
+  -webkit-text-fill-color: $secondary-text-color !important;
 }
 
 input[disabled] {
@@ -13,11 +16,6 @@ input:focus {
   outline: none;
 }
 
-.labelsWrapper {
-  margin-bottom: 5px;
-  @include flex-container;
-}
-
 .inputError {
   margin-top: 5px;
   color: #d43728;
@@ -25,12 +23,21 @@ input:focus {
 }
 
 .inputContainer {
+  position: relative;
   @include flex-container;
   background-color: $primary-text-color;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 500;
-  padding: 12px;
+  padding: 12px 12px 12px 40px;
   gap: 8px;
-  width: 100%;
+
+  input {
+    flex: 1;
+  }
+  img:first-child {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
 }

@@ -1,32 +1,29 @@
 .mainHeader {
-  padding: 23px 0;
-  @include flex-container;
+  padding: 23px 10px;
   gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   .btn {
-    max-width: 163px;
-    width: 100%;
+    width: 163px;
+    height: 48px;
   }
 
   .searchInput {
     max-width: 410px;
+    width: 100%
   }
 
   .headerBlock {
     @include flex-container;
-    gap: 100px;
-
-    // div {
-    //   flex: 1;
-    //   // @include flex-container;
-    //   gap: 24px;
-    // }
   }
 
-  .headerBlock2{
-    display: flex;
-    @include flex-container;
+  .headerBlock:first-child {
+    gap: 100px;
+  }
+
+  .headerBlock:last-child {
     flex: 1;
-
-
   }
 }
