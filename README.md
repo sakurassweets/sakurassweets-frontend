@@ -16,7 +16,7 @@ Welcome to the Sakuras Sweets! Below are instructions on setting up and running 
 - [npm](https://www.npmjs.com/) (v6 or later)
 
 ### Installation
-1. Clone the repository: `git clone https://github.com/your-username/sakura-project.git`
+1. Clone the repository: `git clone https://github.com/sakurassweets/sakurassweets-frontend.gitt`
 2. Navigate to the project directory: `cd sakura-project`
 3. Install dependencies: `npm install`
 
