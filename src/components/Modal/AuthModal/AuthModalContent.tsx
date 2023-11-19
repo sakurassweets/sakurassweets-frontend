@@ -1,4 +1,3 @@
-import { FormType } from '../../../enums/auth.enum';
 import { Button } from '../../Button/Button';
 import { FormikHelpers } from 'formik';
 import { authFormValues } from '../../../models/auth';
@@ -12,7 +11,7 @@ interface AuthModaContentProps {
   buttonSwithTitle: string;
   img: string;
   onModalSwith: () => void;
-  formType?: string;
+  isLogin?: boolean;
   onClose: () => void;
 }
 
@@ -40,13 +39,13 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
       <div className={classes.modalLeft}>
         <div className={classes.modalContent}>
           <h2>{title}</h2>
-          {props.formType === FormType.Login ? (
+          {props.isLogin ? (
             <LoginControl handleSubmit={handleSubmit} buttonTitle={buttonTitle} />
           ) : (
             <RegisterControl handleSubmit={handleSubmit} buttonTitle={buttonTitle} />
           )}
           <div className={classes.modalBtnBlock}>
-            {props.formType !== FormType.Login && <span>Вже маєте акаунт? </span>}
+            {!props.isLogin && <span>Вже маєте акаунт? </span>}
             <Button className={classes.modalBtn} onClick={onModalSwith}>
               {buttonSwithTitle}
             </Button>

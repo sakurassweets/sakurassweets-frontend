@@ -2,10 +2,10 @@ import { Form, Formik } from 'formik';
 import { InputFormik } from '../../../Input/FormikInput';
 import { Button } from '../../../Button/Button';
 import { registerFormFieldsDefault } from '../../../utils/auth';
-import { validationRegister } from '../../../../schemas/regiater-validator';
 import { AuthControlProps } from '../AuthModalContent';
 
 import classes from '../AuthModal.module.scss';
+import { validationRegister } from '../../../../schemas/auth-validator';
 
 export const RegisterControl: React.FC<AuthControlProps> = ({ handleSubmit, ...props }) => {
   return (

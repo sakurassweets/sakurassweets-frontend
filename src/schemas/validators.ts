@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
-export const validationPasswordEmail = Yup.object().shape({
-  email: Yup.string()
+export const validateEmail = () => {
+  return Yup.string()
     .email('Невірний формат електронної пошти')
     .required('Електронна пошта обов’язкова до заповнення')
     .test('subdomainNoUnderscore', 'Субдомен не може містити нижнє тире', (value) => {
@@ -46,15 +46,24 @@ export const validationPasswordEmail = Yup.object().shape({
     .matches(
       /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
       'Електронна пошта може містити тільки такі спеціальні символи "-", "_", "."'
-    ),
-  password: Yup.string()
+    );
+};
+
+export const validatePassword = () => {
+  return Yup.string()
     .trim('Пароль не може містити пробіли')
     .strict(true)
     .required('Пароль обов’язковий до заповнення')
     .matches(/[A-Z]/, 'Пароль повинен містити принаймні одну велику літеру')
     .matches(/[a-z]/, 'Пароль повинен містити принаймні одну малу літеру')
     .matches(/[0-9]/, 'Пароль повинен містити принаймні одну цифру (0-9)')
-    .matches(/[!@#$%^&*]/, 'Пароль повинен містити принаймні один спеціальний си мвол')
     .min(8, 'Пароль повинен бути не менше 8 символів')
-    .max(40, 'Пароль повинен бути не більше 40 символів'),
-});
+    .max(40, 'Пароль повинен бути не більше 40 символів');
+};
+
+export const validateConfirmPassword = () => {
+  return Yup.string()
+    .strict(true)
+    .required('Пароль обов’язковий до заповнення')
+    .oneOf([Yup.ref('password')], 'Паролі повинні співпадати');
+};
