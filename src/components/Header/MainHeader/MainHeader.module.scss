@@ -1,0 +1,33 @@
+.mainHeader {
+  padding: 23px 10px;
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn {
+    width: 163px;
+    height: 48px;
+  }
+
+  .inputControl {
+    max-width: 410px;
+    width: 100%;
+  }
+
+  .searchInput {
+    padding: 12px 12px 12px 40px;
+  }
+
+  .headerBlock {
+    @include flex-container;
+  }
+
+  .headerBlock:first-child {
+    gap: 100px;
+  }
+
+  .headerBlock:last-child {
+    flex: 1;
+  }
+}

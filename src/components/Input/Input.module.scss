@@ -1,0 +1,58 @@
+input {
+  border: none;
+  color: $secondary-text-color;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 1) inset !important;
+  -webkit-text-fill-color: $secondary-text-color !important;
+}
+
+input[disabled] {
+  cursor: not-allowed;
+}
+
+.labelsWrapper {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #dadada;
+}
+
+input:focus {
+  outline: none;
+}
+
+.inputError {
+  margin-top: 5px;
+  color: #d43728;
+  font-size: 12px;
+  border-color: red !important;
+}
+
+.labelError,
+.errorMessage {
+  color: red;
+}
+
+.inputContainer {
+  position: relative;
+  @include flex-container;
+  background-color: $primary-text-color;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px;
+  box-sizing: border-box;
+  gap: 8px;
+
+  input {
+    flex: 1;
+  }
+
+  img:first-child {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+}
