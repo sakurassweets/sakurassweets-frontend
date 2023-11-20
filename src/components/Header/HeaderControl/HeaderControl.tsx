@@ -12,7 +12,7 @@ interface HeaderControlProps {
 export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
   return (
     <div className={classes.headerControl}>
-      <div className={classes.language}>EN</div>
+      <div className={classes.language}>UA</div>
       <div className={classes.controlBtns}>
         <Button>
           <img src={favoriteIcon} alt="Favorite Icon" />

@@ -1,7 +1,6 @@
 // import { NavLink } from 'react-router-dom';
 import { Button } from '../../Button/Button';
 import { Logo } from '../../Logo/Logo';
-import classes from './MainHeader.module.scss';
 import catalogIcon from '../../../assets/icons/catalog.svg';
 import { Input } from '../../Input/Input';
 import searchIcon from '../../../assets/icons/search.svg';
@@ -10,6 +9,9 @@ import { HeaderControl } from '../HeaderControl/HeaderControl';
 import { useState } from 'react';
 import { AuthModal } from '../../Modal/AuthModal/AuthModal';
 
+import classes from './MainHeader.module.scss';
+import classNames from 'classnames'; 
+ 
 export const MainHeader: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -23,7 +25,7 @@ export const MainHeader: React.FC = () => {
 
   return (
     <>
-      <div className={classes.mainHeader}>
+      <div className={classNames(classes.mainHeader, 'container')}>
         <div className={classes.headerBlock}>
           <Logo />
           <Button className={classes.btn}>
