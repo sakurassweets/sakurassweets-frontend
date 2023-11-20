@@ -36,7 +36,6 @@ export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
     }
   }, [open, shouldRender]);
 
-
   if (!shouldRender) return null;
 
   return (

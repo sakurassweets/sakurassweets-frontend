@@ -42,11 +42,13 @@ input:focus {
   border-radius: 8px;
   font-size: 12px;
   font-weight: 500;
-  padding: 12px;
+  padding: 0 10px;
   box-sizing: border-box;
   gap: 8px;
 
   input {
+    box-sizing: border-box;
+    height: 48px;
     flex: 1;
   }
 

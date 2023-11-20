@@ -1,9 +1,17 @@
 .logo {
   max-width: 110px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   column-gap: 3px;
+
+  .logoImg {
+    width: 28px;
+    height: 26px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../assets/icons/plumFlower.svg');
+  }
 
   .shopTitle {
     color: $accent-color-light;

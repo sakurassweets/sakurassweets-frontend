@@ -34,7 +34,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
         />
       ) : (
         <AuthModaContent
-          title={'Регістрація'}
+          title={'Реєстрація'}
           buttonTitle={'Зареєструватися'}
           buttonSwithTitle={'Увійти'}
           img={modalImg}
