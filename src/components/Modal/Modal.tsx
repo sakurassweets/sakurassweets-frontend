@@ -36,20 +36,6 @@ export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
     }
   }, [open, shouldRender]);
 
-  // useEffect(() => {
-  //   let timerId: NodeJS.Timeout;
-  //   if (open && !shouldRender) {
-  //     timerId = setTimeout(() => {
-  //       setShouldRender(true);
-  //     }, 200);
-  //   } else {
-  //     timerId = setTimeout(() => {
-  //       setShouldRender(false);
-  //     }, 500);
-
-  //     return () => clearTimeout(timerId);
-  //   }
-  // }, [open]);
 
   if (!shouldRender) return null;
 

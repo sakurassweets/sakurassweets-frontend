@@ -10,8 +10,8 @@ import { useState } from 'react';
 import { AuthModal } from '../../Modal/AuthModal/AuthModal';
 
 import classes from './MainHeader.module.scss';
-import classNames from 'classnames';
-
+import classNames from 'classnames'; 
+ 
 export const MainHeader: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
