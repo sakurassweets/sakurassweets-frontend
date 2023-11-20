@@ -1,8 +1,10 @@
 .subHeader {
-  padding: 12px 8px;
   background-color: $nav-color;
 
-  @include flex-container;
+  .wrapper {
+    padding: 12px 10px;
+    @include flex-container;
+  }
 
   .info {
     @include flex-container;
@@ -19,3 +21,4 @@
     gap: 4px;
   }
 }
+

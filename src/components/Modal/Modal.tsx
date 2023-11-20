@@ -2,6 +2,7 @@ import classes from './Modal.module.scss';
 import cross from '../../assets/icons/crossDark.svg';
 import { Button } from '../Button/Button';
 import { MouseEventHandler } from 'react';
+import classNames from 'classnames';
 
 interface Modal {
   open: boolean;
@@ -15,11 +16,23 @@ const stopPropagation: MouseEventHandler<HTMLDivElement> = (e) => {
 };
 
 export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
-  if (!open) return null;
+  const overlayClasses = classNames(classes.overlay, {
+    [classes.active]: open,
+  });
+
+  const modalContainerClasses = classNames(classes.modalContainer, {
+    [classes.active]: open,
+  });
+
+  if (!open) {
+    setTimeout(() => {
+      return null;
+    }, 30);
+  }
 
   return (
-    <div className={classes.overlay} onClick={onClose}>
-      <div onClick={stopPropagation} className={classes.modalContainer}>
+    <div className={overlayClasses} onClick={onClose}>
+      <div onClick={stopPropagation} className={modalContainerClasses}>
         <Button className={classes.modalClose} onClick={onClose}>
           <img src={cross} alt="close modal" />
         </Button>
