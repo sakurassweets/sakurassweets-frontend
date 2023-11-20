@@ -1,7 +1,7 @@
 import classes from './Modal.module.scss';
 import cross from '../../assets/icons/crossDark.svg';
 import { Button } from '../Button/Button';
-import { MouseEventHandler } from 'react';
+import { MouseEventHandler, useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 interface Modal {
@@ -16,6 +16,8 @@ const stopPropagation: MouseEventHandler<HTMLDivElement> = (e) => {
 };
 
 export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
+  const [shouldRender, setShouldRender] = useState(false);
+
   const overlayClasses = classNames(classes.overlay, {
     [classes.active]: open,
   });
@@ -24,11 +26,32 @@ export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
     [classes.active]: open,
   });
 
-  if (!open) {
-    setTimeout(() => {
-      return null;
-    }, 30);
-  }
+  useEffect(() => {
+    if (open && !shouldRender) {
+      setShouldRender(true);
+    } else if (!open && shouldRender) {
+      setTimeout(() => {
+        setShouldRender(false);
+      }, 300);
+    }
+  }, [open, shouldRender]);
+
+  // useEffect(() => {
+  //   let timerId: NodeJS.Timeout;
+  //   if (open && !shouldRender) {
+  //     timerId = setTimeout(() => {
+  //       setShouldRender(true);
+  //     }, 200);
+  //   } else {
+  //     timerId = setTimeout(() => {
+  //       setShouldRender(false);
+  //     }, 500);
+
+  //     return () => clearTimeout(timerId);
+  //   }
+  // }, [open]);
+
+  if (!shouldRender) return null;
 
   return (
     <div className={overlayClasses} onClick={onClose}>
