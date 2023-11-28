@@ -38,7 +38,7 @@ function createProduct(): Product {
       isActive: Boolean(randomize(2)),
       amount: randomize(100),
     },
-    image: `/src/components/ProductCard/photo_of_the_product(${randomize(13) + 1}).jpg`,
+    image: 'https://i.postimg.cc/KzGNQtP8/photo-of-the-product-1.jpg',
     rating: randomize(501) / 100,
     inStock: Boolean(randomize(2)),
     description: 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. ',
