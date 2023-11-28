@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    box-sizing: border-box;
+    height: 401px;
+    width: 302px;
+    padding: 25px 24px;
+    border-radius: 6px;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+    background-color: rgb(64, 73, 102);
+    letter-spacing: 1.4;
+};
+
+.button {
+    height: 48px;
+    width: 100%;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.buttonText {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: -26px;
+        display: block;
+        height: 18px;
+        width: 18px;
+        background-image: url('./cart.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
