@@ -1,0 +1,23 @@
+.headerControl {
+  @include flex-container;
+  gap: 20px;
+}
+
+.controlBtns {
+  @include flex-container;
+  gap: 16px;
+
+  button {
+    padding: 5px;
+    background-color: transparent;
+  }
+
+  button:hover {
+    background-color: $primaty-color-light;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}

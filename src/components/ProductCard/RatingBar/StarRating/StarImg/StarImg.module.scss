@@ -1,0 +1,10 @@
+.container {
+  height: 13px;
+  margin-right: 2px;
+  background-image: url('./Star.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+}

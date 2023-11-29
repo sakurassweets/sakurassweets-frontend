@@ -1,8 +1,13 @@
+import { ProductCard } from '../../components/ProductCard/ProductCard';
+
 const MainPage = () => {
   return (
-    <>
-      <h1>Main Page</h1>
-    </>
+    <main>
+      <div className="container">
+        <h1>Main Page</h1>
+        <ProductCard />
+      </div>
+    </main>
   );
 };
 
