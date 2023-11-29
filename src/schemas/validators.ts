@@ -59,7 +59,11 @@ export const validatePassword = () => {
     .matches(/[a-z]/, 'Пароль повинен містити принаймні одну малу літеру')
     .matches(/[0-9]/, 'Пароль повинен містити принаймні одну цифру (0-9)')
     .min(8, 'Пароль повинен бути не менше 8 символів')
-    .max(40, 'Пароль повинен бути не більше 40 символів');
+    .max(40, 'Пароль повинен бути не більше 40 символів')
+    .test('password-similarity', 'Пароль занадто схожий на емейл', function (password) {
+      const email = this.parent.email;
+      return validatePasswordNotSimilar(email, password);
+    });
 };
 
 export const validateConfirmPassword = () => {
@@ -73,4 +77,20 @@ export const validateConfirmPassword = () => {
     .matches(/[0-9]/, 'Пароль повинен містити принаймні одну цифру (0-9)')
     .min(8, 'Пароль повинен бути не менше 8 символів')
     .max(40, 'Пароль повинен бути не більше 40 символів');
+};
+
+const validatePasswordNotSimilar = (email: string, password: string): boolean => {
+  const similarityThreshold = 0.55;
+
+  const emailLowerCase = email.toLowerCase().trim();
+  const passwordLowerCase = password.toLowerCase().trim();
+
+  const minLength = Math.min(emailLowerCase.length, passwordLowerCase.length);
+  const commonSubstringLength = [...Array(minLength).keys()].filter(
+    (i) => emailLowerCase[i] === passwordLowerCase[i]
+  ).length;
+
+  const similarity = commonSubstringLength / minLength;
+
+  return similarity <= similarityThreshold;
 };
