@@ -1,5 +1,4 @@
-// import { NavLink } from 'react-router-dom';
-import { Button } from '../../Button/Button';
+import { NavLink } from 'react-router-dom';
 import { Logo } from '../../Logo/Logo';
 import catalogIcon from '../../../assets/icons/catalog.svg';
 import { Input } from '../../Input/Input';
@@ -28,10 +27,10 @@ export const MainHeader: React.FC = () => {
       <div className={classNames(classes.mainHeader, 'container')}>
         <div className={classes.headerBlock}>
           <Logo />
-          <Button className={classes.btn}>
+          <NavLink to="/catalog" className={classes.btn}>
             <img src={catalogIcon} alt="Catalog icon" />
             <span>Каталог</span>
-          </Button>
+          </NavLink>
         </div>
         <div className={classes.headerBlock}>
           <Input
