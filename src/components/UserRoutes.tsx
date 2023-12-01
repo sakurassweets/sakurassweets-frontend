@@ -5,12 +5,14 @@ const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 const Favorites = lazy(() => import('../pages/Favorites/Favorites'));
 const AboutUs = lazy(() => import('../pages/AboutUs/AboutUs'));
+const Catalog = lazy(() => import('../pages/Catalog/Catalog'));
 
 const UserRoutes = () => {
   return (
     <Suspense fallback={<p>...loading</p>}>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<Catalog />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFoundPage />} />
