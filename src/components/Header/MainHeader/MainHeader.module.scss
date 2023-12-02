@@ -1,5 +1,5 @@
 .mainHeader {
-  padding: 23px 10px;
+  padding: 23px 0px;
   gap: 24px;
   display: flex;
   align-items: center;
@@ -13,12 +13,20 @@
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background: $accent-color;
+    background: #CB5980;
     font-size: 16px;
     font-weight: 600;
     color: $primary-text-color;
     border: none;
     gap: 8px;
+
+    &:hover {
+      background: #EF7DA4;
+    }
+
+    &:focus {
+      background: #CB5980;
+    }
   }
 
   .inputControl {
