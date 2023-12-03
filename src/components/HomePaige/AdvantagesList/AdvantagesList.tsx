@@ -6,22 +6,22 @@ import { AdvantageItem } from './AdvantageItem/AdvantageItem';
 
 const advantages = [
   {
-    icon: '/assets/icons/track.svg',
+    icon: 'icons/track.svg',
     header: 'Безкоштовна доставка',
     text: 'Безкоштовна доставка по всій Україні',
   },
   {
-    icon: '/assets/icons/phone.svg',
+    icon: 'icons/phone.svg',
     header: 'Підтримка 24/7',
     text: 'Передзвонимо вам протягом хвилини',
   },
   {
-    icon: '/assets/icons/bag.svg',
+    icon: 'icons/bag.svg',
     header: 'Гарантія повернення ',
     text: 'Повернення товару протягом 30 днів',
   },
   {
-    icon: '/assets/icons/cash.svg',
+    icon: 'icons/cash.svg',
     header: '100% безпечна оплата',
     text: 'Ми гарантуємо безпеку ваших грошей',
   },
