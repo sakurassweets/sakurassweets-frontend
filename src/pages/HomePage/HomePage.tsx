@@ -1,11 +1,12 @@
 import { ProductCard } from '../../components/ProductCard/ProductCard';
-import { Hero } from '../../components/Hero/Hero';
+import { Hero, AdvantagesList } from '../../components/HomePaige/';
 
 const MainPage = () => {
   return (
     <main>
       <div className="container">
         <Hero />
+        <AdvantagesList />
         <ProductCard />
       </div>
     </main>

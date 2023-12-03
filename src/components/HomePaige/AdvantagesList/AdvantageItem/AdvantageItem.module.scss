@@ -1,0 +1,27 @@
+.advantageItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 302px;
+}
+
+.advantageIcon {
+    width: 56px;
+    height: 56px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.advantageHeader {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(255, 171, 199);
+}
+
+.advantageText {
+    width: 230px;
+    font-size: 16px;
+    line-height: 1.3;
+    color: rgb(255, 234, 236);
+}
