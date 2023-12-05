@@ -1,0 +1,19 @@
+.showBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  border-radius: 8px;
+  background-color: rgb(239, 127, 165);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+
+  &:hover {
+    background-color: rgb(238, 144, 176);
+  }
+
+  &:focus {
+    background-color: rgb(239, 127, 165);
+  }
+}
