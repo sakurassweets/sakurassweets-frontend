@@ -1,0 +1,19 @@
+.container {
+    position: absolute;
+    top: calc(50% - 16px);
+    box-sizing: border-box;
+    height: 32px;
+    width: 32px;
+    border: 0px;
+    background-color: transparent;
+    background-image: url('../../../assets/icons/arrowRight.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    &__right {
+        right: -52px;
+    }
+    &__left {
+      transform: rotate(180deg);
+      left: -52px;
+    }
+  }

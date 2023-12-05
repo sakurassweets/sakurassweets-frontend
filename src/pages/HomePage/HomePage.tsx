@@ -1,5 +1,5 @@
-import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { Hero, AdvantagesList } from '../../components/HomePaige/';
+import { Slider } from '../../components/Slider/Slider';
 
 const MainPage = () => {
   return (
@@ -7,7 +7,7 @@ const MainPage = () => {
       <div className="container">
         <Hero />
         <AdvantagesList />
-        <ProductCard />
+        <Slider />
       </div>
     </main>
   );
