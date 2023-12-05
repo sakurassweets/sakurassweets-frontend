@@ -51,7 +51,6 @@ export const Slider: React.FC<Props> = ({ name, items, marginBottom }) => {
           <div className={classNames(classes.slider_cards)} style={{ transform: `translate(${pos}px)` }}>
             {items.map((card) => (
               <ProductCard product={card} key={Math.random() * Math.random()} />
-              <ProductCard product={card} />
             ))}
           </div>
         </div>
