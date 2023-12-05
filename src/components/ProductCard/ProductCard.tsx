@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import classNames from 'classnames';
 import classes from './ProductCard.module.scss';
 import { FavoriteBtn } from './FavoriteBtn/FavoriteBtn';
@@ -10,58 +9,17 @@ import { ProductCardHeader } from './ProductCardHeader/ProductCardHeader';
 import { ProductDescription } from './ProductDescription/ProductDescription';
 import { ProductPrice } from './ProductPrice/ProductPrice';
 import { Button } from '../Button/Button';
+import { Product } from '../../types/interfaces/Product';
 
 const styles = classNames(classes.container);
 
-//це переробити коли буде хотова схема до продукту
-interface Product {
-  productName: string;
-  favorite: boolean;
-  sale: {
-    isActive: boolean;
-    amount: number;
-  };
-  image: string;
-  rating: number;
-  inStock: boolean;
-  description: string;
-  price: number;
+interface Props {
+  product: Product;
 }
 
-//це можно буде прибрати коли будуть готові продукти
-//також треба буде видалити усі картинки продуктів
-function createProduct(): Product {
-  const defaultProduct: Product = {
-    productName: 'Hanami Picnic',
-    favorite: Boolean(randomize(2)),
-    sale: {
-      isActive: Boolean(randomize(2)),
-      amount: randomize(100),
-    },
-    image: 'https://i.postimg.cc/KzGNQtP8/photo-of-the-product-1.jpg',
-    rating: randomize(501) / 100,
-    inStock: Boolean(randomize(2)),
-    description: 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. ',
-    price: randomize(100000) / 100,
-  };
-
-  return defaultProduct;
-}
-
-//це також видалити
-function randomize(max: number): number {
-  return Math.floor(Math.random() * max);
-}
-
-export const ProductCard: React.FC = () => {
-  //скоріш за все використання статів тут буде не потрібно
-  const [product, setProduct] = useState(() => createProduct());
-
+export const ProductCard: React.FC<Props> = ({ product }) => {
   function handleFavoriteClick(): void {
-    setProduct((product) => ({
-      ...product,
-      favorite: !product.favorite,
-    }));
+    product.favorite = !product.favorite;
   }
 
   function handleBuyClick(): void {
