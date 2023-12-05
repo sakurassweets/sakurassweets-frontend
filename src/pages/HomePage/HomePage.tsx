@@ -1,4 +1,4 @@
-import { Hero, AdvantagesList } from '../../components/HomePaige/';
+import { Hero, AdvantagesList, Presentation } from '../../components/HomePaige/';
 import { Slider } from '../../components/Slider/Slider';
 
 //It is only for exampels, in product all this need delete
@@ -44,6 +44,7 @@ const MainPage = () => {
         <AdvantagesList />
         <Slider name="Акції" items={createCollectProducts()} marginBottom={62} />
         <Slider name="Хіт продажу" items={createCollectProducts()} marginBottom={98} />
+        <Presentation />
         <Slider name="Рекомендуємо" items={createCollectProducts()} marginBottom={40} />
       </div>
     </main>

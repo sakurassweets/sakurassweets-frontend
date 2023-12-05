@@ -1,0 +1,17 @@
+.presentation {
+  &_mainContainer {
+    width: 1280px;
+    margin: 0px auto 97px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_secondaryContainer {
+    height: 586px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
