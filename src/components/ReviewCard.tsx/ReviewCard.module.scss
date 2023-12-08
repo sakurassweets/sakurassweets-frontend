@@ -13,57 +13,57 @@
 }
 
 .author {
-    line-height: 1.5;
-    color: (rgb(231, 225, 254));
+  line-height: 1.5;
+  color: (rgb(231, 225, 254));
 }
 
 .date {
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
 .contantContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .imgContainer {
-    height: 64px;
-    width: 64px;
-    border-radius: 8px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  height: 64px;
+  width: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .contantInnerContainer {
-    width: 283px;
-    height: 96px;
-    display: block;
+  width: 283px;
+  height: 96px;
+  display: block;
 }
 
 .productName {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .productText {
-    font-size: 12px;
-    line-height: 1.3;
-    display: -webkit-box;
-    justify-content: left;
-    align-items: flex-start;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    height: 36px;
+  font-size: 12px;
+  line-height: 1.3;
+  display: -webkit-box;
+  justify-content: left;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 36px;
 }
