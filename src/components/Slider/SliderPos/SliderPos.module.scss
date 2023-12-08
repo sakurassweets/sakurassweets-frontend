@@ -1,0 +1,21 @@
+.container {
+  width: 114px;
+  height: 8px;
+  position: absolute;
+  bottom: -51px;
+  left: calc(50% - 57px);
+}
+
+.item {
+  height: 8px;
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: $primary-text-color;
+  transition-property: width;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+
+  &:not(:last-child) {
+    margin-right: 7px;
+  }
+}
