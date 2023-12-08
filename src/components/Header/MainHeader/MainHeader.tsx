@@ -23,7 +23,7 @@ export const MainHeader: React.FC = () => {
   };
 
   return (
-    <>
+    <div className={classes.mainHeader_back}>
       <div className={classNames(classes.mainHeader, 'container')}>
         <div className={classes.headerBlock}>
           <Logo />
@@ -46,6 +46,6 @@ export const MainHeader: React.FC = () => {
         </div>
       </div>
       <AuthModal onClose={onModalClose} open={isModalOpen}></AuthModal>
-    </>
+    </div>
   );
 };

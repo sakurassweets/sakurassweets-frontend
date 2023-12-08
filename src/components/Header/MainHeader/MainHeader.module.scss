@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: space-between;
 
+  &_back {
+    background-color: #404966;
+  }
+
   .btn {
     width: 163px;
     height: 48px;
