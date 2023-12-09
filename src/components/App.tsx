@@ -1,6 +1,7 @@
 // import Navigation from './Navigation/Navigation';
 import UserRoutes from './UserRoutes';
 import { Header } from './Header/Header';
+import { Footer } from './Footer/Footer';
 
 function App() {
   const BASE_URL = 'https://api.sakurassweets.asion.tk/';
@@ -88,6 +89,7 @@ function App() {
       <Header />
       {/* <Navigation /> */}
       <UserRoutes />
+      <Footer />
       <button onClick={register}>Register</button>
       <button onClick={login}>Login</button>
       <button onClick={getUsers}>Get Users</button>
