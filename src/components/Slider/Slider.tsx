@@ -30,8 +30,6 @@ export const Slider: React.FC<Props> = ({ name, items, marginBottom, type }) => 
   const itemOnPaige = type === 'product' ? 4 : 3;
   const maxPos = -1 * itemWidth * (lastItem - 1);
 
-  console.log(type, '   =   ', items.length);
-
   function handleClick(direction: string) {
     const pol = direction === DIRECTION.LEFT ? 1 : -1;
     if (pol === 1 && pos === 0) {

@@ -1,0 +1,44 @@
+.footer {
+  width: 100%;
+  padding: 48px 0px;
+  background-color: rgb(64, 73, 102);
+}
+
+.footer_container {
+  display: flex;
+  justify-content: space-between;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.footer_sheduleContainer {
+  margin-right: 170px;
+}
+
+.footer_shedule {
+  margin-top: 16px;
+  width: 193px;
+}
+
+.footer_sheduleText {
+  line-height: 1.3;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.footer_sheduleText__header {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.footer_footerList {
+  display: flex;
+}
+
+.footer_footerListItem {
+  &:not(:last-child) {
+    margin-right: 112px;
+  }
+}
