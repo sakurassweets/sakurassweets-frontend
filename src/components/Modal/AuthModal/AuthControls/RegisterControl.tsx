@@ -18,13 +18,20 @@ export const RegisterControl: React.FC<AuthControlProps> = ({ handleSubmit, ...p
     >
       {({ isSubmitting }) => (
         <Form className={classes.modalForm}>
-          <InputFormik label="Ел.пошта *" name="email" type="email" className={classes.modalInput} />
-          <InputFormik label="Введіть пароль *" name="password" type="password" className={classes.modalInput} />
+          <InputFormik label="Ел.пошта *" name="email" type="email" className={classes.modalInput} maxLength={255} />
+          <InputFormik
+            label="Введіть пароль *"
+            name="password"
+            type="password"
+            className={classes.modalInput}
+            maxLength={40}
+          />
           <InputFormik
             label="Підтвердіть пароль *"
             name="confirmPassword"
             type="password"
             className={classes.modalInput}
+            maxLength={40}
           />
           <Button disabled={isSubmitting} type={'submit'}>
             {props.buttonTitle}
