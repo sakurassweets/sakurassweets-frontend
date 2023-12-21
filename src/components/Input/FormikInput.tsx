@@ -9,6 +9,7 @@ interface InputFormikProps {
   className?: string;
   type?: string;
   placeholder?: string;
+  maxLength?: number;
 }
 
 export const InputFormik: React.FC<InputFormikProps> = ({ label, ...props }) => {

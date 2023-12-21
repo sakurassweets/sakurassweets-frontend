@@ -18,8 +18,14 @@ export const LoginControl: React.FC<AuthControlProps> = ({ handleSubmit, ...prop
     >
       {({ isSubmitting }) => (
         <Form className={classes.modalForm}>
-          <InputFormik label="Ел.пошта *" name="email" type="email" className={classes.modalInput} />
-          <InputFormik label="Введіть пароль *" name="password" type="password" className={classes.modalInput} />
+          <InputFormik label="Ел.пошта *" name="email" type="email" className={classes.modalInput} maxLength={320} />
+          <InputFormik
+            label="Введіть пароль *"
+            name="password"
+            type="password"
+            className={classes.modalInput}
+            maxLength={40}
+          />
           <Button disabled={isSubmitting} type={'submit'}>
             {props.buttonTitle}
           </Button>
