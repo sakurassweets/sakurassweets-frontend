@@ -7,6 +7,7 @@ import { LoginControl } from './AuthControls/LoginControl';
 import { RegisterControl } from './AuthControls/RegisterControl';
 import { useAppDispatch } from '../../../redux/hook';
 import { loginThunk, registerThunk } from '../../../redux/auth/operations';
+import { toast } from 'react-toastify';
 interface AuthModaContentProps {
   title: string;
   buttonTitle: string;
@@ -33,23 +34,24 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
   const dispatch = useAppDispatch();
 
   const handleSubmit = (values: authFormValues, actions: FormikHelpers<authFormValues>) => {
-    console.log('Form submitted with values:', values);
     if (props.isLogin) {
       dispatch(loginThunk(values))
         .unwrap()
         .then(() => {
+          toast.success(`Welcome!`);
           props.onClose();
         })
         .catch((err) => {
-          alert(err);
+          toast.error(err);
         });
     } else {
       dispatch(registerThunk(values))
         .unwrap()
         .then(() => {
+          toast.success(`Welcome!`);
           props.onClose();
         })
-        .catch((err) => alert(err));
+        .catch((err) => toast.error(err));
     }
 
     actions.resetForm();
