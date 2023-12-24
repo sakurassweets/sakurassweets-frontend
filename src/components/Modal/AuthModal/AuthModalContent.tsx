@@ -5,6 +5,8 @@ import { authFormValues } from '../../../models/auth';
 import classes from './AuthModal.module.scss';
 import { LoginControl } from './AuthControls/LoginControl';
 import { RegisterControl } from './AuthControls/RegisterControl';
+import { useAppDispatch } from '../../../redux/hook';
+import { loginThunk, registerThunk } from '../../../redux/auth/operations';
 interface AuthModaContentProps {
   title: string;
   buttonTitle: string;
@@ -28,10 +30,29 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
   onModalSwith,
   ...props
 }) => {
+  const dispatch = useAppDispatch();
+
   const handleSubmit = (values: authFormValues, actions: FormikHelpers<authFormValues>) => {
     console.log('Form submitted with values:', values);
+    if (props.isLogin) {
+      dispatch(loginThunk(values))
+        .unwrap()
+        .then(() => {
+          props.onClose();
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    } else {
+      dispatch(registerThunk(values))
+        .unwrap()
+        .then(() => {
+          props.onClose();
+        })
+        .catch((err) => alert(err));
+    }
+
     actions.resetForm();
-    props.onClose();
   };
 
   return (
