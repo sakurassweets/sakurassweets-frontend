@@ -1,13 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { Logo } from '../../Logo/Logo';
-import catalogIcon from '../../../assets/icons/catalog.svg';
 import { Input } from '../../Input/Input';
-import searchIcon from '../../../assets/icons/search.svg';
-import closeIcon from '../../../assets/icons/cross.svg';
 import { HeaderControl } from '../HeaderControl/HeaderControl';
 import { useState } from 'react';
 import { AuthModal } from '../../Modal/AuthModal/AuthModal';
-
+import sprite from '../../../assets/icons/sprite.svg';
 import classes from './MainHeader.module.scss';
 import classNames from 'classnames';
 
@@ -28,7 +25,9 @@ export const MainHeader: React.FC = () => {
         <div className={classes.headerBlock}>
           <Logo />
           <NavLink to="/catalog" className={classes.btn}>
-            <img src={catalogIcon} alt="Catalog icon" />
+            <svg viewBox="0 0 32 32" className={classes.svg}>
+              <use href={sprite + '#icon-catalog'}></use>
+            </svg>
             <span>Каталог</span>
           </NavLink>
         </div>
@@ -39,8 +38,18 @@ export const MainHeader: React.FC = () => {
             placeholder="Пошук товарів"
             controlClassName={classes.inputControl}
             className={classes.searchInput}
-            icon={<img src={searchIcon} alt="Search icon" />}
-            closeIcon={<img src={closeIcon} alt="Close icon" />}
+            icon={
+              <svg viewBox="0 0 32 32" className={classes.svgSearch}>
+                <use href={sprite + '#icon-search'}></use>
+              </svg>
+            }
+            closeIcon={
+              <button className={classes.buttonSVG} type="button">
+                <svg viewBox="0 0 32 32" className={classes.svgClose}>
+                  <use href={sprite + '#icon-cross'}></use>
+                </svg>
+              </button>
+            }
           />
           <HeaderControl openModal={toggleModal} />
         </div>
