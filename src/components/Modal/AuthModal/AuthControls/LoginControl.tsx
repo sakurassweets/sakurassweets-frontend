@@ -3,7 +3,7 @@ import { InputFormik } from '../../../Input/FormikInput';
 import { Button } from '../../../Button/Button';
 import { loginFormFieldsDefault } from '../../../utils/auth';
 import { AuthControlProps } from '../AuthModalContent';
-
+import { PASS_MAX, INPUT_LENGTH } from '../../../../constants/index';
 import classes from '../AuthModal.module.scss';
 import { validationLogin } from '../../../../schemas/auth-validator';
 
@@ -18,13 +18,19 @@ export const LoginControl: React.FC<AuthControlProps> = ({ handleSubmit, ...prop
     >
       {({ isSubmitting }) => (
         <Form className={classes.modalForm}>
-          <InputFormik label="Ел.пошта *" name="email" type="email" className={classes.modalInput} maxLength={255} />
+          <InputFormik
+            label="Ел.пошта *"
+            name="email"
+            type="email"
+            className={classes.modalInput}
+            maxLength={INPUT_LENGTH}
+          />
           <InputFormik
             label="Введіть пароль *"
             name="password"
             type="password"
             className={classes.modalInput}
-            maxLength={40}
+            maxLength={PASS_MAX}
           />
           <Button disabled={isSubmitting} type={'submit'}>
             {props.buttonTitle}
