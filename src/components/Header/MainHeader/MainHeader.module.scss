@@ -41,6 +41,7 @@
 
   .searchInput {
     padding: 0 12px 0 40px;
+    color: $input-text-color;
   }
 
   .headerBlock {
@@ -53,5 +54,41 @@
 
   .headerBlock:last-child {
     flex: 1;
+  }
+  .svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+  .svgSearch {
+    width: 24px;
+    height: 24px;
+    fill: transparent;
+    stroke: rgba(68, 68, 68, 1);
+  }
+  .svgClose {
+    width: 24px;
+    height: 24px;
+    fill: transparent;
+    stroke: currentColor;
+    transition: 0.2s all ease-in;
+  }
+  .buttonSVG {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    color: $input-text-color;
+    background: transparent;
+    border: none;
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+  .svgClose:hover,
+  .svgClose:focus {
+    transform: scale(1.1);
   }
 }
