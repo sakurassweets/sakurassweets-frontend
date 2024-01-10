@@ -10,6 +10,7 @@ import classNames from 'classnames';
 
 export const MainHeader: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   const onModalClose = () => {
     setModalOpen(false);
@@ -17,6 +18,24 @@ export const MainHeader: React.FC = () => {
 
   const toggleModal = () => {
     setModalOpen((prev) => !prev);
+  };
+
+  // Submits search query
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    if (inputValue.length > 0) {
+      console.log(`Пошук: ${inputValue}`);
+    }
+  };
+
+  // Handles input changes
+  const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setInputValue(e.target.value);
+  };
+
+  // Clears the input field
+  const clearInput = (): void => {
+    setInputValue('');
   };
 
   return (
@@ -32,25 +51,31 @@ export const MainHeader: React.FC = () => {
           </NavLink>
         </div>
         <div className={classes.headerBlock}>
-          <Input
-            id="search"
-            type="text"
-            placeholder="Пошук товарів"
-            controlClassName={classes.inputControl}
-            className={classes.searchInput}
-            icon={
-              <svg viewBox="0 0 32 32" className={classes.svgSearch}>
-                <use href={sprite + '#icon-search'}></use>
-              </svg>
-            }
-            closeIcon={
-              <button className={classes.buttonSVG} type="button">
-                <svg viewBox="0 0 32 32" className={classes.svgClose}>
-                  <use href={sprite + '#icon-cross'}></use>
-                </svg>
-              </button>
-            }
-          />
+          <form onSubmit={handleSubmit} className={classes.inputControl}>
+            <Input
+              id="search"
+              type="text"
+              placeholder="Пошук товарів"
+              controlClassName={classes.inputControl}
+              className={classes.searchInput}
+              value={inputValue}
+              onChange={handleInputValue}
+              icon={
+                <button className={classes.buttonSearch} onClick={handleSubmit}>
+                  <svg viewBox="0 0 32 32" className={classes.svgSearch}>
+                    <use href={sprite + '#icon-search'}></use>
+                  </svg>
+                </button>
+              }
+              closeIcon={
+                <button className={classes.buttonSVG} type="button" onClick={clearInput}>
+                  <svg viewBox="0 0 32 32" className={classes.svgClose}>
+                    <use href={sprite + '#icon-cross'}></use>
+                  </svg>
+                </button>
+              }
+            />
+          </form>
           <HeaderControl openModal={toggleModal} />
         </div>
       </div>

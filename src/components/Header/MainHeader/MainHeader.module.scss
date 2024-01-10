@@ -91,4 +91,10 @@
   .svgClose:focus {
     transform: scale(1.1);
   }
+  .buttonSearch {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
 }
