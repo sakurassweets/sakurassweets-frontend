@@ -36,6 +36,21 @@ export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
     }
   }, [open, shouldRender]);
 
+  //Modal Escape close
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    if (open) {
+      document.addEventListener('keydown', handleKeyDown);
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open, onClose]);
+
   if (!shouldRender) return null;
 
   return (
