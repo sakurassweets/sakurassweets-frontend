@@ -26,6 +26,7 @@ export const MainHeader: React.FC = () => {
     if (inputValue.length > 0) {
       console.log(`Пошук: ${inputValue}`);
     }
+    setInputValue('');
   };
 
   // Handles input changes
