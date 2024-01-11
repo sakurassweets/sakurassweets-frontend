@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+import { PASS_MIN, PASS_MAX, INPUT_LENGTH } from '../constants/index';
 
 export const validateEmail = () => {
   return Yup.string()
@@ -47,7 +48,7 @@ export const validateEmail = () => {
       /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
       'Електронна пошта може містити тільки такі спеціальні символи "-", "_", "."'
     )
-    .max(255, 'Електронна поштa повинна бути не більше 255 символів');
+    .max(INPUT_LENGTH, `Електронна поштa повинна бути не більше ${INPUT_LENGTH} символів`);
 };
 
 export const validatePassword = () => {
@@ -59,8 +60,8 @@ export const validatePassword = () => {
     .matches(/[A-Z]/, 'Пароль повинен містити принаймні одну велику літеру')
     .matches(/[a-z]/, 'Пароль повинен містити принаймні одну малу літеру')
     .matches(/[0-9]/, 'Пароль повинен містити принаймні одну цифру (0-9)')
-    .min(8, 'Пароль повинен бути не менше 8 символів')
-    .max(40, 'Пароль повинен бути не більше 40 символів')
+    .min(PASS_MIN, `Пароль повинен бути не менше ${PASS_MIN} символів`)
+    .max(PASS_MAX, `Пароль повинен бути не більше ${PASS_MAX} символів`)
     .test('password-similarity', 'Пароль занадто схожий на емейл', function (password) {
       const email = this.parent.email;
       return validatePasswordNotSimilar(email, password);
@@ -76,8 +77,8 @@ export const validateConfirmPassword = () => {
     .matches(/[A-Z]/, 'Пароль повинен містити принаймні одну велику літеру')
     .matches(/[a-z]/, 'Пароль повинен містити принаймні одну малу літеру')
     .matches(/[0-9]/, 'Пароль повинен містити принаймні одну цифру (0-9)')
-    .min(8, 'Пароль повинен бути не менше 8 символів')
-    .max(40, 'Пароль повинен бути не більше 40 символів');
+    .min(PASS_MIN, `Пароль повинен бути не менше ${PASS_MIN} символів`)
+    .max(PASS_MAX, `Пароль повинен бути не більше ${PASS_MAX} символів`);
 };
 
 const validatePasswordNotSimilar = (email: string, password: string): boolean => {
