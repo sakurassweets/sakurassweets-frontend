@@ -9,15 +9,15 @@
 }
 
 body {
-  background-color: $background-color;
-  font-size: 14px;
   margin: 0;
+  font-size: 14px;
+  background-color: $background-color;
 }
 
 body,
 a {
-  color: $primary-text-color;
   font-family: $main-font;
+  color: $primary-text-color;
 }
 
 a {
