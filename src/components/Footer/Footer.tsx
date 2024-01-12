@@ -39,8 +39,6 @@ export const Footer: React.FC = () => {
               content={{
                 header: 'Допомога',
                 items: [
-                  { text: 'Контакти', to: '/contacts' },
-                  { text: 'FAQ', to: '/faq' },
                   { text: 'Правила та умови', to: '/rules' },
                   { text: 'Політика конфідеціальності', to: '/policy' },
                 ],
@@ -51,12 +49,7 @@ export const Footer: React.FC = () => {
             <FooterList
               content={{
                 header: 'Proxy',
-                items: [
-                  { text: 'Про нас', to: '/about' },
-                  { text: 'Магазин', to: '/shop' },
-                  { text: 'Товари', to: '/catalog' },
-                  { text: 'Порядок видстеження', to: '/stitch' },
-                ],
+                items: [{ text: 'Про нас', to: '/about' }],
               }}
             />
           </li>
