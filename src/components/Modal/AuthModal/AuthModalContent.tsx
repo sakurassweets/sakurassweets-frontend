@@ -38,7 +38,7 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
       dispatch(loginThunk(values))
         .unwrap()
         .then(() => {
-          toast.success(`Welcome!`);
+          toast.success(`Welcome to SAKURA’s sweets!`);
           props.onClose();
         })
         .catch((err) => {
@@ -48,7 +48,7 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
       dispatch(registerThunk(values))
         .unwrap()
         .then(() => {
-          toast.success(`Welcome!`);
+          toast.success(`Welcome to SAKURA’s sweets!`);
           props.onClose();
         })
         .catch((err) => toast.error(err));
