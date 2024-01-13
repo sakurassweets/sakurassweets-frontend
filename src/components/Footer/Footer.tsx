@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
                 items: [
                   { text: 'Мій аккаунт', to: '/account' },
                   { text: 'Історія замовлень', to: '/history' },
-                  { text: 'Кошик', to: '/basket' },
+                  { text: 'Кошик', to: '/cart' },
                   { text: 'Бажане', to: '/favorites' },
                 ],
               }}
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
             <FooterList
               content={{
                 header: 'Proxy',
-                items: [{ text: 'Про нас', to: '/about' }],
+                items: [{ text: 'Про нас', to: '/about-us' }],
               }}
             />
           </li>
