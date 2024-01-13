@@ -1,55 +1,21 @@
+@import './reset.scss';
+
+//base styles
 :root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.container {
-  margin: 0 auto;
+html {
+  font-size: 62.5%;
 }
-
 body {
-  margin: 0;
-  font-size: 14px;
-  background-color: $background-color;
-}
-
-body,
-a {
-  font-family: $main-font;
-  color: $primary-text-color;
-}
-
-a {
-  text-decoration: none;
-}
-
-button,
-a {
-  transition: 0.2s all ease-in;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-main {
-  flex: 1;
-}
-
-ul,
-p {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+  font-family: $main_font;
+  font-size: $font_size_base;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $primary_text_color;
+  background-color: $primary_background_color;
 }

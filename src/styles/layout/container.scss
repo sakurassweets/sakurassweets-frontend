@@ -1,0 +1,16 @@
+.container {
+  margin: 0 auto;
+  padding-right: $py_xl;
+  padding-left: $py_xl;
+  @include mq(mobile) {
+    width: $mobile;
+  }
+
+  @include mq(tablet) {
+    width: $tablet;
+  }
+
+  @include mq(desktop) {
+    width: $desktop;
+  }
+}

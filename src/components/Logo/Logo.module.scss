@@ -1,7 +1,7 @@
 .logo {
   max-width: 110px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   column-gap: 3px;
 
@@ -13,16 +13,19 @@
     background-image: url('../../assets/icons/plumFlower.svg');
   }
 
-  .shopTitle {
-    color: $accent-color-light;
+  .logoTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1.6rem;
+    color: $secondary-text-color;
   }
 
-  .shopSumTitle {
-    color: $accent-color-medium;
+  .logoSubtitle {
     font-weight: 500;
-    font-size: 12px;
-    display: flex;
+    font-size: 1.2rem;
+    color: $accent-color-light;
   }
 }

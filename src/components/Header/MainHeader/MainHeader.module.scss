@@ -71,7 +71,7 @@
     height: 24px;
     fill: transparent;
     stroke: currentColor;
-    transition: 0.2s all ease-in;
+    transition: $transition;
   }
   .buttonSVG {
     display: flex;

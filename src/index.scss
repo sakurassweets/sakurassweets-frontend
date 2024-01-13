@@ -1,6 +1,7 @@
 @import 'modern-normalize/modern-normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 //helpers
+@import './styles/helpers/globalMixin.scss';
 @import './styles/helpers/toast.scss';
 @import './styles/helpers/vars.scss';
 //base
@@ -8,7 +9,7 @@
 //layout
 @import './styles/layout/layout.scss';
 @import './styles/layout/section.scss';
-@import './styles/layout/contsiner.scss';
+@import './styles/layout/container.scss';
 @import './styles/layout/header.scss';
 @import './styles/layout/footer.scss';
 //ui
