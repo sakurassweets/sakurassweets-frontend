@@ -1,4 +1,4 @@
-import { Hero, AdvantagesList, Presentation } from '../../components/HomePaige/';
+import { Hero, AdvantagesList, Presentation } from '../../components/HomePage';
 // import { Slider } from '../../components/Slider/Slider';
 import SliderComponent from '../../components/SliderComponent/SliderComponent';
 
@@ -64,43 +64,41 @@ function createCollectReviews(): Review[] {
 const MainPage = () => {
   return (
     <main>
-      <div className="container">
-        <Hero />
-        <AdvantagesList />
-        <SliderComponent
-          name="Акції"
-          items={createCollectProducts()}
-          marginBottom={62}
-          type={TYPE.PRODUCT}
-          dots={false}
-          slides={4}
-        />
-        <SliderComponent
-          name="Хіт продажу"
-          items={createCollectProducts()}
-          marginBottom={98}
-          type={TYPE.PRODUCT}
-          dots={false}
-          slides={4}
-        />
-        <Presentation />
-        <SliderComponent
-          name="Рекомендуємо"
-          items={createCollectProducts()}
-          marginBottom={100}
-          type={TYPE.PRODUCT}
-          dots={false}
-          slides={4}
-        />
-        <SliderComponent
-          name="Відгуки"
-          items={createCollectReviews()}
-          marginBottom={148}
-          type={TYPE.REVIEW}
-          dots={true}
-          slides={3}
-        />
-      </div>
+      <Hero />
+      <AdvantagesList />
+      <SliderComponent
+        name="Акції"
+        items={createCollectProducts()}
+        marginBottom={62}
+        type={TYPE.PRODUCT}
+        dots={false}
+        slides={4}
+      />
+      <SliderComponent
+        name="Хіт продажу"
+        items={createCollectProducts()}
+        marginBottom={98}
+        type={TYPE.PRODUCT}
+        dots={false}
+        slides={4}
+      />
+      <Presentation />
+      <SliderComponent
+        name="Рекомендуємо"
+        items={createCollectProducts()}
+        marginBottom={100}
+        type={TYPE.PRODUCT}
+        dots={false}
+        slides={4}
+      />
+      <SliderComponent
+        name="Відгуки"
+        items={createCollectReviews()}
+        marginBottom={148}
+        type={TYPE.REVIEW}
+        dots={true}
+        slides={3}
+      />
     </main>
   );
 };

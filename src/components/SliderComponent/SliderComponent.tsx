@@ -72,24 +72,28 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
   };
 
   return (
-    <div className={classes.slider_container} style={{ marginBottom: `${marginBottom}px` }}>
-      <div className={classes.slider_header}>
-        <p className={classes.slider_name}>{name}</p>
-        {/* NavLink can be replaced with your routing component */}
-        <a href="/catalog" className={classes.slider_link}>
-          Всі з категорії
-        </a>
+    <section>
+      <div className="container">
+        <div className={classes.slider_container} style={{ marginBottom: `${marginBottom}px` }}>
+          <div className={classes.slider_header}>
+            <p className={classes.slider_name}>{name}</p>
+            {/* NavLink can be replaced with your routing component */}
+            <a href="/catalog" className={classes.slider_link}>
+              Всі з категорії
+            </a>
+          </div>
+          <Slider {...settings}>
+            {items.map((item, index) =>
+              type === 'product' ? (
+                <ProductCard product={item as Product} key={index} />
+              ) : (
+                <ReviewCard review={item as Review} key={index} />
+              )
+            )}
+          </Slider>
+        </div>
       </div>
-      <Slider {...settings}>
-        {items.map((item, index) =>
-          type === 'product' ? (
-            <ProductCard product={item as Product} key={index} />
-          ) : (
-            <ReviewCard review={item as Review} key={index} />
-          )
-        )}
-      </Slider>
-    </div>
+    </section>
   );
 };
 
