@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import { useField } from 'formik';
 import classes from './Input.module.scss';
-import iconShow from '../../assets/icons/eye-password-show.svg';
-import iconClose from '../../assets/icons/eye-password-close.svg';
+
 import { useState } from 'react';
+import sprite from '../../assets/icons/sprite.svg';
 
 interface InputFormikProps {
   label: string;
@@ -36,7 +36,9 @@ export const InputFormik: React.FC<InputFormikProps> = ({ label, ...props }) => 
         <input {...field} {...props} type={!isOpen && props.type === 'password' ? props.type : 'text'} />
 
         {props.type === 'password' && (
-          <img src={isOpen ? iconShow : iconClose} className={classes.svg} onClick={handleToggleEye} />
+          <svg viewBox="0 0 32 32" className={classes.svg} onClick={handleToggleEye}>
+            <use href={isOpen ? sprite + '#icon-eye' : sprite + '#icon-eye_off'}></use>
+          </svg>
         )}
       </div>
       {meta.touched && meta.error && <div className={classes.errorMessage}>{meta.error}</div>}
