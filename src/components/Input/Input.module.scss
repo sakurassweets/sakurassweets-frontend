@@ -57,4 +57,15 @@ input:focus {
     top: 12px;
     left: 12px;
   }
+  .svg {
+    width: 24px;
+    height: 24px;
+    fill: transparent;
+    stroke: $input-text-color;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
