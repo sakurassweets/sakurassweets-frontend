@@ -1,0 +1,12 @@
+.section {
+  margin: 10rem 0;
+
+  @include mq(mobile) {
+  }
+
+  @include mq(tablet) {
+  }
+
+  @include mq(desktop) {
+  }
+}

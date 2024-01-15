@@ -1,8 +1,5 @@
 import { Button } from '../../Button/Button';
-import favoriteIcon from '../../../assets/icons/favorite.svg';
-import cartIcon from '../../../assets/icons/cart.svg';
-import userIcon from '../../../assets/icons/user.svg';
-
+import sprite from '../../../assets/icons/sprite.svg';
 import classes from './HeaderControl.module.scss';
 
 interface HeaderControlProps {
@@ -15,13 +12,19 @@ export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
       <div className={classes.language}>UA</div>
       <div className={classes.controlBtns}>
         <Button>
-          <img src={favoriteIcon} alt="Favorite Icon" />
+          <svg viewBox="0 0 32 32" className={classes.svg}>
+            <use href={sprite + '#icon-favorite'}></use>
+          </svg>
         </Button>
         <Button>
-          <img src={cartIcon} alt="Cart Icon" />
+          <svg viewBox="0 0 32 32" className={classes.svg}>
+            <use href={sprite + '#icon-user'}></use>
+          </svg>
         </Button>
         <Button onClick={openModal}>
-          <img src={userIcon} alt="User Icon" />
+          <svg viewBox="0 0 32 32" className={classes.svg}>
+            <use href={sprite + '#icon-cart'}></use>
+          </svg>
         </Button>
       </div>
     </div>

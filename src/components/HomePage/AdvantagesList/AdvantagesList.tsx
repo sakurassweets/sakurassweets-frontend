@@ -33,12 +33,16 @@ const advantages = [
 
 export const AdvantagesList: React.FC = () => {
   return (
-    <ul className={classNames(classes.advantagesList)}>
-      {advantages.map((item) => (
-        <li key={Math.random()}>
-          <AdvantageItem advantage={item} />
-        </li>
-      ))}
-    </ul>
+    <section className="section">
+      <div className="container">
+        <ul className={classNames(classes.advantagesList)}>
+          {advantages.map((item) => (
+            <li key={Math.random()}>
+              <AdvantageItem advantage={item} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 };

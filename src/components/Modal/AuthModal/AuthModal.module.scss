@@ -30,7 +30,7 @@
 
   .modalInput {
     background-color: transparent;
-    border: 1px solid #dadada;
+    border: $border;
 
     input {
       background-color: transparent;
@@ -39,7 +39,7 @@
     }
 
     input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 1000px $modal-background-color inset !important;
+      -webkit-box-shadow: 0 0 0 1000px $primary-background-color inset !important;
       -webkit-text-fill-color: #dadada !important;
     }
   }

@@ -28,7 +28,6 @@ export const MainHeader: React.FC = () => {
     }
 
     setInputValue('');
-
   };
 
   // Handles input changes

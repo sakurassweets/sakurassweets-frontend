@@ -1,11 +1,11 @@
 input {
   border: none;
-  color: $secondary-text-color;
+  color: $input-text-color;
 }
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 1) inset !important;
-  -webkit-text-fill-color: $secondary-text-color !important;
+  -webkit-text-fill-color: $input-text-color !important;
 }
 
 input[disabled] {

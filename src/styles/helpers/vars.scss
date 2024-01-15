@@ -1,0 +1,37 @@
+//Typography
+$main_font: 'Inter', sans-serif;
+$font_size_base: 1.6rem;
+
+//Colors
+//Text
+$primary_text_color: rgba(255, 255, 255, 1);
+$secondary_text_color: rgba(255, 234, 236, 1);
+$input_text_color: rgba(189, 196, 205, 1);
+
+// Background
+$primary_background_color: rgb(44, 49, 65);
+$secondary_background_color: rgb(64, 73, 102);
+$disable_background_color: rgba(189, 196, 205, 1);
+
+//Accent
+$accent_color: rgb(203, 89, 128);
+$accent_color_active: rgb(239, 127, 165);
+$accent_color_hover: rgb(238, 144, 176);
+$accent_color_light: rgb(255, 171, 199);
+
+$accent_color_stock: rgba(63, 175, 106, 1);
+$accent_color_stars: rgba(247, 207, 106, 1);
+$border: rgba(189, 196, 205, 1);
+
+//Spacing
+$py_s: 1.4rem;
+$py_m: 2.4rem;
+$py_xl: 8rem;
+$mx_m: 2.4rem;
+
+//Borders
+$gl_radius: 0.8rem;
+$border: 0.1rem solid $border;
+
+//Transitions & Animation
+$transition: all 250ms cubic-bezier(0.53, 0.5, 0.53, 0.52) 0s;

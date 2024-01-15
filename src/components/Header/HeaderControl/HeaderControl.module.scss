@@ -13,11 +13,17 @@
   }
 
   button:hover {
-    background-color: $primaty-color-light;
+    background-color: $accent-color-active;
   }
 
-  img {
+  .svg {
     width: 24px;
     height: 24px;
+    fill: transparent;
+    stroke: currentColor;
+  }
+  .svg:hover,
+  .svg:focus {
+    fill: $accent-color-hover;
   }
 }

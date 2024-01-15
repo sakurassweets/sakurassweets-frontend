@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: $transition;
   z-index: 999;
 
   &.active {
@@ -23,9 +23,9 @@
   width: 100%;
   position: fixed;
   display: flex;
-  background-color: $modal-background-color;
+  background-color: $primary-background-color;
   border-radius: 24px;
-  transition: 0.3s all;
+  transition: $transition;
   transform: scale(0.5);
 
   &.active {
