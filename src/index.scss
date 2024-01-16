@@ -4,8 +4,10 @@
 @import './styles/helpers/globalMixin.scss';
 @import './styles/helpers/toast.scss';
 @import './styles/helpers/vars.scss';
-// @import './styles/helpers/mixinsAll.scss';
+
 @import './styles/helpers/mixins/transition.scss';
+
+
 //base
 @import './styles/base/base.scss';
 //layout
