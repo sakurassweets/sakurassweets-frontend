@@ -1,0 +1,14 @@
+@mixin link_global {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: center;
+  line-height: normal;
+  color: $primary_text_color;
+  cursor: pointer;
+  @include transition_all;
+
+  &:hover,
+  &:focus {
+  }
+}

@@ -18,6 +18,8 @@ export default defineConfig({
         additionalData: `
         @import "/src/styles/helpers/vars.scss";
         @import "/src/styles/layout/layout.scss";
+        @import "/src/styles/helpers/mixinsAll.scss";
+
       `,
       },
     },

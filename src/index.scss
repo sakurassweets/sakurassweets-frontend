@@ -4,6 +4,8 @@
 @import './styles/helpers/globalMixin.scss';
 @import './styles/helpers/toast.scss';
 @import './styles/helpers/vars.scss';
+// @import './styles/helpers/mixinsAll.scss';
+@import './styles/helpers/mixins/transition.scss';
 //base
 @import './styles/base/base.scss';
 //layout
@@ -12,9 +14,6 @@
 @import './styles/layout/container.scss';
 @import './styles/layout/header.scss';
 @import './styles/layout/footer.scss';
-//ui
-@import './styles/ui/forms.scss';
-@import './styles/ui/buttons.scss';
-@import './styles/ui/icons.scss';
+
 // //components
 // @import './styles/components/';
