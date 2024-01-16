@@ -1,13 +1,13 @@
 .logo {
-  max-width: 110px;
+  max-width: 11rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  column-gap: 3px;
+  column-gap: 0.3rem;
 
   .logoImg {
-    width: 28px;
-    height: 26px;
+    width: 2.8rem;
+    height: 2.6rem;
     background-size: cover;
     background-position: center;
     background-image: url('../../assets/icons/plumFlower.svg');

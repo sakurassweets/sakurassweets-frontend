@@ -16,12 +16,12 @@ export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
             <use href={sprite + '#icon-favorite'}></use>
           </svg>
         </Button>
-        <Button>
+        <Button onClick={openModal}>
           <svg viewBox="0 0 32 32" className={classes.svg}>
             <use href={sprite + '#icon-user'}></use>
           </svg>
         </Button>
-        <Button onClick={openModal}>
+        <Button>
           <svg viewBox="0 0 32 32" className={classes.svg}>
             <use href={sprite + '#icon-cart'}></use>
           </svg>

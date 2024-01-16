@@ -1,0 +1,22 @@
+.mainHeader {
+  width: 1280px;
+  padding: 23px 0px;
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.catalogBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  min-width: 19.4rem;
+}
+.catalogSVG {
+  width: 24px;
+  height: 24px;
+  fill: transparent;
+  stroke: currentColor;
+}
