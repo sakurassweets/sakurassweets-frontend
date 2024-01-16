@@ -1,24 +1,27 @@
 .headerControl {
   @include flex;
   gap: 2rem;
-}
 
-.headerControlList {
-  @include flex;
-  gap: 1.6rem;
-}
-.headerControlListBtn {
-  @include flex();
-  @include transparent;
-  color: $primary_text_color;
-  border-radius: $gl_radius;
-  cursor: pointer;
-  transition: $transition;
-  :hover,
-  :focus {
-    background-color: $accent_color_hover;
+  &__list {
+    @include flex;
+    gap: 1.6rem;
   }
-}
-.headerControlListSvg {
-  @include svg;
+
+  &__btn {
+    @include btn_svg;
+    color: $primary_text_color;
+    border-radius: $gl_radius;
+    cursor: pointer;
+    transition: $transition;
+    &:hover,
+    &:focus {
+      background-color: $primary_background_color;
+    }
+    &:active {
+      background-color: $accent_color;
+    }
+  }
+  svg {
+    @include svg;
+  }
 }

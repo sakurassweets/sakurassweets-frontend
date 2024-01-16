@@ -15,10 +15,10 @@ export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
   return (
     <div className={classes.headerControl}>
       <p className={classes.language}>UA</p>
-      <ul className={classes.headerControlList}>
+      <ul className={classes.headerControl__list}>
         {buttons.map((button, index) => (
           <li key={index}>
-            <button onClick={button.onClick} className={classes.headerControlListBtn}>
+            <button onClick={button.onClick} className={classes.headerControl__btn}>
               {button.icon}
             </button>
           </li>

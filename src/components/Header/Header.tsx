@@ -22,9 +22,9 @@ export const Header: React.FC = () => {
     <header className={classes.header}>
       <div className={'container'}>
         <Logo />
-        <NavLink to="/catalog" className={classes.catalogBtn}>
+        <NavLink to="/catalog" className={classes.header__catalogBtn}>
           <LuLayoutGrid />
-          <span>Каталог</span>
+          Каталог
         </NavLink>
 
         <SearchForm />

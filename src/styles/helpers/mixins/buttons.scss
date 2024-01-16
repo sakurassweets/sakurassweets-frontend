@@ -20,6 +20,7 @@
 
 @mixin btn_svg {
   @include flex();
+  padding: 0.4rem;
   @include transparent;
   cursor: pointer;
   @include transition_all;
