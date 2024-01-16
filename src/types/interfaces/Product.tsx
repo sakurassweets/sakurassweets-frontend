@@ -9,5 +9,6 @@ export interface Product {
   rating: number;
   inStock: boolean;
   description: string;
+  salePrice?: number;
   price: number;
 }

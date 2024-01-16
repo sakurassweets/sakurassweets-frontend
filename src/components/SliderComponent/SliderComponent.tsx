@@ -8,8 +8,9 @@ import classes from './SliderComponent.module.scss';
 
 import { Product } from '../../types/interfaces/Product';
 import { Review } from '../../types/interfaces/Review';
-import { ProductCard } from '../ProductCard/ProductCard';
+// import { ProductCard } from '../ProductCard/ProductCard';
 import { ReviewCard } from '../ReviewCard.tsx/ReviewCard';
+import ProductCard from '../ProductCard/ProductCard';
 
 interface SliderProps {
   name: string;

@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  box-sizing: border-box;
+  height: 401px;
+  width: 300px;
+  margin: 0 auto;
+  padding: 25px 24px;
+  border-radius: 6px;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+  background-color: rgb(64, 73, 102);
+  letter-spacing: 1.4;
+}
+
+.button {
+  height: 48px;
+  width: 100%;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: rgb(239, 127, 165);
+
+  &:hover {
+    background-color: rgb(238, 144, 176);
+  }
+
+  &:focus {
+    background-color: rgb(239, 127, 165);
+  }
+}
+
+.buttonText {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: -26px;
+    display: block;
+    height: 18px;
+    width: 18px;
+    background-image: url('../../assets/icons/productCart.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
