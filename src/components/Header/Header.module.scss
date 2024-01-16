@@ -1,22 +1,23 @@
-.mainHeader {
-  width: 1280px;
-  padding: 23px 0px;
-  gap: 24px;
+.header {
+  padding: 2rem 0rem;
+  gap: $py_m;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .catalogBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex();
   gap: 0.8rem;
-  padding: 0.8rem;
-  min-width: 19.4rem;
+  padding: 1.2rem;
+  max-width: 19.4rem;
+  color: $primary_text_color;
+  background-color: $accent_color;
+  border-radius: $gl_radius;
+  svg {
+    @include svg;
+  }
 }
-.catalogSVG {
-  width: 24px;
-  height: 24px;
-  fill: transparent;
-  stroke: currentColor;
+.catalogBtn:hover,
+.catalogBtn:focus {
+  background-color: $accent_color_hover;
 }

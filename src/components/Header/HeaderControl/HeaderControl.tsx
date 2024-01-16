@@ -1,32 +1,29 @@
-import { Button } from '../../Button/Button';
-import sprite from '../../../assets/icons/sprite.svg';
 import classes from './HeaderControl.module.scss';
+import { LuUser, LuShoppingCart, LuHeart } from 'react-icons/lu';
 
 interface HeaderControlProps {
   openModal: () => void;
 }
 
 export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
+  const buttons = [
+    { icon: <LuHeart />, onClick: () => console.log('Favorite clicked') },
+    { icon: <LuUser />, onClick: openModal },
+    { icon: <LuShoppingCart />, onClick: () => console.log('Cart clicked') },
+  ];
+
   return (
     <div className={classes.headerControl}>
-      <div className={classes.language}>UA</div>
-      <div className={classes.controlBtns}>
-        <Button>
-          <svg viewBox="0 0 32 32" className={classes.svg}>
-            <use href={sprite + '#icon-favorite'}></use>
-          </svg>
-        </Button>
-        <Button onClick={openModal}>
-          <svg viewBox="0 0 32 32" className={classes.svg}>
-            <use href={sprite + '#icon-user'}></use>
-          </svg>
-        </Button>
-        <Button>
-          <svg viewBox="0 0 32 32" className={classes.svg}>
-            <use href={sprite + '#icon-cart'}></use>
-          </svg>
-        </Button>
-      </div>
+      <p className={classes.language}>UA</p>
+      <ul className={classes.headerControlList}>
+        {buttons.map((button, index) => (
+          <li key={index}>
+            <button onClick={button.onClick} className={classes.headerControlListBtn}>
+              {button.icon}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

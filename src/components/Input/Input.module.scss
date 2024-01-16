@@ -1,6 +1,8 @@
 input {
+  padding: 1.2rem;
   border: none;
   color: $input-text-color;
+  background-color: $input_background_color;
 }
 
 input:-webkit-autofill {
@@ -42,21 +44,14 @@ input:focus {
   border-radius: 8px;
   font-size: 12px;
   font-weight: 500;
-  padding: 0 10px;
-  box-sizing: border-box;
+
   gap: 8px;
 
   input {
     box-sizing: border-box;
-    height: 48px;
     flex: 1;
   }
 
-  img:first-child {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-  }
   .svg {
     width: 24px;
     height: 24px;

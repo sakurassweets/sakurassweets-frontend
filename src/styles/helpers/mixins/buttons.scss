@@ -7,7 +7,7 @@
   text-align: center;
   line-height: normal;
   color: $primary_text_color;
-  background-color: $accent_color_active;
+  background-color: $accent_color;
   border-radius: $gl_radius;
   cursor: pointer;
   @include transition_all;
@@ -16,4 +16,11 @@
   &:focus {
     background-color: $accent_color_hover;
   }
+}
+
+@mixin btn_svg {
+  @include flex();
+  @include transparent;
+  cursor: pointer;
+  @include transition_all;
 }

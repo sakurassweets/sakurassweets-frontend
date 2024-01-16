@@ -3,7 +3,7 @@ import { Logo } from '../Logo/Logo';
 import { NavLink } from 'react-router-dom';
 import { HeaderControl } from './HeaderControl/HeaderControl';
 import { AuthModal } from '../Modal/AuthModal/AuthModal';
-import sprite from '../../assets/icons/sprite.svg';
+import { LuLayoutGrid } from 'react-icons/lu';
 import classes from './Header.module.scss';
 import { SearchForm } from './SearchForm/SearchForm';
 
@@ -19,21 +19,17 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header>
+    <header className={classes.header}>
       <div className={'container'}>
-        <div>
-          <Logo />
-          <NavLink to="/catalog" className={classes.catalogBtn}>
-            <svg viewBox="0 0 32 32" className={classes.svg}>
-              <use href={sprite + '#icon-catalog'}></use>
-            </svg>
-            <span>Каталог</span>
-          </NavLink>
-        </div>
+        <Logo />
+        <NavLink to="/catalog" className={classes.catalogBtn}>
+          <LuLayoutGrid />
+          <span>Каталог</span>
+        </NavLink>
+
         <SearchForm />
-        <div>
-          <HeaderControl openModal={toggleModal} />
-        </div>
+
+        <HeaderControl openModal={toggleModal} />
       </div>
       <AuthModal onClose={onModalClose} open={isModalOpen}></AuthModal>
     </header>

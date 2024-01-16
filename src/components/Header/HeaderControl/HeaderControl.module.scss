@@ -1,29 +1,24 @@
 .headerControl {
-  @include flex-container;
-  gap: 20px;
+  @include flex;
+  gap: 2rem;
 }
 
-.controlBtns {
-  @include flex-container;
-  gap: 16px;
-
-  button {
-    padding: 5px;
-    background-color: transparent;
+.headerControlList {
+  @include flex;
+  gap: 1.6rem;
+}
+.headerControlListBtn {
+  @include flex();
+  @include transparent;
+  color: $primary_text_color;
+  border-radius: $gl_radius;
+  cursor: pointer;
+  transition: $transition;
+  :hover,
+  :focus {
+    background-color: $accent_color_hover;
   }
-
-  button:hover {
-    background-color: $accent-color-active;
-  }
-
-  .svg {
-    width: 24px;
-    height: 24px;
-    fill: transparent;
-    stroke: currentColor;
-  }
-  .svg:hover,
-  .svg:focus {
-    fill: $accent-color-hover;
-  }
+}
+.headerControlListSvg {
+  @include svg;
 }

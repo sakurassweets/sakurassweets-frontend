@@ -1,0 +1,22 @@
+.serchForm {
+  @include flex();
+  align-self: stretch;
+  gap: 0.8rem;
+  max-width: 41rem;
+  background-color: $input_background_color;
+  border-radius: $gl_radius;
+  border: $border;
+}
+
+.btnSearch {
+  color: rgba(68, 68, 68, 1);
+  svg {
+    @include svg;
+  }
+}
+.btnClose {
+  color: $input_text_color;
+  svg {
+    @include svg;
+  }
+}

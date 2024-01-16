@@ -1,6 +1,6 @@
 import { Input } from '../../Input/Input';
 import classes from './SearchForm.module.scss';
-import sprite from '../../../assets/icons/sprite.svg';
+import { LuSearch, LuX } from 'react-icons/lu';
 import { useState } from 'react';
 
 export const SearchForm: React.FC = () => {
@@ -27,7 +27,7 @@ export const SearchForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.serchForm}>
       <Input
         id="search"
         type="text"
@@ -37,17 +37,13 @@ export const SearchForm: React.FC = () => {
         value={inputValue}
         onChange={handleInputValue}
         icon={
-          <button onClick={handleSubmit}>
-            <svg viewBox="0 0 32 32" className={classes.svgSearch}>
-              <use href={sprite + '#icon-search'}></use>
-            </svg>
+          <button onClick={handleSubmit} className={classes.btnSearch}>
+            <LuSearch />
           </button>
         }
         closeIcon={
-          <button type="button" onClick={clearInput}>
-            <svg viewBox="0 0 32 32" className={classes.svgClose}>
-              <use href={sprite + '#icon-cross'}></use>
-            </svg>
+          <button type="button" onClick={clearInput} className={classes.btnClose}>
+            <LuX />
           </button>
         }
       />
