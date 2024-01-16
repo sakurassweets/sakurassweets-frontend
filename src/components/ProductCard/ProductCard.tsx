@@ -1,43 +1,52 @@
-import React from 'react';
-import classNames from 'classnames';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
+import { MdOutlineStar } from 'react-icons/md';
+
 import classes from './ProductCard.module.scss';
-import { FavoriteBtn } from './FavoriteBtn/FavoriteBtn';
-import { SaleImg } from './SaleImg/SaleImg';
-import { ProductImg } from './ProductImg/ProductImg';
-import { RatingBar } from './RatingBar/RatingBar';
-import { ProductCardHeader } from './ProductCardHeader/ProductCardHeader';
-import { ProductDescription } from './ProductDescription/ProductDescription';
-import { ProductPrice } from './ProductPrice/ProductPrice';
-import { Button } from '../Button/Button';
 import { Product } from '../../types/interfaces/Product';
+import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart';
 
-const styles = classNames(classes.container);
-
-interface Props {
+interface ProductCartProps {
   product: Product;
 }
 
-export const ProductCard: React.FC<Props> = ({ product }) => {
-  function handleFavoriteClick(): void {
-    product.favorite = !product.favorite;
-  }
-
-  function handleBuyClick(): void {
-    console.log('Happy buy ;)');
-  }
-
+const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
   return (
-    <div className={styles}>
-      <FavoriteBtn favorite={product.favorite} onClick={handleFavoriteClick} />
-      <SaleImg isActive={product.sale.isActive} amount={product.sale.amount} />
-      <ProductImg image={product.image} alt={product.productName} />
-      <RatingBar rating={product.rating} inStock={product.inStock} />
-      <ProductCardHeader productName={product.productName} />
-      <ProductDescription productDescription={product.description} />
-      <ProductPrice price={product.price} sale={product.sale} />
-      <Button onClick={handleBuyClick} className={classNames(classes.button)} type={'button'}>
-        <p className={classNames(classes.buttonText)}>Додати до кошика</p>
-      </Button>
+    <div className={classes.card}>
+      {product.sale.isActive && (
+        <div className={classes.sale}>
+          <p>{product.sale.amount}%</p>
+          <p>OFF</p>
+        </div>
+      )}
+
+      <div className={classes.img_wrapper}>
+        <img src={product.image} alt={product.productName} />
+        <button className={classes.wish}>
+          {product.favorite ? <FaRegHeart className={classes.wish_img} /> : <FaHeart className={classes.wish_img} />}
+        </button>
+      </div>
+
+      <div className={classes.rating_instock_wrapper}>
+        <div className={classes.rating_wrapper}>
+          <MdOutlineStar className={classes.rating_star} />
+          <MdOutlineStar className={classes.rating_star} />
+          <MdOutlineStar className={classes.rating_star} />
+          <MdOutlineStar className={classes.rating_star} />
+          <MdOutlineStar className={classes.rating_star} />
+          <div className={classes.rating}>{product.rating}</div>
+        </div>
+
+        <p className={classes.inStock}>in stock</p>
+      </div>
+
+      <p className={classes.title}>{product.productName}</p>
+      <p className={classes.description}>{product.description}</p>
+      {product.salePrice && <p className={classes.salePrice}>{product.salePrice} грн.</p>}
+      <p className={classes.price}>{product.price} грн.</p>
+
+      <ButtonAddToCart />
     </div>
   );
 };
+
+export default ProductCard;
