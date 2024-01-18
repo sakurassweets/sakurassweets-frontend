@@ -2,6 +2,10 @@
   @include flex;
   gap: 2rem;
 
+  &__lang {
+    @include flex();
+  }
+
   &__list {
     @include flex;
     gap: 1.6rem;

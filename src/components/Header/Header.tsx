@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className={classes.header}>
-      <div className={'container'}>
+      <div className={`${classes.header__container} container`}>
         <Logo />
         <NavLink to="/catalog" className={classes.header__catalogBtn}>
           <LuLayoutGrid />

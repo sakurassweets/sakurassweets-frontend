@@ -27,7 +27,7 @@ export const SearchForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={classes.serchForm}>
+    <form onSubmit={handleSubmit} className={classes.searchForm}>
       <Input
         id="search"
         type="text"
@@ -37,14 +37,16 @@ export const SearchForm: React.FC = () => {
         value={inputValue}
         onChange={handleInputValue}
         icon={
-          <button onClick={handleSubmit} className={classes.btnSearch}>
+          <button onClick={handleSubmit} className={classes.searchForm__btnSearch}>
             <LuSearch />
           </button>
         }
         closeIcon={
-          <button type="button" onClick={clearInput} className={classes.btnClose}>
-            <LuX />
-          </button>
+          inputValue && (
+            <button type="button" onClick={clearInput} className={classes.searchForm__btnClose}>
+              <LuX />
+            </button>
+          )
         }
       />
     </form>

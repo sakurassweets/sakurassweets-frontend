@@ -1,22 +1,25 @@
-.serchForm {
-  @include flex();
+.searchForm {
+  @include flex($jc: space-between);
   align-self: stretch;
   gap: 0.8rem;
-  max-width: 41rem;
+  padding: 0 1.6rem;
+  min-width: 41rem;
   background-color: $input_background_color;
   border-radius: $gl_radius;
-  border: $border;
-}
 
-.btnSearch {
-  color: rgba(68, 68, 68, 1);
-  svg {
-    @include svg;
+  &__btnSearch {
+    color: rgba(68, 68, 68, 1);
+    svg {
+      @include svg;
+    }
   }
-}
-.btnClose {
-  color: $input_text_color;
-  svg {
-    @include svg;
+
+  &__btnClose {
+    color: $input_text_color;
+    svg {
+      @include svg;
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }

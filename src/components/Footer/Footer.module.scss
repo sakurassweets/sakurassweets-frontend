@@ -1,16 +1,23 @@
 .footer {
   width: 100%;
-  padding: 48px 0px;
-  background-color: rgb(64, 73, 102);
+  padding: 2.8rem 0px;
+  background-color: $secondary_background_color;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 auto;
+  }
 }
 
-.footer_container {
-  display: flex;
-  justify-content: space-between;
-  width: 1280px;
-  margin: 0 auto;
+.address {
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.2rem;
+  }
 }
-
 .footer_sheduleContainer {
   margin-right: 170px;
 }

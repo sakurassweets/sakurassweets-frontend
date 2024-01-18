@@ -169,30 +169,24 @@ input,
 textarea {
   border-radius: 0;
   box-sizing: border-box;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  width: 100%;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: $input_text_color !important;
+  background-color: $input_background_color !important;
+  border-radius: $gl_radius;
+  border: transparent;
+  outline: transparent;
+}
 
-  &::-webkit-input-placeholder {
-    color: $input-text-color;
-  }
-
-  &::-moz-placeholder {
-    color: $input-text-color;
-  }
-  &:-ms-input-placeholder {
-    color: $input-text-color;
-  }
-
-  &:focus {
-    &::-webkit-input-placeholder {
-      color: transparent;
-    }
-
-    &::-moz-placeholder {
-      color: transparent;
-    }
-    &:-ms-input-placeholder {
-      color: transparent;
-    }
-  }
+input:-internal-autofill-selected {
+  appearance: none !important;
+  background-color: $input_background_color !important;
+  color: $input_text_color !important;
 }
 
 textarea {

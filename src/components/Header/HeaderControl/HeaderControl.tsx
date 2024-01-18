@@ -1,5 +1,5 @@
 import classes from './HeaderControl.module.scss';
-import { LuUser, LuShoppingCart, LuHeart } from 'react-icons/lu';
+import { LuUser, LuShoppingCart, LuHeart, LuChevronDown } from 'react-icons/lu';
 
 interface HeaderControlProps {
   openModal: () => void;
@@ -8,13 +8,15 @@ interface HeaderControlProps {
 export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
   const buttons = [
     { icon: <LuHeart />, onClick: () => console.log('Favorite clicked') },
-    { icon: <LuUser />, onClick: openModal },
     { icon: <LuShoppingCart />, onClick: () => console.log('Cart clicked') },
+    { icon: <LuUser />, onClick: openModal },
   ];
 
   return (
     <div className={classes.headerControl}>
-      <p className={classes.language}>UA</p>
+      <p className={classes.headerControl__lang}>
+        UA <LuChevronDown />
+      </p>
       <ul className={classes.headerControl__list}>
         {buttons.map((button, index) => (
           <li key={index}>
