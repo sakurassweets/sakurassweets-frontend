@@ -1,18 +1,45 @@
 .footer {
   width: 100%;
-  padding: 48px 0px;
-  background-color: rgb(64, 73, 102);
+  padding: 2.8rem 0px;
+  background-color: $secondary_background_color;
+
+  &__container {
+    @include flex($jc: space-between);
+    margin: 0 auto;
+    gap: $p_m;
+  }
+  &__logowrapper {
+    @include flex($ai: flex-start);
+    flex-direction: column;
+    gap: $p_m;
+  }
+  &__list {
+    @include flex();
+  }
 }
 
-.footer_container {
-  display: flex;
-  justify-content: space-between;
-  width: 1280px;
-  margin: 0 auto;
-}
+.address {
+  font-size: $font_size_base;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
 
-.footer_sheduleContainer {
-  margin-right: 170px;
+  &__list {
+    @include flex($ai: flex-start);
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.2rem;
+    svg {
+      @include svg;
+      stroke: $accent_color;
+    }
+  }
 }
 
 .footer_shedule {
@@ -31,10 +58,6 @@
 .footer_sheduleText__header {
   font-weight: 600;
   font-size: 16px;
-}
-
-.footer_footerList {
-  display: flex;
 }
 
 .footer_footerListItem {

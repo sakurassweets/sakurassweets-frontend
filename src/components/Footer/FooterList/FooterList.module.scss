@@ -1,15 +1,19 @@
-.footerList_header {
+.subtitle {
   margin-bottom: 20px;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 1.6rem;
   line-height: 1.5;
-  color: rgb(255, 171, 199);
+  color: $accent_color_hover;
 }
 
-.footerList_item {
+.list {
+  @include flex($ai: flex-start);
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1.6rem;
   line-height: 1.5;
-
-  &:not(:last-child) {
-    margin-bottom: 12px;
+  font-weight: 400;
+  &__item {
+    font-weight: 600;
   }
 }

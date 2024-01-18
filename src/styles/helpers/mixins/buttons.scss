@@ -1,13 +1,13 @@
 @mixin btn_global {
   @include flex();
-  padding: $py_s 0;
+  padding: $p_s 0;
   font-family: $main_font;
   font-size: $font_size_base;
   font-weight: 500;
   text-align: center;
   line-height: normal;
   color: $primary_text_color;
-  background-color: $accent_color_active;
+  background-color: $accent_color;
   border-radius: $gl_radius;
   cursor: pointer;
   @include transition_all;
@@ -16,4 +16,12 @@
   &:focus {
     background-color: $accent_color_hover;
   }
+}
+
+@mixin btn_svg {
+  @include flex();
+  padding: 0.4rem;
+  @include transparent;
+  cursor: pointer;
+  @include transition_all;
 }

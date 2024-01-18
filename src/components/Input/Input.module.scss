@@ -1,26 +1,8 @@
-input {
-  border: none;
-  color: $input-text-color;
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 1) inset !important;
-  -webkit-text-fill-color: $input-text-color !important;
-}
-
-input[disabled] {
-  cursor: not-allowed;
-}
-
 .labelsWrapper {
   font-size: 12px;
   font-weight: 500;
   line-height: 24px;
   color: #dadada;
-}
-
-input:focus {
-  outline: none;
 }
 
 .inputError {
@@ -37,31 +19,32 @@ input:focus {
 
 .inputContainer {
   position: relative;
-  @include flex-container;
+  @include flex();
+  gap: 8px;
   background-color: $primary-text-color;
-  border-radius: 8px;
+  border-radius: $gl_radius;
   font-size: 12px;
   font-weight: 500;
-  padding: 0 10px;
-  box-sizing: border-box;
-  gap: 8px;
 
   input {
-    box-sizing: border-box;
-    height: 48px;
-    flex: 1;
+    padding: 1.2rem 0;
+    border: none;
+    color: $input-text-color;
+    background-color: $input_background_color;
   }
 
-  img:first-child {
-    position: absolute;
-    top: 12px;
-    left: 12px;
+  input:focus {
+    outline: transparent;
   }
-  .svg {
-    width: 24px;
-    height: 24px;
-    fill: transparent;
-    stroke: $input-text-color;
+  input[disabled] {
+    cursor: not-allowed;
+  }
+  input::placeholder {
+    color: $input-text-color;
+  }
+
+  svg {
+    @include svg;
     cursor: pointer;
     transition: all 250ms ease-in-out;
     &:hover {

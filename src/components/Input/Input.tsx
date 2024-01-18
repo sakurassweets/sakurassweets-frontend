@@ -23,10 +23,10 @@ export const Input: React.FC<InputProps> = ({
   ...attrs
 }) => {
   const styles = classNames(classes.inputContainer, className, { error });
-  const containerClasses = classNames(classes.formControl, controlClassName);
+  // const containerClasses = classNames(classes.formControl, controlClassName);
 
   return (
-    <div className={containerClasses}>
+    <>
       {label && (
         <label className={classes.labelsWrapper} htmlFor={id}>
           {label}
@@ -38,6 +38,6 @@ export const Input: React.FC<InputProps> = ({
         {closeIcon && closeIcon}
       </div>
       {error && <span className={classes.inputError}>{error}</span>}
-    </div>
+    </>
   );
 };
