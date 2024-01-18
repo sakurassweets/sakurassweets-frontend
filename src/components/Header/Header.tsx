@@ -21,13 +21,14 @@ export const Header: React.FC = () => {
   return (
     <header className={classes.header}>
       <div className={`${classes.header__container} container`}>
-        <Logo />
-        <NavLink to="/catalog" className={classes.header__catalogBtn}>
-          <LuLayoutGrid />
-          Каталог
-        </NavLink>
-
-        <SearchForm />
+        <Logo type="header" />
+        <div className={classes.wrapper}>
+          <NavLink to="/catalog" className={classes.header__catalogBtn}>
+            <LuLayoutGrid />
+            Каталог
+          </NavLink>
+          <SearchForm />
+        </div>
 
         <HeaderControl openModal={toggleModal} />
       </div>

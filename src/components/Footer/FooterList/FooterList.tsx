@@ -8,22 +8,27 @@ interface Props {
     header: string;
     items: Array<{
       text: string;
-      to: string;
+      to?: string;
     }>;
   };
 }
 
 export const FooterList: React.FC<Props> = ({ content }) => {
   return (
-    <div>
-      <h2 className={classNames(classes.footerList_header)}>{content.header}</h2>
-      <ul>
-        {content.items.map((item: { text: string; to: string }, index: number) => (
-          <li key={index} className={classNames(classes.footerList_item)}>
-            <NavLink to={item.to}>{item.text}</NavLink>
+    <>
+      <h2 className={classNames(classes.subtitle)}>{content.header}</h2>
+      <ul className={classes.list}>
+        {content.items.map((item: { text: string; to?: string }, index: number) => (
+          <li
+            key={index}
+            className={classNames({
+              [classes.list__item]: !item.to && index % 2 === 0,
+            })}
+          >
+            {item.to ? <NavLink to={item.to}>{item.text}</NavLink> : <p>{item.text}</p>}
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };

@@ -2,24 +2,44 @@
   width: 100%;
   padding: 2.8rem 0px;
   background-color: $secondary_background_color;
-  &__container {
-    display: flex;
-    justify-content: space-between;
 
+  &__container {
+    @include flex($jc: space-between);
     margin: 0 auto;
+    gap: $p_m;
+  }
+  &__logowrapper {
+    @include flex($ai: flex-start);
+    flex-direction: column;
+    gap: $p_m;
+  }
+  &__list {
+    @include flex();
   }
 }
 
 .address {
+  font-size: $font_size_base;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+
+  &__list {
+    @include flex($ai: flex-start);
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
   &__items {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 1.2rem;
+    svg {
+      @include svg;
+      stroke: $accent_color;
+    }
   }
-}
-.footer_sheduleContainer {
-  margin-right: 170px;
 }
 
 .footer_shedule {
@@ -38,10 +58,6 @@
 .footer_sheduleText__header {
   font-weight: 600;
   font-size: 16px;
-}
-
-.footer_footerList {
-  display: flex;
 }
 
 .footer_footerListItem {

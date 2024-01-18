@@ -1,6 +1,6 @@
 .header {
   padding: 1.6rem 0rem;
-  gap: $py_m;
+  gap: $p_m;
   background-color: $secondary_background_color;
 
   &__container {
@@ -24,4 +24,10 @@
       background-color: $accent_color_hover;
     }
   }
+}
+
+.wrapper {
+  @include flex();
+  margin-right: 23.1rem;
+  gap: $m_m;
 }
