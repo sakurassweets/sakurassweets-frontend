@@ -3,6 +3,7 @@
   object-fit: contain;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
+  color: $input-text-color;
 }
 
 .modalContent {
@@ -12,7 +13,6 @@
 
   h2 {
     margin-bottom: 32px;
-    color: $primary-text-color;
     text-align: center;
   }
 }
@@ -26,22 +26,29 @@
 
   button {
     height: 48px;
+    cursor: pointer;
+  }
+  .forgotPassword {
+    color: $secondary_text_color;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration-line: underline;
   }
 
   .modalInput {
-    background-color: transparent;
     border: $border;
+    width: 30.4rem;
+    height: 4.4rem;
+    padding: 1.2rem 1.6rem;
 
-    // input {
-    //   background-color: transparent;
-    //   border: none;
-    //   color: #dadada;
-    // }
-
-    // input:-webkit-autofill {
-    //   -webkit-box-shadow: 0 0 0 1000px $primary-background-color inset !important;
-    //   -webkit-text-fill-color: #dadada !important;
-    // }
+    input {
+      color: $input-text-color !important;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      width: 100%;
+      color: #dadada;
+    }
   }
 }
 
@@ -63,6 +70,7 @@
 
   .modalBtn {
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 

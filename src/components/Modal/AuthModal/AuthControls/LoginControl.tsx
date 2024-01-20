@@ -6,6 +6,7 @@ import { AuthControlProps } from '../AuthModalContent';
 import { PASS_MAX, INPUT_LENGTH } from '../../../../constants/index';
 import classes from '../AuthModal.module.scss';
 import { validationLogin } from '../../../../schemas/auth-validator';
+import { Link } from 'react-router-dom';
 
 export const LoginControl: React.FC<AuthControlProps> = ({ handleSubmit, ...props }) => {
   return (
@@ -19,19 +20,22 @@ export const LoginControl: React.FC<AuthControlProps> = ({ handleSubmit, ...prop
       {({ isSubmitting }) => (
         <Form className={classes.modalForm}>
           <InputFormik
-            label="Ел.пошта *"
+            label="Ел.пошта"
             name="email"
             type="email"
             className={classes.modalInput}
             maxLength={INPUT_LENGTH}
           />
           <InputFormik
-            label="Введіть пароль *"
+            label="Введіть пароль"
             name="password"
             type="password"
             className={classes.modalInput}
             maxLength={PASS_MAX}
           />
+          <Link to="/" className={classes.forgotPassword}>
+            Забули пароль?
+          </Link>
           <Button disabled={isSubmitting} type={'submit'}>
             {props.buttonTitle}
           </Button>
