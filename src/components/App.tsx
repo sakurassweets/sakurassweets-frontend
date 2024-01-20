@@ -4,6 +4,7 @@ import { Footer } from './Footer/Footer';
 import { useAppDispatch } from '../redux/hook';
 import { useEffect } from 'react';
 import { refreshThunk } from '../redux/auth/operations';
+import { fetchAllProductsThunk } from '../redux/products/operations';
 // import { Navigation } from './Navigation/Navigation';
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
 
   useEffect(() => {
     dispatch(refreshThunk());
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchAllProductsThunk());
   }, [dispatch]);
 
   return (
