@@ -7,13 +7,11 @@
   padding: 2.5rem 2.4rem;
 }
 .sale {
-  @include flex;
-  flex-direction: column;
+  display: flex;
   position: absolute;
+  padding: 12px;
   left: 0;
   top: 0;
-  width: 5.1rem;
-  height: 5.3rem;
   border-radius: 0.8rem 0rem;
   background-color: $accent_color_stock;
   z-index: 1;
@@ -43,7 +41,7 @@
   height: 2rem;
 }
 .rating_instock_wrapper {
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +49,9 @@
 .rating_wrapper {
   @include flex;
 }
-.rating_star {
+.fullStar,
+.halfStar,
+.emptyStar {
   width: 1.3rem;
   height: 1.3rem;
   color: $accent_color_stars;
@@ -64,7 +64,8 @@
   margin-left: 0.2rem;
   color: $accent_color_stars;
 }
-.inStock {
+.inStock,
+.outOfStock {
   position: relative;
   color: $accent_color_stock;
   font-size: 1rem;
@@ -75,7 +76,7 @@
     display: block;
     position: absolute;
     top: 50%;
-    left: -1.4rem;
+    left: -1.6rem;
     transform: translateY(-50%);
     height: 1.1rem;
     width: 1.1rem;
@@ -84,18 +85,24 @@
     background-position: center;
   }
 }
+.outOfStock {
+  color: $outOfStock;
+  &::before {
+    background-image: url('../../assets/icons/out_of_stock.svg');
+  }
+}
 .title {
-  margin-top: 0.8rem;
+  margin-top: 2rem;
   font-size: 1.6rem;
   font-weight: 500;
 }
 .description {
-  margin-top: 0.8rem;
+  margin-top: 1.2rem;
   font-size: 1.4rem;
   font-weight: 400;
 }
 .salePrice {
-  margin-top: 0.8rem;
+  margin-top: 2rem;
   font-size: 1.4rem;
   font-weight: 400;
   text-decoration: line-through;
@@ -103,7 +110,7 @@
 }
 .price {
   margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 2.2rem;
   font-size: 1.8rem;
   font-weight: 600;
   color: #fff;

@@ -12,7 +12,7 @@
     background-color: $accent_color_hover;
   }
   &:active {
-    background-color: $accent_color;
+    background-color: $disable_background_color;
   }
   &__icon {
     margin-right: 0.8rem;
