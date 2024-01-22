@@ -1,5 +1,5 @@
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
-import { MdOutlineStar } from 'react-icons/md';
+import { FaStar, FaRegStarHalfStroke, FaRegStar } from 'react-icons/fa6';
 
 import classes from './ProductCard.module.scss';
 import { Product } from '../../types/interfaces/Product';
@@ -9,13 +9,31 @@ interface ProductCartProps {
   product: Product;
 }
 
+interface RatingStarsProps {
+  rating: number;
+}
+
+const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars.push(<FaStar key={i} className={classes.fullStar} />);
+    } else if (i - 0.5 === rating) {
+      stars.push(<FaRegStarHalfStroke key={i} className={classes.halfStar} />);
+    } else {
+      stars.push(<FaRegStar key={i} className={classes.emptyStar} />);
+    }
+  }
+
+  return <div className={classes.ratingWrapper}>{stars}</div>;
+};
+
 const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
   return (
     <div className={classes.card}>
       {product.sale.isActive && (
         <div className={classes.sale}>
-          <p>{product.sale.amount}%</p>
-          <p>OFF</p>
+          <p>{product.sale.amount}% ЗНИЖКА</p>
         </div>
       )}
 
@@ -28,15 +46,15 @@ const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
 
       <div className={classes.rating_instock_wrapper}>
         <div className={classes.rating_wrapper}>
-          <MdOutlineStar className={classes.rating_star} />
-          <MdOutlineStar className={classes.rating_star} />
-          <MdOutlineStar className={classes.rating_star} />
-          <MdOutlineStar className={classes.rating_star} />
-          <MdOutlineStar className={classes.rating_star} />
-          <div className={classes.rating}>{product.rating}</div>
+          <RatingStars rating={product.rating} />
+          <div className={classes.rating}>({product.rating})</div>
         </div>
 
-        <p className={classes.inStock}>in stock</p>
+        {product.inStock ? (
+          <p className={classes.inStock}>В наявності</p>
+        ) : (
+          <p className={classes.outOfStock}>Немає в наявності</p>
+        )}
       </div>
 
       <p className={classes.title}>{product.productName}</p>

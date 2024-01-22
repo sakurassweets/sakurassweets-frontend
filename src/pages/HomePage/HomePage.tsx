@@ -24,7 +24,7 @@ function createProduct(): Product {
       amount: randomize(100),
     },
     image: 'https://i.postimg.cc/KzGNQtP8/photo-of-the-product-1.jpg',
-    rating: randomize(5),
+    rating: (randomize(10) + 1) / 2,
     inStock: Boolean(randomize(2)),
     description: 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. ',
     salePrice: randomize(100000) / 100,
