@@ -1,8 +1,7 @@
-import classes from './Modal.module.scss';
-import cross from '../../assets/icons/crossDark.svg';
-import { Button } from '../Button/Button';
 import { MouseEventHandler, useEffect, useState } from 'react';
 import classNames from 'classnames';
+import { LuX } from 'react-icons/lu';
+import classes from './Modal.module.scss';
 
 interface Modal {
   open: boolean;
@@ -56,9 +55,9 @@ export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
   return (
     <div className={overlayClasses} onClick={onClose}>
       <div onClick={stopPropagation} className={modalContainerClasses}>
-        <Button className={classes.modalClose} onClick={onClose}>
-          <img src={cross} alt="close modal" />
-        </Button>
+        <button className={classes.modalClose} onClick={onClose}>
+          <LuX />
+        </button>
         {children}
       </div>
     </div>
