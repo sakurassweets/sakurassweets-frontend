@@ -8,6 +8,8 @@
   font-size: 1.4rem;
   font-weight: 500;
   cursor: pointer;
+  @include transition_all;
+
   &:hover {
     background-color: $accent_color_hover;
   }

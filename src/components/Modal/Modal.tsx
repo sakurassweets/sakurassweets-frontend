@@ -25,14 +25,28 @@ export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
     [classes.active]: open,
   });
 
+  // useEffect(() => {
+  //   if (open && !shouldRender) {
+  //     setShouldRender(true);
+  //   } else if (!open && shouldRender) {
+  //     setTimeout(() => {
+  //       setShouldRender(false);
+  //     }, 300);
+  //   }
+  // }, [open, shouldRender]);
   useEffect(() => {
+    let timerId: string | number | NodeJS.Timeout | undefined;
+
     if (open && !shouldRender) {
-      setShouldRender(true);
+      timerId = setTimeout(() => {
+        setShouldRender(true);
+      }, 300);
     } else if (!open && shouldRender) {
-      setTimeout(() => {
+      timerId = setTimeout(() => {
         setShouldRender(false);
       }, 300);
     }
+    return () => clearTimeout(timerId);
   }, [open, shouldRender]);
 
   //Modal Escape close

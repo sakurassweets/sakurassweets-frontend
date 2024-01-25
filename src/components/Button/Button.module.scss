@@ -9,6 +9,7 @@
   line-height: 1.5;
   font-weight: 600;
   cursor: pointer;
+  @include transition_all;
   &:hover {
     background-color: $accent_color_hover;
   }

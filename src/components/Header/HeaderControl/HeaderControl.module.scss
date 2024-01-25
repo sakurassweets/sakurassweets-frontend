@@ -16,7 +16,7 @@
     color: $primary_text_color;
     border-radius: $gl_radius;
     cursor: pointer;
-    transition: $transition;
+    @include transition_all;
     &:hover,
     &:focus {
       background-color: $primary_background_color;

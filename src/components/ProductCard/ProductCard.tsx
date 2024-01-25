@@ -1,5 +1,5 @@
-import { FaRegHeart, FaHeart } from 'react-icons/fa';
-import { FaStar, FaRegStarHalfStroke, FaRegStar } from 'react-icons/fa6';
+import { FaRegStarHalfStroke } from 'react-icons/fa6';
+import { LuHeart, LuStar } from 'react-icons/lu';
 
 import classes from './ProductCard.module.scss';
 import { Product } from '../../types/interfaces/Product';
@@ -13,15 +13,15 @@ interface RatingStarsProps {
   rating: number;
 }
 
-const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
+export const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
-      stars.push(<FaStar key={i} className={classes.fullStar} />);
+      stars.push(<LuStar key={i} className={classes.fullStar} />);
     } else if (i - 0.5 === rating) {
       stars.push(<FaRegStarHalfStroke key={i} className={classes.halfStar} />);
     } else {
-      stars.push(<FaRegStar key={i} className={classes.emptyStar} />);
+      stars.push(<LuStar key={i} className={classes.emptyStar} />);
     }
   }
 
@@ -40,7 +40,7 @@ const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
       <div className={classes.img_wrapper}>
         <img src={product.image} alt={product.productName} />
         <button className={classes.wish}>
-          {product.favorite ? <FaRegHeart className={classes.wish_img} /> : <FaHeart className={classes.wish_img} />}
+          {product.favorite ? <LuHeart className={classes.wish_img} /> : <LuHeart className={classes.wish_favimg} />}
         </button>
       </div>
 
