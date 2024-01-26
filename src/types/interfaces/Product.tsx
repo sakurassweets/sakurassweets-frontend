@@ -18,3 +18,18 @@ export interface Product {
   components: string;
   price_currency_symbol: string;
 }
+
+export interface TestProduct {
+  productName: string;
+  favorite: boolean;
+  sale: {
+    isActive: boolean;
+    amount: number;
+  };
+  image: string;
+  rating: number;
+  inStock: boolean;
+  description: string;
+  salePrice?: number;
+  price: number;
+}
