@@ -18,18 +18,3 @@ export interface Product {
   components: string;
   price_currency_symbol: string;
 }
-
-export interface ProductsResponse {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: Product[];
-}
-
-export interface ProductsState {
-  products: ProductsResponse | object;
-  isLoading: boolean;
-  error: string;
-}
-
-export type ProductsData = Product[];

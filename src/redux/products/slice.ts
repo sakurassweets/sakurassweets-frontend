@@ -1,9 +1,15 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchAllProductsThunk } from './operations';
-import { ProductsState } from '../../types/interfaces/Product';
+import { Product } from '../../types/interfaces/Product';
+
+export interface ProductsState {
+  products: Product[];
+  isLoading: boolean;
+  error: string;
+}
 
 const initialState: ProductsState = {
-  products: {},
+  products: [],
   isLoading: false,
   error: '',
 };

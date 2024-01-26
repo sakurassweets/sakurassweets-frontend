@@ -47,7 +47,6 @@ export const authSlice = createSlice({
         state.refresh = payload.refresh;
         state.isLoggedIn = true;
         state.isRefresh = false;
-        state.isLoading = false;
       })
       .addCase(refreshThunk.pending, (state) => {
         state.isRefresh = true;
@@ -56,13 +55,12 @@ export const authSlice = createSlice({
         state.isRefresh = false;
         state.access = '';
         state.refresh = '';
-        state.isLoggedIn = false;
       })
-      .addMatcher(isAnyOf(loginThunk.pending, registerThunk.pending, refreshThunk.pending), (state) => {
+      .addMatcher(isAnyOf(loginThunk.pending, registerThunk.pending), (state) => {
         state.isLoading = true;
         state.error = '';
       })
-      .addMatcher(isAnyOf(loginThunk.rejected, registerThunk.rejected, refreshThunk.rejected), (state, { payload }) => {
+      .addMatcher(isAnyOf(loginThunk.rejected, registerThunk.rejected), (state, { payload }) => {
         state.isLoading = false;
         state.error = payload ?? 'Error refreshing token';
       });

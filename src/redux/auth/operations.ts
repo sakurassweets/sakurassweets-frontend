@@ -14,7 +14,6 @@ export const loginThunk = createAsyncThunk<AuthData, authFormValues, { rejectVal
   async (credentials, ThunkAPI) => {
     try {
       const response = await API.post('login/', credentials);
-
       const data = response.data;
       localStorage.setItem('token', JSON.stringify(data));
 
