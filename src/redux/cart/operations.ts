@@ -4,7 +4,7 @@ import { Cart } from '../../types/interfaces/Cart';
 
 //GetCartByID
 export const fetchCartThunk = createAsyncThunk<Cart[], undefined, { rejectValue: string }>(
-  'products/getCartByID',
+  'cart/getCartByID',
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await API.get(`/carts`);
