@@ -7,14 +7,14 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import classes from './SliderComponent.module.scss';
 
-import { Product } from '../../types/interfaces/Product';
+import { TestProduct } from '../../types/interfaces/Product';
 import { Review } from '../../types/interfaces/Review';
 import { ReviewCard } from '../ReviewCard.tsx/ReviewCard';
 import ProductCard from '../ProductCard/ProductCard';
 
 interface SliderProps {
   name: string;
-  items: Product[] | Review[];
+  items: TestProduct[] | Review[];
   marginBottom: number;
   type: string;
   dots: boolean;
@@ -83,7 +83,7 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
           <Slider {...settings}>
             {items.map((item, index) =>
               type === 'product' ? (
-                <ProductCard product={item as Product} key={index} />
+                <ProductCard product={item as TestProduct} key={index} />
               ) : (
                 <ReviewCard review={item as Review} key={index} />
               )

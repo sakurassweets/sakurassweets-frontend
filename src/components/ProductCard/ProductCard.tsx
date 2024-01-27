@@ -2,11 +2,11 @@ import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { LuHeart, LuStar } from 'react-icons/lu';
 
 import classes from './ProductCard.module.scss';
-import { Product } from '../../types/interfaces/Product';
+import { TestProduct } from '../../types/interfaces/Product';
 import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart';
 
 interface ProductCartProps {
-  product: Product;
+  product: TestProduct;
 }
 
 interface RatingStarsProps {
