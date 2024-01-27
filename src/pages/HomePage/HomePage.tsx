@@ -8,15 +8,15 @@ const TYPE = {
 };
 
 //It is only for exampels, in product all this need delete
-import { Product } from '../../types/interfaces/Product';
+import { TestProduct } from '../../types/interfaces/Product';
 import { Review } from '../../types/interfaces/Review';
 
 function randomize(max: number): number {
   return Math.floor(Math.random() * max);
 }
 
-function createProduct(): Product {
-  const defaultProduct: Product = {
+function createProduct(): TestProduct {
+  const defaultProduct: TestProduct = {
     productName: 'Hanami Picnic',
     favorite: Boolean(randomize(2)),
     sale: {
@@ -34,8 +34,8 @@ function createProduct(): Product {
   return defaultProduct;
 }
 
-function createCollectProducts(): Product[] {
-  const defaultProduct: Product[] = [];
+function createCollectProducts(): TestProduct[] {
+  const defaultProduct: TestProduct[] = [];
 
   for (let i = 0; i < 12; i++) {
     defaultProduct.push(createProduct());
