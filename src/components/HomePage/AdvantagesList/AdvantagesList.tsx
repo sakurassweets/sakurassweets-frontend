@@ -1,31 +1,28 @@
 import React from 'react';
+import { LuTruck, LuPhone, LuShoppingBag, LuCircleDollarSign } from 'react-icons/lu';
 import classNames from 'classnames';
 import classes from './AdvantagesList.module.scss';
-import trackUrl from '../../../assets/icons/track.svg';
-import phoneUrl from '../../../assets/icons/phone.svg';
-import bagUrl from '../../../assets/icons/bag.svg';
-import cashUrl from '../../../assets/icons/cash.svg';
 
 import { AdvantageItem } from './AdvantageItem/AdvantageItem';
 
 const advantages = [
   {
-    icon: trackUrl,
+    icon: <LuTruck />,
     header: 'Безкоштовна доставка',
     text: 'Безкоштовна доставка по всій Україні',
   },
   {
-    icon: phoneUrl,
+    icon: <LuPhone />,
     header: 'Підтримка 24/7',
     text: 'Передзвонимо вам протягом хвилини',
   },
   {
-    icon: bagUrl,
-    header: 'Гарантія повернення ',
+    icon: <LuShoppingBag />,
+    header: 'Гарантія повернення',
     text: 'Повернення товару протягом 30 днів',
   },
   {
-    icon: cashUrl,
+    icon: <LuCircleDollarSign />,
     header: '100% безпечна оплата',
     text: 'Ми гарантуємо безпеку ваших грошей',
   },
@@ -35,11 +32,9 @@ export const AdvantagesList: React.FC = () => {
   return (
     <section className="section">
       <div className="container">
-        <ul className={classNames(classes.advantagesList)}>
-          {advantages.map((item) => (
-            <li key={Math.random()}>
-              <AdvantageItem advantage={item} />
-            </li>
+        <ul className={classNames(classes.advantages__list)}>
+          {advantages.map((item, index) => (
+            <AdvantageItem key={index} advantage={item} />
           ))}
         </ul>
       </div>
