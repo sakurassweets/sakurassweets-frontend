@@ -1,4 +1,3 @@
-import { Button } from '../../Button/Button';
 import { FormikHelpers } from 'formik';
 import { authFormValues } from '../../../models/auth';
 
@@ -68,10 +67,13 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
             <RegisterControl handleSubmit={handleSubmit} buttonTitle={buttonTitle} />
           )}
           <div className={classes.modalBtnBlock}>
-            {!props.isLogin && <span>Вже маєте акаунт? </span>}
-            <Button className={classes.modalBtn} onClick={onModalSwith}>
+            {!props.isLogin && <span>Вже маєте акаунт ? </span>}
+            <button
+              className={`${classes.modalBtn} ${props.isLogin ? classes.login : classes.register}`}
+              onClick={onModalSwith}
+            >
               {buttonSwithTitle}
-            </Button>
+            </button>
           </div>
         </div>
       </div>

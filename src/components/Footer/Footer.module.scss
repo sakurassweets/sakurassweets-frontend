@@ -4,7 +4,7 @@
   background-color: $secondary_background_color;
 
   &__container {
-    @include flex($jc: space-between);
+    @include flex($jc: space-between, $ai: flex-start);
     margin: 0 auto;
     gap: $p_m;
   }

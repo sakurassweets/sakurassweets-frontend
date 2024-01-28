@@ -1,0 +1,22 @@
+.social {
+  &__list {
+    @include flex();
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  &__link {
+    display: block;
+    width: 3.2rem;
+    height: 3.2rem;
+    color: $accent_color_hover;
+    cursor: pointer;
+    @include transition_all;
+  }
+  &__svg {
+    @include svg;
+    width: 3.2rem;
+    height: 3.2rem;
+    stroke-width: 1.5;
+  }
+}

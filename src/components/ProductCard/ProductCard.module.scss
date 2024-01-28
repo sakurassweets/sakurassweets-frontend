@@ -32,33 +32,54 @@
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 0.6rem;
-  background-color: #404966;
+  color: $primary_text_color;
+  background-color: $secondary_background_color;
   cursor: pointer;
+  @include transition_all;
+  &:hover,
+  &:focus {
+    background-color: $primary_background_color;
+  }
+
+  svg:hover {
+    @include svg;
+  }
 }
 .wish_img {
-  color: #ffffff;
+  color: $primary_text_color;
+  width: 2rem;
+  height: 2rem;
+}
+.wish_favimg {
+  fill: $secondary_text_color;
   width: 2rem;
   height: 2rem;
 }
 .rating_instock_wrapper {
+  @include flex($jc: space-between);
   margin-top: 0.8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .rating_wrapper {
-  @include flex;
+  @include flex();
 }
 .fullStar,
-.halfStar,
+.halfStar {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: $accent_color_stars;
+  fill: $accent_color_stars;
+  margin-right: 0.2rem;
+}
+
 .emptyStar {
   width: 1.3rem;
   height: 1.3rem;
   color: $accent_color_stars;
+  fill: transparent;
   margin-right: 0.2rem;
 }
 .rating {
-  @include flex;
+  @include flex();
   font-size: 1.2rem;
   font-weight: 400;
   margin-left: 0.2rem;
@@ -106,12 +127,12 @@
   font-size: 1.4rem;
   font-weight: 400;
   text-decoration: line-through;
-  color: #ffeaec;
+  color: $secondary_text_color;
 }
 .price {
   margin-top: 0.8rem;
   margin-bottom: 2.2rem;
   font-size: 1.8rem;
   font-weight: 600;
-  color: #fff;
+  color: $primary_text_color;
 }

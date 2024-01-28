@@ -4,6 +4,7 @@ import classes from './Footer.module.scss';
 import { Logo } from '../Logo/Logo';
 import { FooterList } from './FooterList/FooterList';
 import { LuPhone, LuMail } from 'react-icons/lu';
+import { SocialSVG } from './SocialList/SocialSVG';
 
 export const Footer: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ export const Footer: React.FC = () => {
             </ul>
           </address>
         </div>
+        <SocialSVG />
         <ul className={classNames(classes.footer__list)}>
           <li className={classNames(classes.footer_footerListItem)}>
             <FooterList

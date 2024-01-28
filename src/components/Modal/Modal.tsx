@@ -1,10 +1,12 @@
-import classes from './Modal.module.scss';
-import cross from '../../assets/icons/crossDark.svg';
-import { Button } from '../Button/Button';
 import { MouseEventHandler, useEffect, useState } from 'react';
 import classNames from 'classnames';
+import { LuX } from 'react-icons/lu';
+import classes from './Modal.module.scss';
+import ReactDOM from 'react-dom';
 
-interface Modal {
+const rootModal = document.querySelector('#modal-root');
+
+interface ModalProps {
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
@@ -15,7 +17,7 @@ const stopPropagation: MouseEventHandler<HTMLDivElement> = (e) => {
   e.stopPropagation();
 };
 
-export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
+export const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   const [shouldRender, setShouldRender] = useState(false);
 
   const overlayClasses = classNames(classes.overlay, {
@@ -27,13 +29,18 @@ export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
   });
 
   useEffect(() => {
+    let timerId: string | number | NodeJS.Timeout | undefined;
+
     if (open && !shouldRender) {
-      setShouldRender(true);
+      timerId = setTimeout(() => {
+        setShouldRender(true);
+      }, 300);
     } else if (!open && shouldRender) {
-      setTimeout(() => {
+      timerId = setTimeout(() => {
         setShouldRender(false);
       }, 300);
     }
+    return () => clearTimeout(timerId);
   }, [open, shouldRender]);
 
   //Modal Escape close
@@ -53,14 +60,15 @@ export const Modal: React.FC<Modal> = ({ open, onClose, children }) => {
 
   if (!shouldRender) return null;
 
-  return (
+  return ReactDOM.createPortal(
     <div className={overlayClasses} onClick={onClose}>
       <div onClick={stopPropagation} className={modalContainerClasses}>
-        <Button className={classes.modalClose} onClick={onClose}>
-          <img src={cross} alt="close modal" />
-        </Button>
+        <button className={classes.modalClose} onClick={onClose}>
+          <LuX />
+        </button>
         {children}
       </div>
-    </div>
+    </div>,
+    rootModal!
   );
 };

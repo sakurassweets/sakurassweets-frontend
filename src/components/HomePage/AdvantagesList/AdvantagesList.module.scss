@@ -1,4 +1,6 @@
-.advantagesList {
-  display: flex;
-  justify-content: space-between;
+.advantages {
+  &__list {
+    @include flex($jc: space-between);
+    gap: $m_m;
+  }
 }

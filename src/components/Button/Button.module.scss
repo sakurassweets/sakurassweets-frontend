@@ -1,13 +1,19 @@
 .btn {
-  display: flex;
-  padding: 8px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background: $accent-color;
-  font-size: 16px;
+  @include flex;
+  padding: 1.2rem 0;
+  width: 100%;
+  background-color: $accent_color;
+  color: #fff;
+  border-radius: $gl_radius;
+  font-size: 1.6rem;
+  line-height: 1.5;
   font-weight: 600;
-  color: $primary-text-color;
-  border: none;
-  gap: 8px;
+  cursor: pointer;
+  @include transition_all;
+  &:hover {
+    background-color: $accent_color_hover;
+  }
+  &:active {
+    background-color: $disable_background_color;
+  }
 }
