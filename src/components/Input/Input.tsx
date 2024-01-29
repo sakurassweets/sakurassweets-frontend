@@ -9,13 +9,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: ReactNode;
   closeIcon?: ReactNode;
   className?: string;
-  // controlClassName?: string;
+  controlClassName?: string;
 }
 
 export const Input: React.FC<InputProps> = ({
   id,
   className,
-  // controlClassName,
+  controlClassName,
   label,
   error,
   icon,
