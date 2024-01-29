@@ -42,7 +42,7 @@
     cursor: not-allowed;
   }
   input::placeholder {
-    color: $input-text-color;
+    color: $input_placeholder_color;
   }
 
   svg {
