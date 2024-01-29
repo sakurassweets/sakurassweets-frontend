@@ -32,7 +32,7 @@ export const SearchForm: React.FC = () => {
         id="search"
         type="text"
         placeholder="Пошук товарів"
-        // controlClassName={classes.inputControl}
+        controlClassName={classes.inputControl}
         className={classes.searchInput}
         value={inputValue}
         onChange={handleInputValue}
