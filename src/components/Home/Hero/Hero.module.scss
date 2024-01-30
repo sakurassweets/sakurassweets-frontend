@@ -1,0 +1,54 @@
+.hero {
+  height: 736px;
+  width: 100%;
+  background-image: url('../../../assets/img/background.jpg');
+  background-image: image-set(
+    url('../../../assets/img/background.webp') 1x,
+    url('../../../assets/img/background@2x.webp') 2x
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &_content {
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &_header {
+    margin-bottom: 6px;
+    width: 625px;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 1.17;
+    text-transform: uppercase;
+  }
+
+  &_text {
+    width: 600px;
+    margin-bottom: 24px;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  &_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 304px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #ef7fa5;
+
+    &:hover {
+      background-color: #ee90b0;
+    }
+
+    &:focus {
+      background-color: #ef7fa5;
+    }
+  }
+}

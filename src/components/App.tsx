@@ -1,11 +1,9 @@
 import UserRoutes from './UserRoutes';
-import { Header } from './Header/Header';
-import { Footer } from './Footer/Footer';
 import { useAppDispatch } from '../redux/hook';
 import { useEffect } from 'react';
 import { refreshThunk } from '../redux/auth/operations';
 import { fetchCartThunk } from '../redux/cart/operations';
-// import { Navigation } from './Navigation/Navigation';
+import { Layout } from './Layout/Layout';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -16,12 +14,9 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
-      <Header />
-      {/* <Navigation /> */}
+    <Layout>
       <UserRoutes />
-      <Footer />
-    </>
+    </Layout>
   );
 }
 

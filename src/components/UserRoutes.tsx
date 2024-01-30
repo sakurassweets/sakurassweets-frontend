@@ -1,27 +1,27 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Loader from './Loader/Loader';
+import Loader from './Common/Loader/Loader';
 
-const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
-const Favorites = lazy(() => import('../pages/Favorites/Favorites'));
-const AboutUs = lazy(() => import('../pages/AboutUs/AboutUs'));
-const Catalog = lazy(() => import('../pages/Catalog/Catalog'));
-const Cart = lazy(() => import('../pages/Cart/Cart'));
-const ProductCard = lazy(() => import('../pages/ProductCard/ProductCard'));
-const UserAccount = lazy(() => import('../pages/UserAccount/UserAccount'));
+const HomePage = lazy(() => import('../pages/Home/Home'));
+const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
+const FavoritesPage = lazy(() => import('../pages/Favorites/Favorites'));
+const AboutUsPage = lazy(() => import('../pages/AboutUs/AboutUs'));
+const CatalogPage = lazy(() => import('../pages/Catalog/Catalog'));
+const CartPage = lazy(() => import('../pages/Cart/Cart'));
+const ProductCardPage = lazy(() => import('../pages/ProductCard/ProductCard'));
+const UserAccountPage = lazy(() => import('../pages/UserAccount/UserAccount'));
 
 const UserRoutes = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<ProductCard />} />
-        <Route path="/account" element={<UserAccount />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/product/:id" element={<ProductCardPage />} />
+        <Route path="/account" element={<UserAccountPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
