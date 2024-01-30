@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { LuInstagram, LuFacebook } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 import { Telegram } from './Telegram';
-import { FACEBOOK, INSTAGRAM } from '../../../constants';
+import { FACEBOOK, INSTAGRAM } from '../../../../constants';
 //Todo вставити коректні посилання
 export const SocialSVG: React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import classes from './Footer.module.scss';
-import { Logo } from '../Logo/Logo';
+import { Logo } from '../../Logo/Logo';
 import { FooterList } from './FooterList/FooterList';
 import { LuPhone, LuMail } from 'react-icons/lu';
 import { SocialSVG } from './SocialList/SocialSVG';
