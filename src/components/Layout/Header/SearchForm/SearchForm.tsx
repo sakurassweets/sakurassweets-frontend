@@ -1,4 +1,4 @@
-import { Input } from '../../../Input/Input';
+import { Input } from '../../../Common/Inputs/Input';
 import classes from './SearchForm.module.scss';
 import { LuSearch, LuX } from 'react-icons/lu';
 import { useState } from 'react';

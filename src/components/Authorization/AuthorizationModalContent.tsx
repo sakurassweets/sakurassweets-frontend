@@ -1,11 +1,11 @@
 import { FormikHelpers } from 'formik';
-import { authFormValues } from '../../../models/auth';
+import { authFormValues } from '../../models/auth';
 
-import classes from './AuthModal.module.scss';
-import { LoginControl } from './AuthControls/LoginControl';
-import { RegisterControl } from './AuthControls/RegisterControl';
-import { useAppDispatch } from '../../../redux/hook';
-import { loginThunk, registerThunk } from '../../../redux/auth/operations';
+import classes from './AuthorizationModal.module.scss';
+import { LoginControl } from './AuthorizationControls/LoginControl';
+import { RegisterControl } from './AuthorizationControls/RegisterControl';
+import { useAppDispatch } from '../../redux/hook';
+import { loginThunk, registerThunk } from '../../redux/auth/operations';
 import { toast } from 'react-toastify';
 interface AuthModaContentProps {
   title: string;

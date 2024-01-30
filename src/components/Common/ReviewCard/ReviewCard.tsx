@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import classes from './ReviewCard.module.scss';
 
-import { Review } from '../../types/interfaces/Review';
+import { Review } from '../../../types/interfaces/Review';
 import { StarRating } from './StarRating/StarRating';
 
 interface Props {

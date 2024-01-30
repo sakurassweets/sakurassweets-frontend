@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Logo } from '../../Logo/Logo';
+import { Logo } from '../../Common/Logo/Logo';
 import { NavLink } from 'react-router-dom';
 import { HeaderControl } from './HeaderControl/HeaderControl';
-import { AuthModal } from '../../Modal/AuthModal/AuthModal';
+import { AuthModal } from '../../Authorization/AuthorizationModal';
 import { LuLayoutGrid } from 'react-icons/lu';
 import classes from './Header.module.scss';
 import { SearchForm } from './SearchForm/SearchForm';

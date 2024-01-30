@@ -2,8 +2,8 @@ import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { LuHeart, LuStar } from 'react-icons/lu';
 
 import classes from './ProductCard.module.scss';
-import { TestProduct } from '../../types/interfaces/Product';
-import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart';
+import { TestProduct } from '../../../types/interfaces/Product';
+import ButtonAddToCart from '../Buttons/ButtonAddToCart';
 
 interface ProductCartProps {
   product: TestProduct;
@@ -28,7 +28,7 @@ export const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
   return <div className={classes.ratingWrapper}>{stars}</div>;
 };
 
-const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
   return (
     <div className={classes.card}>
       {product.sale.isActive && (
@@ -66,5 +66,3 @@ const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
     </div>
   );
 };
-
-export default ProductCard;

@@ -5,12 +5,12 @@ import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import classes from './SliderComponent.module.scss';
+import classes from './Slider.module.scss';
 
-import { TestProduct } from '../../types/interfaces/Product';
-import { Review } from '../../types/interfaces/Review';
-import { ReviewCard } from '../ReviewCard.tsx/ReviewCard';
-import ProductCard from '../ProductCard/ProductCard';
+import { TestProduct } from '../../../types/interfaces/Product';
+import { Review } from '../../../types/interfaces/Review';
+import { ReviewCard } from '../ReviewCard/ReviewCard';
+import { ProductCard } from '../ProductCard/ProductCard';
 
 interface SliderProps {
   name: string;

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import modalImg from '../../../assets/img/modal.png';
-import { Modal } from '../Modal';
-import { AuthModaContent } from './AuthModalContent';
-import { FormType } from '../../../enums/auth.enum';
+import modalImg from '../../assets/img/modal.png';
+import { Modal } from '../Common/Modal/Modal';
+import { AuthModaContent } from './AuthorizationModalContent';
+import { FormType } from '../../enums/auth.enum';
 
 interface AuthModalProps {
   open: boolean;

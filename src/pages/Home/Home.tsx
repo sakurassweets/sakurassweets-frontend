@@ -1,6 +1,6 @@
-import { Hero, AdvantagesList, Presentation } from '../../components/HomePage';
+import { Hero, AdvantagesList, Presentation } from '../../components/Home';
 // import { Slider } from '../../components/Slider/Slider';
-import SliderComponent from '../../components/SliderComponent/SliderComponent';
+import SliderComponent from '../../components/Common/Slider/Slider';
 
 const TYPE = {
   PRODUCT: 'product',
@@ -62,7 +62,7 @@ function createCollectReviews(): Review[] {
   return defaultReviews;
 }
 
-const MainPage = () => {
+const Home = () => {
   return (
     <main>
       <Hero />
@@ -104,4 +104,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Home;
