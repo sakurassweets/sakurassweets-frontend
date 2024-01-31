@@ -32,3 +32,100 @@ $ npm run dev
 - `npm run preview` - preview the production build locally.
 - `npm run serve` - serve the production build locally.
 - `npm run format:fix` - fix formatting issues using Prettier.
+
+## Code Styles
+
+### React Components Declaration
+
+
+```tsx
+
+interface MyExampleProps {
+  children: React.ReactNode;
+  title: string;
+}
+
+export const MyExample: React.FC<MyExampleProps> = ({ children, title }) => {
+  return (
+    <div className={classes.container}>
+      <h4>{title}</h4>
+      <div className={classes.content}>{children}</div>
+    </div>
+  );
+};
+
+```
+
+## Git Workflow
+
+### Git Branch
+
+The branches should look like this template: 
+```
+number-task-short-description
+```
+
+Exapmle:
+```
+SAK-5-refactor-layout
+```
+
+
+### Git Commit
+
+The commit should look like this template:
+```
+type-of-commit: Short description
+- Change
+- Change
+- ...
+```
+
+Types of commit: 
+
+- fix: Fix of something.
+- feat: New feature.
+- refactor: Fix of something + New feature or Refactoring, Сode improvement, etc.
+- build: Related to the project build (Docker, nginx, config, etc).
+- docs: Update documentation or comments in the code.
+
+Exapmle:
+```
+refactor: Refactored layout
+- Rename and refactored header
+- Changed and refactored footer
+- ...
+```
+
+### Git Pull Request
+
+We have a template on Github to describe the pull request, it looks like this: 
+```
+Implement:
+
+-  Change: 
+    - Change
+-  Change
+-  Change
+
+
+This is a:
+
+- [x] 🐛 Bug Fix
+- [x] 🧑‍💻 Code Refactor
+- [x] 🍕 Feature
+- [x] 🎨 Style
+
+```
+
+You need to select the appropriate items and remove unnecessary ones.
+
+The name of pull request should look like this template: 
+```
+number-task short-description
+```
+
+Exapmle:
+```
+SAK-5 Refactored Layout
+```
