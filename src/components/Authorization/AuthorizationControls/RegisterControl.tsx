@@ -1,13 +1,14 @@
 import { Form, Formik } from 'formik';
+import { useState } from 'react';
+import { LuSquare, LuChevronDownSquare } from 'react-icons/lu';
+
+import { AuthControlProps } from '../AuthorizationModalContent';
+import { validationRegister } from '../../../schemas/auth-validator';
+import { registerFormFieldsDefault } from '../../utils/auth';
 import { InputFormik } from '../../Common/Inputs/FormikInput';
 import { Button } from '../../Common/Buttons/Button';
-import { registerFormFieldsDefault } from '../../utils/auth';
-import { AuthControlProps } from '../AuthorizationModalContent';
 import { PASS_MAX, INPUT_LENGTH } from '../../../constants/index';
 import classes from '../AuthorizationModal.module.scss';
-import { validationRegister } from '../../../schemas/auth-validator';
-import { LuSquare, LuChevronDownSquare } from 'react-icons/lu';
-import { useState } from 'react';
 
 export const RegisterControl: React.FC<AuthControlProps> = ({ handleSubmit, ...props }) => {
   const [isChecked, setIsChecked] = useState(false);
