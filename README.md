@@ -65,7 +65,7 @@ The branches should look like this template:
 number-task-short-description
 ```
 
-Exapmle:
+Example:
 ```
 SAK-5-refactor-layout
 ```
@@ -89,7 +89,7 @@ Types of commit:
 - build: Related to the project build (Docker, nginx, config, etc).
 - docs: Update documentation or comments in the code.
 
-Exapmle:
+Example:
 ```
 refactor: Refactored layout
 - Rename and refactored header
@@ -97,6 +97,16 @@ refactor: Refactored layout
 ```
 
 ### Git Pull Request
+
+The name of pull request should look like this template: 
+```
+number-task short-description
+```
+
+Example:
+```
+SAK-5 Refactored Layout
+```
 
 We have a template on Github to describe the pull request, it looks like this: 
 ```
@@ -123,13 +133,3 @@ This is a:
 ```
 
 You need to select the appropriate items and remove unnecessary ones.
-
-The name of pull request should look like this template: 
-```
-number-task short-description
-```
-
-Exapmle:
-```
-SAK-5 Refactored Layout
-```
