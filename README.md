@@ -78,7 +78,7 @@ The commit should look like this template:
 type-of-commit: Short description
 - Change
 - Change
-- ...
+- ..
 ```
 
 Types of commit: 
@@ -94,7 +94,6 @@ Exapmle:
 refactor: Refactored layout
 - Rename and refactored header
 - Changed and refactored footer
-- ...
 ```
 
 ### Git Pull Request
@@ -103,18 +102,23 @@ We have a template on Github to describe the pull request, it looks like this:
 ```
 Implement:
 
--  Change: 
-    - Change
--  Change
--  Change
+-  Some change:
+    - Some subchange
+-  ..
+-  ..
 
 
 This is a:
 
-- [x] 🐛 Bug Fix
-- [x] 🧑‍💻 Code Refactor
 - [x] 🍕 Feature
+- [x] 🐛 Bug Fix
+- [x] 📝 Documentation Update
 - [x] 🎨 Style
+- [x] 🧑‍💻 Code Refactor
+- [x] 🔥 Performance Improvements
+- [x] ✅ Test
+- [x] 🤖 Build
+- [x] Other
 
 ```
 
