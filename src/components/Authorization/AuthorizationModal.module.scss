@@ -1,5 +1,5 @@
 .modalImg {
-  width: 330px;
+  width: 33rem;
   object-fit: contain;
   border-top-right-radius: 2.4rem;
   border-bottom-right-radius: 2.4rem;
@@ -7,9 +7,8 @@
 }
 
 .modalContent {
-  max-width: 304px;
+  max-width: 30.4rem;
   width: 100%;
-  color: #dadada;
 
   h2 {
     margin-bottom: 3.2rem;
@@ -119,11 +118,9 @@
 }
 
 .modalLeft {
-  width: 100%;
-  display: flex;
+  @include flex();
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
 }
 
 .accept {

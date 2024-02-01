@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom';
 import { Form, Formik } from 'formik';
+
+import { AuthControlProps } from '../AuthorizationModalContent';
+import { loginFormFieldsDefault } from '../../utils/auth';
+import { validationLogin } from '../../../schemas/auth-validator';
 import { InputFormik } from '../../Common/Inputs/FormikInput';
 import { Button } from '../../Common/Buttons/Button';
-import { loginFormFieldsDefault } from '../../utils/auth';
-import { AuthControlProps } from '../AuthorizationModalContent';
 import { PASS_MAX, INPUT_LENGTH } from '../../../constants/index';
+
 import classes from '../AuthorizationModal.module.scss';
-import { validationLogin } from '../../../schemas/auth-validator';
-import { Link } from 'react-router-dom';
 
 export const LoginControl: React.FC<AuthControlProps> = ({ handleSubmit, ...props }) => {
   return (
