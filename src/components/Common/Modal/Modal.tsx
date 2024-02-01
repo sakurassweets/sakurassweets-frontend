@@ -1,8 +1,9 @@
-import { MouseEventHandler, useEffect, useState } from 'react';
-import classNames from 'classnames';
-import { LuX } from 'react-icons/lu';
-import classes from './Modal.module.scss';
 import ReactDOM from 'react-dom';
+import { MouseEventHandler, useEffect, useState } from 'react';
+import { LuX } from 'react-icons/lu';
+
+import classNames from 'classnames';
+import classes from './Modal.module.scss';
 
 const rootModal = document.querySelector('#modal-root');
 
@@ -20,28 +21,26 @@ const stopPropagation: MouseEventHandler<HTMLDivElement> = (e) => {
 export const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   const [shouldRender, setShouldRender] = useState(false);
 
-  const overlayClasses = classNames(classes.overlay, {
-    [classes.active]: open,
+  // This class should handle showing and hiding with transition
+  const overlayClasses = classNames(classes.modal__overlay, {
+    [classes.modal__overlay__active]: open,
   });
 
-  const modalContainerClasses = classNames(classes.modalContainer, {
-    [classes.active]: open,
+  // This class should handle showing and hiding with transition
+  const modalContainerClasses = classNames(classes.modal__wrapper, {
+    [classes.modal__wrapper__active]: open,
   });
 
   useEffect(() => {
-    let timerId: string | number | NodeJS.Timeout | undefined;
-
-    if (open && !shouldRender) {
-      timerId = setTimeout(() => {
-        setShouldRender(true);
-      }, 300);
-    } else if (!open && shouldRender) {
-      timerId = setTimeout(() => {
+    if (open) {
+      setShouldRender(true);
+    } else {
+      const timerId = setTimeout(() => {
         setShouldRender(false);
       }, 300);
+      return () => clearTimeout(timerId);
     }
-    return () => clearTimeout(timerId);
-  }, [open, shouldRender]);
+  }, [open]);
 
   //Modal Escape close
   useEffect(() => {
@@ -63,7 +62,7 @@ export const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
   return ReactDOM.createPortal(
     <div className={overlayClasses} onClick={onClose}>
       <div onClick={stopPropagation} className={modalContainerClasses}>
-        <button className={classes.modalClose} onClick={onClose}>
+        <button className={classes.modal__wrapper__closeBtn} onClick={onClose}>
           <LuX />
         </button>
         {children}
