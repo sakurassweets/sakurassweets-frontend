@@ -23,7 +23,7 @@ $accent_color_hover: rgb(255, 171, 199);
 $accent_color_stock: rgba(63, 175, 106, 1);
 $outOfStock: rgba(240, 88, 91, 1);
 $accent_color_stars: rgba(247, 207, 106, 1);
-$border: rgba(189, 196, 205, 1);
+$border_color: rgba(189, 196, 205, 1);
 
 //Spacing
 $p_s: 1.4rem;
@@ -33,7 +33,7 @@ $m_m: 2.4rem;
 
 //Borders
 $gl_radius: 0.8rem;
-$border: 0.1rem solid $border;
+$border: 0.1rem solid $border_color;
 
 //Transitions & Animation
 $transition: all 250ms cubic-bezier(0.53, 0.5, 0.53, 0.52) 0s;
