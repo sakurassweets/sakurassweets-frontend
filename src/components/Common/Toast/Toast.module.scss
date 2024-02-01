@@ -1,0 +1,24 @@
+.toast {
+  &__closeIcon {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    stroke: $border_color;
+  }
+
+  &__icon {
+    @include flex();
+    padding: 0.4rem;
+    width: 2.4rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: $accent_color_stock;
+  }
+  &__icon--success {
+    background: $accent_color_stock;
+  }
+
+  &__icon--error {
+    background: $outOfStock;
+  }
+}

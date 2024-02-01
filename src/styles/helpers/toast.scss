@@ -1,10 +1,12 @@
 body .Toastify__toast-container--top-right {
   top: 7em;
-  right: 1em;
+  right: 2em;
 }
 body .Toastify__toast-theme--dark {
-  background-color: #404966;
+  background-color: rgba(64, 73, 102, 1);
+  border-radius: $gl_radius;
 }
+
 body .Toastify__progress-bar--success {
-  background-color: #3faf6a;
+  border-bottom: 4px solid rgb(64, 176, 107);
 }
