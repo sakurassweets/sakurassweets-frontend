@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Loader from './Common/Loader/Loader';
+import { Docs } from '../pages/Docs/Docs';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
@@ -10,7 +11,6 @@ const CatalogPage = lazy(() => import('../pages/Catalog/Catalog'));
 const CartPage = lazy(() => import('../pages/Cart/Cart'));
 const ProductCardPage = lazy(() => import('../pages/ProductCard/ProductCard'));
 const UserAccountPage = lazy(() => import('../pages/UserAccount/UserAccount'));
-const Docs = lazy(() => import('../pages/Docs/Docs'));
 
 const UserRoutes = () => {
   return (
