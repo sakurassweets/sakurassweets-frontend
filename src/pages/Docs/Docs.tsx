@@ -14,10 +14,10 @@ export const Docs = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (pathname === '/policy') {
+    if (pathname === '/docs/policy') {
       setFile('/Policy.pdf');
     }
-    if (pathname === '/rules') {
+    if (pathname === '/docs/rules') {
       setFile('/Rules.pdf');
     }
   }, [pathname]);

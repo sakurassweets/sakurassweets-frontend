@@ -23,8 +23,7 @@ const UserRoutes = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/product/:id" element={<ProductCardPage />} />
         <Route path="/account" element={<UserAccountPage />} />
-        <Route path="/policy" element={<Docs />} />
-        <Route path="/rules" element={<Docs />} />
+        <Route path="/docs/:name" element={<Docs />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
