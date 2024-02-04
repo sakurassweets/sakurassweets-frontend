@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { pdfjs, Document, Page } from 'react-pdf';
+import { Documents } from '../../enums/Documents';
 import Loader from '../Common/Loader/Loader';
 import classes from './Docs.module.scss';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
@@ -14,10 +15,10 @@ export const Docs = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (pathname === '/docs/policy') {
+    if (pathname === Documents.Policy) {
       setFile('/Policy.pdf');
     }
-    if (pathname === '/docs/rules') {
+    if (pathname === Documents.Rules) {
       setFile('/Rules.pdf');
     }
   }, [pathname]);
