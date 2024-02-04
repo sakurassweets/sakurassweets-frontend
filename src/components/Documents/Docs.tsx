@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { pdfjs, Document, Page } from 'react-pdf';
-import Loader from '../../components/Common/Loader/Loader';
+import Loader from '../Common/Loader/Loader';
 import classes from './Docs.module.scss';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
@@ -36,7 +36,6 @@ export const Docs = () => {
 
   return (
     <div className={classes.wrapper}>
-      {/* <div className={classes.wrapper__container__document}> */}
       <Document
         file={file}
         onLoadSuccess={onDocumentLoadSuccess}
