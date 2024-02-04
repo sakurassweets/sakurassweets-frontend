@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import classes from './FooterList.module.scss';
 
-interface Props {
+interface FooterListProps {
   content: {
     header: string;
     items: Array<{
@@ -13,7 +13,7 @@ interface Props {
   };
 }
 
-export const FooterList: React.FC<Props> = ({ content }) => {
+export const FooterList: React.FC<FooterListProps> = ({ content }) => {
   return (
     <>
       <h2 className={classNames(classes.subtitle)}>{content.header}</h2>

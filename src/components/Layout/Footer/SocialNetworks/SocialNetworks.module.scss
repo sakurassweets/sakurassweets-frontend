@@ -12,11 +12,12 @@
     color: $accent_color_hover;
     cursor: pointer;
     @include transition_all;
-  }
-  &__svg {
-    @include svg;
-    width: 3.2rem;
-    height: 3.2rem;
-    stroke-width: 1.5;
+
+    svg {
+      @include svg;
+      width: 3.2rem;
+      height: 3.2rem;
+      stroke-width: 1.5;
+    }
   }
 }

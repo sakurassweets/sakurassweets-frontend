@@ -4,7 +4,8 @@ import classes from './Footer.module.scss';
 import { Logo } from '../../Common/Logo/Logo';
 import { FooterList } from './FooterList/FooterList';
 import { LuPhone, LuMail } from 'react-icons/lu';
-import { SocialSVG } from './SocialList/SocialSVG';
+import { SocialNetworks } from './SocialNetworks/SocialNetworks';
+import { EMAIL, PHONE_NUMBER } from '../../../constants';
 
 export const Footer: React.FC = () => {
   return (
@@ -16,18 +17,18 @@ export const Footer: React.FC = () => {
             <ul className={classes.address__list}>
               <li className={classes.address__items}>
                 <LuPhone aria-label="Телефон" />
-                <a href="tel:+380000000000">+ 38 (000) 000-00-00</a>
+                <a href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER}</a>
               </li>
               <li className={classes.address__items}>
                 <LuMail aria-label="Електронна пошта" />
-                <a href="mailto:sakurasweets.help@gmail.com" lang="en">
-                  sakurasweets.help@gmail.com
+                <a href={`mailto:${EMAIL}`} lang="en">
+                  {EMAIL}
                 </a>
               </li>
             </ul>
           </address>
         </div>
-        <SocialSVG />
+        <SocialNetworks />
         <ul className={classNames(classes.footer__list)}>
           <li className={classNames(classes.footer_footerListItem)}>
             <FooterList
