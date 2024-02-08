@@ -28,12 +28,12 @@ interface ArrProps {
 
 const PrevArrow: React.FC<ArrProps> = (props) => {
   const { onClick } = props;
-  return <LuChevronLeft className={classes.slickPrev} onClick={onClick} />;
+  return <LuChevronLeft className={classes.slider__prev} onClick={onClick} />;
 };
 
 const NextArrow: React.FC<ArrProps> = (props) => {
   const { onClick } = props;
-  return <LuChevronRight className={classes.slickNext} onClick={onClick} />;
+  return <LuChevronRight className={classes.slider__next} onClick={onClick} />;
 };
 
 const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, type, dots, slides }) => {
@@ -80,11 +80,11 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
   return (
     <section>
       <div className="container">
-        <div className={classes.slider__container} style={{ marginBottom: `${marginBottom}px` }}>
-          <div className={classes.slider_header}>
-            <p className={classes.slider_name}>{name}</p>
+        <div className={classes.slyder} style={{ marginBottom: `${marginBottom}px` }}>
+          <div className={classes.slider__title_wrapper}>
+            <p className={classes.slider__title}>{name}</p>
             {/* NavLink can be replaced with your routing component */}
-            <Link to="/catalog" className={classes.slider_link}>
+            <Link to="/catalog" className={classes.slider__link}>
               Бачити все
             </Link>
           </div>
