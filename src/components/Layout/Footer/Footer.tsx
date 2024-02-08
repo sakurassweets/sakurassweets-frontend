@@ -6,6 +6,32 @@ import { FooterList } from './FooterList/FooterList';
 import { LuPhone, LuMail } from 'react-icons/lu';
 import { SocialNetworks } from './SocialNetworks/SocialNetworks';
 import { EMAIL, PHONE_NUMBER } from '../../../constants';
+import { FooterListItem } from '../definitions';
+
+const FOOTER_WORK_SCHEDULE: FooterListItem = {
+  header: 'Графік роботи',
+  items: [{ text: 'Пн - Пт' }, { text: 'з 08:00 до 21:00' }, { text: 'Сб - Нд' }, { text: 'з 10:00 до 18:00' }],
+};
+
+const FOOTER_USER_ACCOUNT: FooterListItem = {
+  header: 'Мій аккаунт',
+  items: [
+    { text: 'Мій аккаунт', to: '/account' },
+    { text: 'Історія замовлень', to: '/history' },
+    { text: 'Кошик', to: '/cart' },
+    { text: 'Обране', to: '/favorites' },
+  ],
+};
+
+const FOOTER_INFORMATION: FooterListItem = {
+  header: 'Інформація',
+  items: [
+    { text: 'Про нас', to: '/about-us' },
+    { text: 'Доставка ', to: '/delivery' },
+    { text: 'Правила та умови', to: '/docs/rules' },
+    { text: 'Політика конфіденційності', to: '/docs/policy' },
+  ],
+};
 
 export const Footer: React.FC = () => {
   return (
@@ -30,45 +56,9 @@ export const Footer: React.FC = () => {
         </div>
         <SocialNetworks />
         <ul className={classNames(classes.footer__list)}>
-          <li className={classNames(classes.footer_footerListItem)}>
-            <FooterList
-              content={{
-                header: 'Графік роботи',
-                items: [
-                  { text: 'Пн - Пт' },
-                  { text: 'з 08:00 до 21:00' },
-                  { text: 'Сб - Нд' },
-                  { text: 'з 10:00 до 18:00' },
-                ],
-              }}
-            />
-          </li>
-          <li className={classNames(classes.footer_footerListItem)}>
-            <FooterList
-              content={{
-                header: 'Мій аккаунт',
-                items: [
-                  { text: 'Мій аккаунт', to: '/account' },
-                  { text: 'Історія замовлень', to: '/history' },
-                  { text: 'Кошик', to: '/cart' },
-                  { text: 'Обране', to: '/favorites' },
-                ],
-              }}
-            />
-          </li>
-          <li className={classNames(classes.footer_footerListItem)}>
-            <FooterList
-              content={{
-                header: 'Інформація',
-                items: [
-                  { text: 'Про нас', to: '/about-us' },
-                  { text: 'Доставка ', to: '/delivery' },
-                  { text: 'Правила та умови', to: '/docs/rules' },
-                  { text: 'Політика конфіденційності', to: '/docs/policy' },
-                ],
-              }}
-            />
-          </li>
+          <FooterList content={FOOTER_WORK_SCHEDULE} />
+          <FooterList content={FOOTER_USER_ACCOUNT} />
+          <FooterList content={FOOTER_INFORMATION} />
         </ul>
       </div>
     </footer>

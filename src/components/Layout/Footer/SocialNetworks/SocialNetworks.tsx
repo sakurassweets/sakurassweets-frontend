@@ -5,7 +5,7 @@ import TelegramIcon from '../../../../assets/icons/telegram.svg?react';
 import { LuInstagram, LuFacebook } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 import { FACEBOOK, INSTAGRAM, TELEGRAM } from '../../../../constants';
-// import { Telegram } from './Telegram';
+
 //Todo вставити коректні посилання
 export const SocialNetworks: React.FC = () => {
   return (

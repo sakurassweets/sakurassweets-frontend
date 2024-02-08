@@ -7,9 +7,9 @@ interface HeaderControlProps {
 
 export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
   const buttons = [
-    { icon: <LuHeart />, onClick: () => console.log('Favorite clicked') },
-    { icon: <LuShoppingCart />, onClick: () => console.log('Cart clicked') },
-    { icon: <LuUser />, onClick: openModal },
+    { icon: <LuHeart />, onClick: () => console.log('Favorite clicked'), id: 'heart-id' },
+    { icon: <LuShoppingCart />, onClick: () => console.log('Cart clicked'), id: 'shopping-id' },
+    { icon: <LuUser />, onClick: openModal, id: 'user-id' },
   ];
 
   return (
@@ -18,8 +18,8 @@ export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
         UA <LuChevronDown />
       </p>
       <ul className={classes.headerControl__list}>
-        {buttons.map((button, index) => (
-          <li key={index}>
+        {buttons.map((button) => (
+          <li key={button.id}>
             <button onClick={button.onClick} className={classes.headerControl__btn}>
               {button.icon}
             </button>
