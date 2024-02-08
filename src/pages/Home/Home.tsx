@@ -72,7 +72,7 @@ const Home = () => {
         items={createCollectProducts()}
         marginBottom={62}
         type={TYPE.PRODUCT}
-        dots={false}
+        dots={true}
         slides={4}
       />
       <SliderComponent
@@ -80,7 +80,7 @@ const Home = () => {
         items={createCollectProducts()}
         marginBottom={98}
         type={TYPE.PRODUCT}
-        dots={false}
+        dots={true}
         slides={4}
       />
       <Presentation />
@@ -89,7 +89,7 @@ const Home = () => {
         items={createCollectProducts()}
         marginBottom={100}
         type={TYPE.PRODUCT}
-        dots={false}
+        dots={true}
         slides={4}
       />
       <SliderComponent

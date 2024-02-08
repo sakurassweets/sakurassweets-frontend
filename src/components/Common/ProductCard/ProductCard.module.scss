@@ -1,10 +1,8 @@
 .card {
   position: relative;
-  width: 90%;
-  margin: 0 auto;
-  background-color: #404966;
+  background-color: $secondary_background_color;
   border-radius: 0.8rem;
-  padding: 2.5rem 2.4rem;
+  padding: 2.4rem;
 }
 .sale {
   display: flex;
