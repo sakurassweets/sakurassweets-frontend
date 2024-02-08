@@ -6,7 +6,7 @@
   color: $accent_color_hover;
 }
 
-.list {
+.list_item {
   @include flex($ai: flex-start);
   flex-direction: column;
   gap: 0.8rem;
@@ -15,5 +15,11 @@
   font-weight: 400;
   &__item {
     font-weight: 600;
+  }
+}
+
+.list {
+  &:not(:last-child) {
+    margin-right: 112px;
   }
 }

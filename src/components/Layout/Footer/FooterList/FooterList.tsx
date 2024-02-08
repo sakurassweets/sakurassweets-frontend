@@ -2,22 +2,17 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import classes from './FooterList.module.scss';
+import { FooterListItem } from '../../definitions';
 
-interface Props {
-  content: {
-    header: string;
-    items: Array<{
-      text: string;
-      to?: string;
-    }>;
-  };
+interface FooterListProps {
+  content: FooterListItem;
 }
 
-export const FooterList: React.FC<Props> = ({ content }) => {
+export const FooterList: React.FC<FooterListProps> = ({ content }) => {
   return (
-    <>
+    <li className={classNames(classes.list)}>
       <h2 className={classNames(classes.subtitle)}>{content.header}</h2>
-      <ul className={classes.list}>
+      <ul className={classes.list_item}>
         {content.items.map((item: { text: string; to?: string }, index: number) => (
           <li
             key={index}
@@ -29,6 +24,6 @@ export const FooterList: React.FC<Props> = ({ content }) => {
           </li>
         ))}
       </ul>
-    </>
+    </li>
   );
 };
