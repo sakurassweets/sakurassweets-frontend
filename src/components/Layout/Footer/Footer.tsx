@@ -63,8 +63,8 @@ export const Footer: React.FC = () => {
                 items: [
                   { text: 'Про нас', to: '/about-us' },
                   { text: 'Доставка ', to: '/delivery' },
-                  { text: 'Правила та умови', to: '/rules' },
-                  { text: 'Політика конфіденційності', to: '/policy' },
+                  { text: 'Правила та умови', to: '/docs/rules' },
+                  { text: 'Політика конфіденційності', to: '/docs/policy' },
                 ],
               }}
             />

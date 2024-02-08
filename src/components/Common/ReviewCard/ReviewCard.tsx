@@ -5,11 +5,11 @@ import classes from './ReviewCard.module.scss';
 import { Review } from '../../../types/interfaces/Review';
 import { StarRating } from './StarRating/StarRating';
 
-interface Props {
+interface ReviewCardProps {
   review: Review;
 }
 
-export const ReviewCard: React.FC<Props> = ({ review }) => {
+export const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
   return (
     <div className={classNames(classes.container)}>
       <p className={classNames(classes.author)}>{review.authorName}</p>
