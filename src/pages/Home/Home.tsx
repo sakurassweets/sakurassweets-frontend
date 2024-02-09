@@ -1,5 +1,4 @@
 import { Hero, AdvantagesList, Presentation } from '../../components/Home';
-// import { Slider } from '../../components/Slider/Slider';
 import SliderComponent from '../../components/Common/Slider/Slider';
 
 const TYPE = {
@@ -7,41 +6,14 @@ const TYPE = {
   REVIEW: 'review',
 };
 
-//It is only for exampels, in product all this need delete
-import { TestProduct } from '../../types/interfaces/Product';
 import { Review } from '../../types/interfaces/Review';
+import { useAppDispatch, useAppSelector } from '../../redux/hook';
+import { useEffect } from 'react';
+import { fetchAllProductsThunk } from '../../redux/products/operations';
+import { cloneProducts } from '../../helpers/cloneProducts';
 
 function randomize(max: number): number {
   return Math.floor(Math.random() * max);
-}
-
-function createProduct(): TestProduct {
-  const defaultProduct: TestProduct = {
-    productName: 'Hanami Picnic',
-    favorite: Boolean(randomize(2)),
-    sale: {
-      isActive: Boolean(randomize(2)),
-      amount: randomize(100),
-    },
-    image: 'https://i.postimg.cc/KzGNQtP8/photo-of-the-product-1.jpg',
-    rating: (randomize(10) + 1) / 2,
-    inStock: Boolean(randomize(2)),
-    description: 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. ',
-    salePrice: randomize(100000) / 100,
-    price: randomize(100000) / 100,
-  };
-
-  return defaultProduct;
-}
-
-function createCollectProducts(): TestProduct[] {
-  const defaultProduct: TestProduct[] = [];
-
-  for (let i = 0; i < 12; i++) {
-    defaultProduct.push(createProduct());
-  }
-
-  return defaultProduct;
 }
 
 function createCollectReviews(): Review[] {
@@ -63,13 +35,21 @@ function createCollectReviews(): Review[] {
 }
 
 const Home = () => {
+  const dispatch = useAppDispatch();
+  const products = useAppSelector((state) => state.products.products);
+  const clonedProducts = cloneProducts(products, 3);
+
+  useEffect(() => {
+    dispatch(fetchAllProductsThunk());
+  }, [dispatch]);
+
   return (
     <main>
       <Hero />
       <AdvantagesList />
       <SliderComponent
         name="Акції"
-        items={createCollectProducts()}
+        items={clonedProducts}
         marginBottom={62}
         type={TYPE.PRODUCT}
         dots={true}
@@ -77,7 +57,7 @@ const Home = () => {
       />
       <SliderComponent
         name="Хіт продажу"
-        items={createCollectProducts()}
+        items={clonedProducts}
         marginBottom={98}
         type={TYPE.PRODUCT}
         dots={true}
@@ -86,7 +66,7 @@ const Home = () => {
       <Presentation />
       <SliderComponent
         name="Рекомендуємо"
-        items={createCollectProducts()}
+        items={clonedProducts}
         marginBottom={100}
         type={TYPE.PRODUCT}
         dots={true}

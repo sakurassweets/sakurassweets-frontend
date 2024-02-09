@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import classes from './Slider.module.scss';
 
-import { TestProduct } from '../../../types/interfaces/Product';
+import { Product } from '../../../types/interfaces/Product';
 import { Review } from '../../../types/interfaces/Review';
 import { ReviewCard } from '../ReviewCard/ReviewCard';
 import { ProductCard } from '../ProductCard/ProductCard';
@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 interface SliderProps {
   name: string;
-  items: TestProduct[] | Review[];
+  items: Product[] | Review[];
   marginBottom: number;
   type: string;
   dots: boolean;
@@ -40,6 +40,7 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
   const settings = {
     dots: dots,
     infinite: true,
+    centerMode: true,
     speed: 1000,
     slidesToShow: slides,
     slidesToScroll: slides,
@@ -91,7 +92,7 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
           <Slider {...settings}>
             {items.map((item, index) =>
               type === 'product' ? (
-                <ProductCard product={item as TestProduct} key={index} />
+                <ProductCard product={item as Product} key={index} />
               ) : (
                 <ReviewCard review={item as Review} key={index} />
               )
