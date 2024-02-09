@@ -1,13 +1,13 @@
 import { Input } from '../../../Common/Inputs/Input';
 import classes from './SearchForm.module.scss';
 import { LuSearch, LuX } from 'react-icons/lu';
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent, MouseEvent } from 'react';
 
 export const SearchForm: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
 
   // Submits search query
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>): void => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement> | MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     if (inputValue.length > 0) {
       console.log(`Пошук: ${inputValue}`);
@@ -17,7 +17,7 @@ export const SearchForm: React.FC = () => {
   };
 
   // Handles input changes
-  const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleInputValue = (e: ChangeEvent<HTMLInputElement>): void => {
     setInputValue(e.target.value);
   };
 

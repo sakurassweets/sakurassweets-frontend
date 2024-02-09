@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios';
 
 // Define a type for  API
 export const API: AxiosInstance = axios.create({
-  baseURL: 'https://api.sakurassweets.asion.tk/',
+  baseURL: 'https://api.sakurassweets.asion.dev/',
 });
 
 // `token` parameter is typed as a string

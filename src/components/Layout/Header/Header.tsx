@@ -4,18 +4,18 @@ import { NavLink } from 'react-router-dom';
 import { HeaderControl } from './HeaderControl/HeaderControl';
 import { AuthModal } from '../../Authorization/AuthorizationModal';
 import { LuLayoutGrid } from 'react-icons/lu';
-import classes from './Header.module.scss';
 import { SearchForm } from './SearchForm/SearchForm';
+import classes from './Header.module.scss';
 
 export const Header: React.FC = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const onModalClose = () => {
-    setModalOpen(false);
+  const onModalClose = (): void => {
+    setIsModalOpen(false);
   };
 
-  const toggleModal = () => {
-    setModalOpen((prev) => !prev);
+  const toggleModal = (): void => {
+    setIsModalOpen((prev) => !prev);
   };
 
   return (
@@ -29,7 +29,6 @@ export const Header: React.FC = () => {
           </NavLink>
           <SearchForm />
         </div>
-
         <HeaderControl openModal={toggleModal} />
       </div>
       <AuthModal onClose={onModalClose} open={isModalOpen}></AuthModal>
