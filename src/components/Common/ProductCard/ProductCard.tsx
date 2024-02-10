@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { LuHeart, LuStar } from 'react-icons/lu';
 
@@ -5,7 +6,6 @@ import classes from './ProductCard.module.scss';
 import { Product } from '../../../types/interfaces/Product';
 import ButtonAddToCart from '../Buttons/ButtonAddToCart';
 import defaultImage from '../../../assets/img/no-image.png';
-import { Link } from 'react-router-dom';
 
 interface ProductCartProps {
   product: Product;
@@ -54,7 +54,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
         <div className={classes.rating_instock_wrapper}>
           <div className={classes.rating_wrapper}>
             <RatingStars rating={product.rating} />
-            <div className={classes.rating}>({product.rating})</div>
+            <p className={classes.rating_wrapper__rating}>({product.rating})</p>
           </div>
 
           {product.quantity_in_stock ? (
@@ -64,10 +64,10 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
           )}
         </div>
 
-        <p className={classes.title}>{product.title}</p>
+        <h4 className={classes.title}>{product.title}</h4>
         <p className={classes.description}>{product.description}</p>
-        {product.price && <p className={classes.salePrice}>{product.price} грн.</p>}
-        <p className={classes.price}>{product.price} грн.</p>
+        {product.price && <p className={classes.salePrice}>{product.price} грн</p>}
+        <p className={classes.price}>{product.price} грн</p>
 
         <ButtonAddToCart />
       </Link>

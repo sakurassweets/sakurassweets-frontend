@@ -35,7 +35,7 @@ function createCollectReviews(): Review[] {
 
 export const Home = () => {
   const dispatch = useAppDispatch();
-  const products = useAppSelector((state) => state.products.products);
+  const { products } = useAppSelector((state) => state.products);
   const clonedProducts = cloneProducts(products, 3);
 
   useEffect(() => {
@@ -46,6 +46,7 @@ export const Home = () => {
     <main>
       <Hero />
       <AdvantagesList />
+
       <SliderComponent
         name="Акції"
         items={clonedProducts}
@@ -54,6 +55,7 @@ export const Home = () => {
         dots={true}
         slides={4}
       />
+
       <SliderComponent
         name="Хіт продажу"
         items={clonedProducts}

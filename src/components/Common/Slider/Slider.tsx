@@ -1,17 +1,18 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../../redux/hook';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-import classes from './Slider.module.scss';
 
 import { Product } from '../../../types/interfaces/Product';
 import { Review } from '../../../types/interfaces/Review';
 import { ReviewCard } from '../ReviewCard/ReviewCard';
 import { ProductCard } from '../ProductCard/ProductCard';
-import { Link } from 'react-router-dom';
+import { SkeletonProductCard } from '../Skeleton/SkeletonProductCard';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import classes from './Slider.module.scss';
 
 interface SliderProps {
   name: string;
@@ -40,7 +41,6 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
   const settings = {
     dots: dots,
     infinite: true,
-    centerMode: true,
     speed: 1000,
     slidesToShow: slides,
     slidesToScroll: slides,
@@ -78,6 +78,8 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
     ],
   };
 
+  const { isLoading, error, products } = useAppSelector((state) => state.products);
+
   return (
     <section>
       <div className="container">
@@ -90,13 +92,15 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
             </Link>
           </div>
           <Slider {...settings}>
-            {items.map((item, index) =>
-              type === 'product' ? (
-                <ProductCard product={item as Product} key={index} />
-              ) : (
-                <ReviewCard review={item as Review} key={index} />
-              )
-            )}
+            {isLoading || error || !products.length
+              ? Array.from({ length: 4 }).map((_, index) => <SkeletonProductCard key={index} />)
+              : items.map((item, index) =>
+                  type === 'product' ? (
+                    <ProductCard product={item as Product} key={index} />
+                  ) : (
+                    <ReviewCard review={item as Review} key={index} />
+                  )
+                )}
           </Slider>
         </div>
       </div>

@@ -1,15 +1,15 @@
 .card {
   position: relative;
-  min-width: 30.2rem;
+  padding: 2.4rem;
   background-color: $secondary_background_color;
   border-radius: 0.8rem;
-  padding: 2.4rem;
+
   cursor: pointer;
 
   &__sale {
-    display: flex;
+    @include flex();
     position: absolute;
-    padding: 12px;
+    padding: 1.2rem;
     left: 0;
     top: 0;
     border-radius: 0.8rem 0rem;
@@ -63,6 +63,12 @@
 }
 .rating_wrapper {
   @include flex();
+  gap: 0.4rem;
+  &__rating {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $accent_color_stars;
+  }
 }
 .fullStar,
 .halfStar {
@@ -78,13 +84,10 @@
   height: 1.3rem;
   color: $accent_color_stars;
   fill: transparent;
-  margin-right: 0.2rem;
 }
 .rating {
-  @include flex();
   font-size: 1.2rem;
   font-weight: 400;
-  margin-left: 0.2rem;
   color: $accent_color_stars;
 }
 .inStock,
@@ -115,34 +118,42 @@
   }
 }
 .title {
-  margin-top: 2rem;
-  font-size: 1.6rem;
-  font-weight: 500;
+  margin-top: $m_m;
+  max-width: 25.4rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .description {
   display: -webkit-box;
+
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-top: 1.2rem;
-  font-size: 1.4rem;
-  font-weight: 400;
 }
 .salePrice {
   margin-top: 2rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 400;
+  line-height: 1.5;
   text-decoration: line-through;
-  color: $secondary_text_color;
+  color: $accent_color_hover;
 }
 .price {
-  margin-top: 0.8rem;
-  margin-bottom: 2.2rem;
-  font-size: 1.8rem;
+  margin-top: 0.4rem;
+  margin-bottom: $m_m;
+  font-size: 2rem;
   font-weight: 600;
+  line-height: 1.2;
   color: $primary_text_color;
 }
