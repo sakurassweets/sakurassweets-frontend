@@ -10,7 +10,7 @@ const CatalogPage = lazy(() => import('../pages/Catalog/Catalog'));
 const CartPage = lazy(() => import('../pages/Cart/Cart'));
 const ProductCardPage = lazy(() => import('../pages/ProductCard/ProductCard'));
 const UserAccountPage = lazy(() => import('../pages/UserAccount/UserAccount'));
-const DocumentsPage = lazy(() => import('../pages/DocumentsPage/DocumentsPage'));
+const DocumentsPage = lazy(() => import('../pages/Document/Document'));
 
 const UserRoutes = () => {
   return (
