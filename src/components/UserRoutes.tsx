@@ -1,6 +1,8 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import Loader from './Common/Loader/Loader';
+import { ROUTERS } from '../constants/routers';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
@@ -16,15 +18,15 @@ const UserRoutes = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/about-us" element={<AboutUsPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/product/:id" element={<ProductCardPage />} />
-        <Route path="/account" element={<UserAccountPage />} />
-        <Route path="/docs/:name" element={<DocumentsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path={ROUTERS.HOME} element={<HomePage />} />
+        <Route path={ROUTERS.CATALOG} element={<CatalogPage />} />
+        <Route path={ROUTERS.ABOUT_US} element={<AboutUsPage />} />
+        <Route path={ROUTERS.FAVORITES} element={<FavoritesPage />} />
+        <Route path={ROUTERS.CART} element={<CartPage />} />
+        <Route path={ROUTERS.PRODUCT} element={<ProductCardPage />} />
+        <Route path={ROUTERS.ACCOUNT} element={<UserAccountPage />} />
+        <Route path={ROUTERS.DOCS} element={<DocumentsPage />} />
+        <Route path={ROUTERS.NOT_FOUND} element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );
