@@ -48,6 +48,7 @@
   svg {
     @include svg;
     cursor: pointer;
+    stroke: $input_placeholder_color;
     @include transition_all;
     &:hover {
       transform: scale(1.1);

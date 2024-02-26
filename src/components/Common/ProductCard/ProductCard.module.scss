@@ -18,12 +18,12 @@
   }
 }
 
-.img_wrapper {
+.img__wrapper {
   @include flex;
   position: relative;
 }
 .img_wrapper img {
-  max-width: 100%;
+  max-width: 25.4rem;
   border-radius: 0.4rem;
 }
 .wish {

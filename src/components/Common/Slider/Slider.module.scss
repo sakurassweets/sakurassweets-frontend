@@ -1,6 +1,6 @@
 .slider {
   width: 100%;
-  margin: 0 auto;
+
   &__title_wrapper {
     @include flex($jc: space-between);
     margin-bottom: 2.4rem;
@@ -41,7 +41,7 @@
     left: -33px;
     box-sizing: border-box;
     height: 3.2rem;
-    width: 3.02rem;
+    width: 3.2rem;
     stroke-width: 1;
     stroke: $secondary_text_color;
     cursor: pointer;

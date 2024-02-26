@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { LuHeart, LuStar } from 'react-icons/lu';
 
-import classes from './ProductCard.module.scss';
+import defaultImage from '../../../assets/img/no-image.png';
 import { Product } from '../../../types/interfaces/Product';
 import ButtonAddToCart from '../Buttons/ButtonAddToCart';
-import defaultImage from '../../../assets/img/no-image.png';
+
+import classes from './ProductCard.module.scss';
 
 interface ProductCartProps {
   product: Product;
@@ -14,7 +15,7 @@ interface ProductCartProps {
 interface RatingStarsProps {
   rating: number;
 }
-
+//TODO Винести в окремий компонент
 export const RatingStars: React.FC<RatingStarsProps> = ({ rating }) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
@@ -40,7 +41,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
           </div>
         )}
 
-        <div className={classes.img_wrapper}>
+        <div className={classes.img__wrapper}>
           {product.images.length > 0 ? (
             <img src={product.images[0].image} alt={product.title} width={254} height={180} />
           ) : (

@@ -1,6 +1,7 @@
-import ContentLoader from 'react-content-loader';
+import ContentLoader, { IContentLoaderProps } from 'react-content-loader';
+import { JSX } from 'react/jsx-runtime';
 
-export const SkeletonProductCard = (props) => (
+export const SkeletonProductCard = (props: JSX.IntrinsicAttributes & IContentLoaderProps) => (
   <ContentLoader
     speed={3}
     width={302}
