@@ -47,9 +47,10 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
           ) : (
             <img src={defaultImage} alt="default Image" width={254} height={180} />
           )}
-          <button className={classes.wish}>
+          {/* <button className={classes.wish}>
             {product.favorite ? <LuHeart className={classes.wish_img} /> : <LuHeart className={classes.wish_favimg} />}
-          </button>
+          </button> */}
+          <LuHeart className={classes.wish_img} />
         </div>
 
         <div className={classes.rating_instock_wrapper}>
