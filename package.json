@@ -24,6 +24,7 @@
     "axios": "^1.6.5",
     "modern-normalize": "^2.0.0",
     "react": "^18.2.0",
+    "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-loader-spinner": "^6.1.6",

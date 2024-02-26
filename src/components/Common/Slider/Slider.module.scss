@@ -1,6 +1,6 @@
 .slider {
   width: 100%;
-  margin: 0 auto;
+
   &__title_wrapper {
     @include flex($jc: space-between);
     margin-bottom: 2.4rem;
