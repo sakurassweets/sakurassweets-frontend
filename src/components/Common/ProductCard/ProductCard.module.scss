@@ -3,7 +3,7 @@
   padding: 2.4rem;
   background-color: $secondary_background_color;
   border-radius: 0.8rem;
-
+  max-width: 18.875em;
   cursor: pointer;
 
   &__sale {
@@ -22,10 +22,12 @@
   @include flex;
   position: relative;
 }
+
 .img_wrapper img {
   max-width: 25.4rem;
   border-radius: 0.4rem;
 }
+
 .wish {
   @include flex;
   position: absolute;
@@ -38,6 +40,7 @@
   background-color: $secondary_background_color;
   cursor: pointer;
   @include transition_all;
+
   &:hover,
   &:focus {
     background-color: $primary_background_color;
@@ -47,29 +50,35 @@
     @include svg;
   }
 }
+
 .wish_img {
   color: $primary_text_color;
   width: 2rem;
   height: 2rem;
 }
+
 .wish_favimg {
   fill: $secondary_text_color;
   width: 2rem;
   height: 2rem;
 }
+
 .rating_instock_wrapper {
   @include flex($jc: space-between);
   margin-top: 0.8rem;
 }
+
 .rating_wrapper {
   @include flex();
   gap: 0.4rem;
+
   &__rating {
     font-size: 1.2rem;
     font-weight: 400;
     color: $accent_color_stars;
   }
 }
+
 .fullStar,
 .halfStar {
   width: 1.3rem;
@@ -85,11 +94,13 @@
   color: $accent_color_stars;
   fill: transparent;
 }
+
 .rating {
   font-size: 1.2rem;
   font-weight: 400;
   color: $accent_color_stars;
 }
+
 .inStock,
 .outOfStock {
   position: relative;
@@ -97,6 +108,7 @@
   font-size: 1rem;
   font-weight: 400;
   margin-right: 0.5rem;
+
   &::before {
     content: '';
     display: block;
@@ -111,12 +123,15 @@
     background-position: center;
   }
 }
+
 .outOfStock {
   color: $outOfStock;
+
   &::before {
     background-image: url('../../assets/icons/out_of_stock.svg');
   }
 }
+
 .title {
   margin-top: $m_m;
   max-width: 25.4rem;
@@ -128,6 +143,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .description {
   display: -webkit-box;
 
@@ -141,6 +157,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 .salePrice {
   margin-top: 2rem;
   font-size: 1.6rem;
@@ -149,6 +166,7 @@
   text-decoration: line-through;
   color: $accent_color_hover;
 }
+
 .price {
   margin-top: 0.4rem;
   margin-bottom: $m_m;

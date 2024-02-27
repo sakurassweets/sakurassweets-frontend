@@ -9,6 +9,7 @@ import { Review } from '../../../types/interfaces/Review';
 import { ReviewCard } from '../ReviewCard/ReviewCard';
 import { ProductCard } from '../ProductCard/ProductCard';
 import { SkeletonProductCard } from '../Skeleton/SkeletonProductCard';
+import { ROUTERS } from '../../../constants/routers';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -87,7 +88,7 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
           <div className={classes.slider__title_wrapper}>
             <p className={classes.slider__title}>{name}</p>
             {/* NavLink can be replaced with your routing component */}
-            <Link to="/catalog" className={classes.slider__link}>
+            <Link to={ROUTERS.CATALOG} className={classes.slider__link}>
               Бачити все
             </Link>
           </div>
