@@ -2,10 +2,8 @@
   height: 736px;
   width: 100%;
   background-image: url('../../../assets/img/background.jpg');
-  background-image: image-set(
-    url('../../../assets/img/background.webp') 1x,
-    url('../../../assets/img/background@2x.webp') 2x
-  );
+  background-image: image-set(url('../../../assets/img/background.webp') 1x,
+      url('../../../assets/img/background@2x.webp') 2x);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -38,7 +36,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 304px;
+    width: fit-content;
+    padding: 0 6.1875em;
     height: 48px;
     border-radius: 8px;
     background-color: #ef7fa5;
