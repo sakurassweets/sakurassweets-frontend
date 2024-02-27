@@ -5,11 +5,13 @@
     @include flex($jc: space-between);
     margin-bottom: 2.4rem;
   }
+
   &__title {
     font-size: 3.2rem;
     line-height: 1.3;
     font-weight: 600;
   }
+
   &__link {
     font-size: 1.6rem;
     line-height: 1.3;
@@ -26,14 +28,17 @@
       background-color: $primary_text_color;
       transition: $transition;
     }
+
     &:hover,
     &:focus {
       color: $accent_color;
     }
+
     &:hover::after {
       background-color: $accent_color;
     }
   }
+
   &__prev {
     @include svg;
     position: absolute;
@@ -46,6 +51,7 @@
     stroke: $secondary_text_color;
     cursor: pointer;
   }
+
   &__next {
     @include svg;
     position: absolute;
@@ -59,10 +65,10 @@
     cursor: pointer;
   }
 }
+
 :global(.slick-track) {
   display: flex !important;
   justify-content: center;
-  gap: 2.4rem;
 }
 
 :global(.slick-dots) {
@@ -77,6 +83,7 @@
   width: 0.8rem;
   height: 0.8rem;
 }
+
 :global(li.slick-active) {
   margin: 0;
   width: 2.4rem;
@@ -87,6 +94,7 @@
   width: 0.8rem;
   height: 0.8rem;
   cursor: pointer;
+
   &::before {
     display: block;
     content: ' ';
