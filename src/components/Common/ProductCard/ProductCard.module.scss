@@ -101,37 +101,6 @@
   color: $accent_color_stars;
 }
 
-.inStock,
-.outOfStock {
-  position: relative;
-  color: $accent_color_stock;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-right: 0.5rem;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: -1.6rem;
-    transform: translateY(-50%);
-    height: 1.1rem;
-    width: 1.1rem;
-    background-image: url('../../assets/icons/check.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
-.outOfStock {
-  color: $outOfStock;
-
-  &::before {
-    background-image: url('../../assets/icons/out_of_stock.svg');
-  }
-}
-
 .title {
   margin-top: $m_m;
   max-width: 25.4rem;
