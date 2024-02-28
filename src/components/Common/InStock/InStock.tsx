@@ -9,18 +9,16 @@ interface InStockProps {
 
 export const InStock: React.FC<InStockProps> = ({ product }) => {
   return (
-    <div className={classes.inStockThumb}>
+    <div className={classes.wrapper}>
       {product.quantity_in_stock ? (
         <>
-          <LuCheck className={classes.inStockThumb__iconInStock} />
-          <p className={classes.inStockThumb__textInStock}>В наявності</p>
+          <LuCheck className={classes.wrapper__iconInStock} />
+          <p className={classes.wrapper__textInStock}>В наявності</p>
         </>
       ) : (
         <>
-          <LuX className={classes.inStockThumb__iconOutOfStock} />
-          <p
-            className={classNames(classes.inStockThumb__textInStock, { [classes.inStockThumb__textOutOfStock]: true })}
-          >
+          <LuX className={classes.wrapper__iconOutOfStock} />
+          <p className={classNames(classes.wrapper__textInStock, { [classes.wrapper__textOutOfStock]: true })}>
             Немає в наявності
           </p>
         </>

@@ -84,7 +84,7 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
   return (
     <section>
       <div className="container">
-        <div className={classes.slyder} style={{ marginBottom: `${marginBottom}px` }}>
+        <div className={classes.slider} style={{ marginBottom: `${marginBottom}px` }}>
           <div className={classes.slider__title_wrapper}>
             <p className={classes.slider__title}>{name}</p>
             {/* NavLink can be replaced with your routing component */}

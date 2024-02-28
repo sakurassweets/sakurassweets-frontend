@@ -1,15 +1,13 @@
 import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { LuStar } from 'react-icons/lu';
+import { Product } from '../../../types/interfaces/Product';
 
 import classes from './Rating.module.scss';
-import { Product } from '../../../types/interfaces/Product';
-import { InStock } from '../InStock/InStock';
 
 interface RatingProps {
   product: Product;
 }
 
-//TODO Винести в окремий компонент
 export const RatingStars: React.FC<RatingProps> = ({ product }) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
@@ -22,19 +20,16 @@ export const RatingStars: React.FC<RatingProps> = ({ product }) => {
     }
   }
 
-  return <div className={classes.ratingWrapper}>{stars}</div>;
+  return <div>{stars}</div>;
 };
 
 export const Rating: React.FC<RatingProps> = ({ product }) => {
   return (
-    <div>
-      <div className={classes.rating_instock_wrapper}>
-        <div className={classes.rating_wrapper}>
-          <RatingStars product={product} />
-          <p className={classes.rating_wrapper__rating}>({product.rating})</p>
-        </div>
-        <InStock product={product} />
+    <>
+      <div className={classes.wrapper}>
+        <RatingStars product={product} />
+        <p className={classes.wrapper__text}>({product.rating})</p>
       </div>
-    </div>
+    </>
   );
 };

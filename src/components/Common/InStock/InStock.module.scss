@@ -1,6 +1,7 @@
-.inStockThumb {
+.wrapper {
   @include flex();
   gap: 0.4rem;
+
   &__iconInStock {
     @include flex();
     padding: 0.4rem;

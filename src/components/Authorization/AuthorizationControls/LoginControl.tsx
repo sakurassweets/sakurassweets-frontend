@@ -5,7 +5,7 @@ import { AuthControlProps } from '../AuthorizationModalContent';
 import { loginFormFieldsDefault } from '../../utils/auth';
 import { validationLogin } from '../../../schemas/auth-validator';
 import { InputFormik } from '../../Common/Inputs/FormikInput';
-import { Button } from '../../Common/Buttons/Button';
+import { Button } from '../../Common/Buttons/Global/Button';
 import { PASS_MAX, INPUT_LENGTH } from '../../../constants/index';
 
 import classes from '../AuthorizationModal.module.scss';
