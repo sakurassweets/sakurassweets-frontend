@@ -16,162 +16,55 @@
     background-color: $accent_color_stock;
     z-index: 1;
   }
-}
+  &__img_wrapper {
+    @include flex;
+    position: relative;
+  }
+  &__title {
+    margin-top: $m_m;
+    max-width: 25.4rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
 
-.img__wrapper {
-  @include flex;
-  position: relative;
-}
-
-.img_wrapper img {
-  max-width: 25.4rem;
-  border-radius: 0.4rem;
-}
-
-.wish {
-  @include flex;
-  position: absolute;
-  right: 0.8rem;
-  top: 0.8rem;
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 0.6rem;
-  color: $primary_text_color;
-  background-color: $secondary_background_color;
-  cursor: pointer;
-  @include transition_all;
-
-  &:hover,
-  &:focus {
-    background-color: $primary_background_color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  svg:hover {
-    @include svg;
+  &__description {
+    display: -webkit-box;
+
+    margin-top: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
-}
+  &__salePrice {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: line-through;
+    color: $accent_color_hover;
+  }
 
-.wish_img {
-  color: $primary_text_color;
-  width: 2rem;
-  height: 2rem;
-}
-
-.wish_favimg {
-  fill: $secondary_text_color;
-  width: 2rem;
-  height: 2rem;
+  &__price {
+    margin-top: 0.4rem;
+    margin-bottom: $m_m;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $primary_text_color;
+  }
 }
 
 .rating_instock_wrapper {
   @include flex($jc: space-between);
   margin-top: 0.8rem;
-}
-
-.rating_wrapper {
-  @include flex();
-  gap: 0.4rem;
-
-  &__rating {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: $accent_color_stars;
-  }
-}
-
-.fullStar,
-.halfStar {
-  width: 1.3rem;
-  height: 1.3rem;
-  color: $accent_color_stars;
-  fill: $accent_color_stars;
-  margin-right: 0.2rem;
-}
-
-.emptyStar {
-  width: 1.3rem;
-  height: 1.3rem;
-  color: $accent_color_stars;
-  fill: transparent;
-}
-
-.rating {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: $accent_color_stars;
-}
-
-.inStock,
-.outOfStock {
-  position: relative;
-  color: $accent_color_stock;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-right: 0.5rem;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: -1.6rem;
-    transform: translateY(-50%);
-    height: 1.1rem;
-    width: 1.1rem;
-    background-image: url('../../assets/icons/check.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
-.outOfStock {
-  color: $outOfStock;
-
-  &::before {
-    background-image: url('../../assets/icons/out_of_stock.svg');
-  }
-}
-
-.title {
-  margin-top: $m_m;
-  max-width: 25.4rem;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.2;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.description {
-  display: -webkit-box;
-
-  margin-top: 1.2rem;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.5;
-
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.salePrice {
-  margin-top: 2rem;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.5;
-  text-decoration: line-through;
-  color: $accent_color_hover;
-}
-
-.price {
-  margin-top: 0.4rem;
-  margin-bottom: $m_m;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: $primary_text_color;
 }

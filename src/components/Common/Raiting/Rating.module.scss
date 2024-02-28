@@ -1,0 +1,26 @@
+.wrapper {
+  @include flex();
+  gap: 0.4rem;
+
+  &__text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $accent_color_stars;
+  }
+}
+
+.fullStar,
+.halfStar {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: $accent_color_stars;
+  fill: $accent_color_stars;
+  margin-right: 0.2rem;
+}
+
+.emptyStar {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: $accent_color_stars;
+  fill: transparent;
+}

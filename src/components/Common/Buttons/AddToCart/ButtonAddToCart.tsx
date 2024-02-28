@@ -2,7 +2,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 import classes from './ButtonAddToCart.module.scss';
 
-const ButtonAddToCart = () => {
+export const ButtonAddToCart = () => {
   const onAddToCart = () => {
     console.log('Added to cart');
   };
@@ -14,5 +14,3 @@ const ButtonAddToCart = () => {
     </button>
   );
 };
-
-export default ButtonAddToCart;

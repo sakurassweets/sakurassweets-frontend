@@ -1,0 +1,34 @@
+.favorite {
+  @include flex;
+  position: absolute;
+  right: 0.8rem;
+  top: 0.8rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.6rem;
+  color: $primary_text_color;
+  background-color: $secondary_background_color;
+  cursor: pointer;
+  @include transition_all;
+
+  &:hover,
+  &:focus {
+    background-color: $primary_background_color;
+  }
+
+  svg:hover {
+    @include svg;
+  }
+
+  &__icon {
+    color: $primary_text_color;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__favIcon {
+    fill: $secondary_text_color;
+    width: 2rem;
+    height: 2rem;
+  }
+}

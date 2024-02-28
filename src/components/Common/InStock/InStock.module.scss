@@ -1,0 +1,31 @@
+.wrapper {
+  @include flex();
+  gap: 0.4rem;
+
+  &__iconInStock {
+    @include flex();
+    padding: 0.4rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: $accent_color_stock;
+  }
+  &__textInStock {
+    position: relative;
+    color: $accent_color_stock;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-right: 0.5rem;
+  }
+  &__textOutOfStock {
+    color: $outOfStock;
+  }
+  &__iconOutOfStock {
+    @include flex();
+    padding: 0.4rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: $outOfStock;
+  }
+}
