@@ -20,26 +20,26 @@ $red: #BA1E26;
 $light_red: #F0585B;
 
 //Text
-$primary_text_color: rgba(255, 255, 255, 1);
-$secondary_text_color: rgba(255, 234, 236, 1);
-$input_text_color: rgb(0, 0, 0);
-$input_placeholder_color: rgba(189, 196, 205, 1);
+$primary_text_color: $white;
+$secondary_text_color: $light_pink;
+$input_text_color: $black;
+$input_placeholder_color: $gray;
 
 // Background
-$primary_background_color: rgb(44, 49, 65);
-$secondary_background_color: rgb(64, 73, 102);
-$disable_background_color: rgba(189, 196, 205, 1);
-$input_background_color: rgba(255, 255, 255, 1);
+$primary_background_color: $black_blue;
+$secondary_background_color: $dark_blue;
+$disable_background_color: $gray;
+$input_background_color: $white;
 
 //Accent
 
-$accent_color: rgb(239, 127, 165);
-$accent_color_hover: rgb(255, 171, 199);
+$accent_color: $dark_pink;
+$accent_color_hover: $pink;
 
-$accent_color_stock: rgba(63, 175, 106, 1);
-$outOfStock: rgba(240, 88, 91, 1);
-$accent_color_stars: rgba(247, 207, 106, 1);
-$border_color: rgba(189, 196, 205, 1);
+$accent_color_stock: $green;
+$outOfStock: $light_red;
+$accent_color_stars: $yellow;
+$border_color: $gray;
 
 //Spacing
 $p_s: 1.4rem;
