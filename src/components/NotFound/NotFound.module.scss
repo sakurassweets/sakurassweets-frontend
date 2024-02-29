@@ -1,6 +1,6 @@
 .thumb {
   position: relative;
-  padding: 4rem 27.3rem 0;
+  padding: 4rem 27.3rem 12.5rem;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -33,7 +33,8 @@
     background-image: url('../../assets/img/not_found.png');
     background-image: image-set(
       url('../../assets/img/not_found.webp') 1x,
-      url('../../assets/img/not_found@2x.png') 2x url('../../assets/img/not_found@2x.webp') 2x
+      url('../../assets/img/not_found@2x.png') 2x,
+      url('../../assets/img/not_found@2x.webp') 2x
     );
     background-repeat: no-repeat;
     background-position: center;
