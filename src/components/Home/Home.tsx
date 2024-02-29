@@ -33,7 +33,7 @@ function createCollectReviews(): Review[] {
   return defaultReviews;
 }
 
-export const Home = () => {
+export const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const { products } = useAppSelector((state) => state.products);
   const clonedProducts = cloneProducts(products, 3);
@@ -43,7 +43,7 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-    <main>
+    <>
       <Hero />
       <AdvantagesList />
 
@@ -81,6 +81,6 @@ export const Home = () => {
         dots={true}
         slides={3}
       />
-    </main>
+    </>
   );
 };
