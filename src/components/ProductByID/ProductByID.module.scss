@@ -1,0 +1,29 @@
+.thumd {
+  @include flex($ai: flex-start, $jc: flex-start);
+  gap: 2.7rem;
+
+  .title {
+    margin-bottom: 1.2rem;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+}
+.content {
+  &_thumb {
+    @include flex($jc: flex-start);
+    gap: 2.4rem;
+    &__article {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: $gray;
+    }
+  }
+}
+.favorite {
+  position: relative;
+  &__text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}

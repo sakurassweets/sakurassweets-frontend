@@ -62,6 +62,9 @@
     line-height: 1.2;
     color: $primary_text_color;
   }
+  &__price_noDiscount {
+    margin-top: 4.8rem;
+  }
 }
 
 .rating_instock_wrapper {

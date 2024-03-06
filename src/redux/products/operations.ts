@@ -8,7 +8,6 @@ export const fetchAllProductsThunk = createAsyncThunk<Product[], undefined, { re
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await API.get('/products/');
-      console.log('GetAllProducts', data.results);
       return data.results;
     } catch (error) {
       if (error instanceof Error) {
@@ -24,8 +23,7 @@ export const fetchProductByIdThunk = createAsyncThunk<Product, string, { rejectV
   async (id, { rejectWithValue }) => {
     try {
       const { data } = await API.get(`/products/${id}`);
-      console.log('GetProductById', data.results);
-      return data.results;
+      return data;
     } catch (error) {
       if (error instanceof Error) {
         return rejectWithValue(error.message);
