@@ -1,0 +1,92 @@
+@import '../../../../../styles/helpers/vars.scss';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px 24px 24px;
+}
+
+.input {
+  width: 100%;
+  max-width: 121px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  color: $gray;
+  margin-top: 4px;
+  -moz-appearance: textfield;
+  &_block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  &_label {
+    font-size: 12px;
+    color: $light-pink;
+    font-weight: lighter;
+  }
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  &[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.slider {
+  height: 4px;
+  background-color: $gray;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.progress {
+  height: 100%;
+  border-radius: 2px;
+  background-color: $blue;
+  position: absolute;
+  top: 0;
+}
+
+.range {
+  position: relative;
+  &:first-child {
+    z-index: 2;
+  }
+  &:last-child {
+    z-index: 1;
+  }
+  &_input {
+    position: absolute;
+    top: -4px;
+    height: 4px;
+    width: 100%;
+    pointer-events: none;
+    background: none;
+    -webkit-appearance: none;
+    // for Chromium based browser
+    &::-webkit-slider-thumb {
+      height: 20px;
+      width: 20px;
+      -webkit-appearance: none;
+      background: $white;
+      border-radius: 50%;
+      pointer-events: auto;
+    }
+    // fix Mozila Firefox bugs
+    &::-moz-range-thumb {
+      height: 20px;
+      width: 20px;
+      -moz-appearance: none;
+      background: $white;
+      border: none;
+      border-radius: 50%;
+      pointer-events: auto;
+    }
+  }
+}

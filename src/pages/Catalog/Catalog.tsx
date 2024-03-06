@@ -1,5 +1,7 @@
-const Catalog = () => {
-  return <h1>Catalog</h1>;
+import { Catalog } from '../../components/Catalog/Catalog';
+
+const CatalogPage: React.FC = () => {
+  return <Catalog />;
 };
 
-export default Catalog;
+export default CatalogPage;
