@@ -1,0 +1,25 @@
+@import '../../../../../styles/helpers/vars.scss';
+
+.checkbox {
+  margin-right: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 5px;
+  border: 2px solid $white;
+  cursor: pointer;
+  position: relative;
+  &::after {
+    content: url('../../../../../assets/icons/check.png');
+    position: absolute;
+    width: 6px;
+    height: 4px;
+    top: -5px;
+    right: calc(70% - 6px);
+    display: none;
+  }
+  &:checked::after {
+    display: block;
+  }
+}
