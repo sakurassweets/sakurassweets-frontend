@@ -3,13 +3,19 @@
   gap: 2.7rem;
 
   .title {
+    max-width: 51.2rem;
     margin-bottom: 1.2rem;
     font-size: 3.2rem;
     font-weight: 600;
     line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 .content {
+  max-width: 51.2rem;
+
   &_thumb {
     @include flex($jc: flex-start);
     gap: 2.4rem;
@@ -63,11 +69,12 @@
   border-bottom: solid 0.1rem $light_pink;
   color: $primary_text_color;
 
-  &__fullPrice {
+  &__totalPrice {
     color: $gray;
   }
-  &__discount {
+  &__discountPrice {
     font-size: 2.4rem;
+    font-weight: 400;
     margin-bottom: 0;
   }
 }

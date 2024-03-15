@@ -49,7 +49,7 @@ export const ProductByID: React.FC<ProductDetailsProps> = () => {
 
             <div className={classes.price_thumb}>
               <p>{productDetails.quantity_in_stock} шт</p>
-              <Discount product={productDetails} />
+              <Discount product={productDetails} isProductPage={true} />
             </div>
 
             <ButtonAddToCart />
