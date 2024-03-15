@@ -1,0 +1,22 @@
+.card {
+  &__fullPrice {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: line-through;
+    color: $accent_color_hover;
+  }
+
+  &__price {
+    margin-top: 0.4rem;
+    margin-bottom: $m_m;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $primary_text_color;
+  }
+  &__price_noDiscount {
+    margin-top: 4.8rem;
+  }
+}

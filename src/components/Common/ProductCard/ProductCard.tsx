@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-
-import { calculateDiscountedPrice, hasDiscount } from '../../../helpers';
 import defaultImage from '../../../assets/img/no-image.png';
 import { Product } from '../../../types/interfaces/Product';
 import { Rating } from '../Raiting/Rating';
 import { InStock } from '../InStock/InStock';
 import { FavoriteBtn } from '../Buttons/Favorite/FavoriteBtn';
 import { ButtonAddToCart } from '../Buttons/AddToCart/ButtonAddToCart';
+import { Discount } from '../Discount/Discount';
 
 import classes from './ProductCard.module.scss';
 
@@ -16,12 +14,6 @@ interface ProductCartProps {
 }
 
 export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
-  const finalPrice = calculateDiscountedPrice(product.price, product.discount.replace('%', ''));
-
-  const priceClass = classNames(classes.card__price, {
-    [classes.card__price_noDiscount]: !hasDiscount(product.discount),
-  });
-
   return (
     <li className={classes.card}>
       <Link to={`/product/${product.id}`} rel="prefetch">
@@ -47,9 +39,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
 
         <h4 className={classes.card__title}>{product.title}</h4>
         <p className={classes.card__description}>{product.description}</p>
-        {hasDiscount(product.discount) && <p className={classes.card__salePrice}> {product.price}</p>}
-        <p className={priceClass}>{finalPrice} грн</p>
-
+        <Discount product={product} />
         <ButtonAddToCart />
       </Link>
     </li>
