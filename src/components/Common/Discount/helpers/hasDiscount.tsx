@@ -1,3 +1,6 @@
-export const hasDiscount = (discountStr: string) => {
-  return discountStr && discountStr !== '0%';
+export const hasDiscount = (discount: string) => {
+  if (discount === undefined || discount === '') {
+    return false;
+  }
+  return discount !== '0%';
 };

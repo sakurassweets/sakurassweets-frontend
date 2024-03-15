@@ -9,7 +9,8 @@ interface DiscountProps {
 }
 
 export const Discount: React.FC<DiscountProps> = ({ product }) => {
-  const finalPrice = calculateDiscountedPrice(product.price, product.discount.replace('%', ''));
+  const discountValue = product.discount ? product.discount.replace('%', '') : '0';
+  const finalPrice = calculateDiscountedPrice(product.price, discountValue);
 
   const priceClass = classNames(classes.card__price, {
     [classes.card__price_noDiscount]: !hasDiscount(product.discount),

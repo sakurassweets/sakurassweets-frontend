@@ -5,7 +5,6 @@ interface BoxSizeProps {
 }
 
 export const BoxSize: React.FC<BoxSizeProps> = ({ productDetails }) => {
-  console.log(productDetails);
   return (
     <div>
       <p>Оберіть розмір упаковки</p>
