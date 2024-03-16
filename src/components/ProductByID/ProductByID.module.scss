@@ -4,17 +4,16 @@
 
   .title {
     max-width: 51.2rem;
+    min-height: 8.4rem;
     margin-bottom: 1.2rem;
     font-size: 3.2rem;
     font-weight: 600;
     line-height: 1.3;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
   }
 }
 .content {
   max-width: 51.2rem;
+  width: 100%;
 
   &_thumb {
     @include flex($jc: flex-start);
@@ -78,9 +77,15 @@
     margin-bottom: 0;
   }
 }
+.counter_thumb {
+  @include flex($jc: flex-start);
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
 
 .favorite {
-  position: relative;
+  @include flex($jc: flex-start);
+  gap: 1.2rem;
   &__text {
     font-size: 1.2rem;
     line-height: 1.5;

@@ -1,16 +1,17 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { useParams } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchProductByIdThunk } from '../../redux/products/operations';
 import { Product } from '../../types/interfaces/Product';
 import { Images } from './Images/Images';
 import { InStock } from '../Common/InStock/InStock';
 import { ButtonAddToCart } from '../Common/Buttons/AddToCart/ButtonAddToCart';
 import { FavoriteBtn } from '../Common/Buttons/Favorite/FavoriteBtn';
-import { BoxSize } from './BoxSize/BoxSize';
 import classes from './ProductByID.module.scss';
 import { Rating } from '../Common/Raiting/Rating';
 import { Discount } from '../Common/Discount/Discount';
+import { Counter } from './Counter/Counter';
+import { Description } from './Description/Description';
 
 interface ProductDetailsProps {
   productDetails: Product;
@@ -18,9 +19,11 @@ interface ProductDetailsProps {
 
 export const ProductByID: React.FC<ProductDetailsProps> = () => {
   const dispatch = useAppDispatch();
+
   const { id } = useParams();
   const productDetails = useAppSelector((state) => state.products.productDetails);
-  console.log(productDetails);
+
+  console.log('productDetails', productDetails);
 
   useEffect(() => {
     dispatch(fetchProductByIdThunk(id as string));
@@ -48,19 +51,20 @@ export const ProductByID: React.FC<ProductDetailsProps> = () => {
             </div>
 
             <div className={classes.price_thumb}>
-              <p>{productDetails.quantity_in_stock} шт</p>
+              <p>{productDetails.product_quantity}</p>
               <Discount product={productDetails} isProductPage={true} />
             </div>
-
-            <ButtonAddToCart />
-            <BoxSize productDetails={productDetails} />
-
+            <div className={classes.counter_thumb}>
+              <Counter />
+              <ButtonAddToCart />
+            </div>
             <div className={classes.favorite}>
-              <FavoriteBtn />
+              <FavoriteBtn isProductPage={true} />
               <p className={classes.favorite__text}>Додати до обраного</p>
             </div>
           </div>
         </div>
+        <Description product={productDetails} />
       </div>
     </section>
   );

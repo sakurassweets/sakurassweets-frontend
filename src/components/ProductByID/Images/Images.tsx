@@ -7,21 +7,14 @@ interface ImagesProps {
 }
 
 export const Images: React.FC<ImagesProps> = ({ images = [] }) => {
-  console.log('Images', images);
-
-  const secondaryImages = images.length === 1 ? Array(5).fill(images[0]) : images;
-
   return (
     <div className={classes.wrapper}>
-      <ul>
-        {images.map((img, index) => (
-          <li key={index}>
-            <img className={classes.main_img} src={img.image} alt={'Product image'} width={734} height={547} />
-          </li>
-        ))}
-      </ul>
+      {images.length > 0 && (
+        <img className={classes.main_img} src={images[0].image} alt={'Product image'} width={734} height={547} />
+      )}
+
       <ul className={classes.secondary_wrapper}>
-        {secondaryImages.map((img, index) => (
+        {images.map((img, index) => (
           <li key={index}>
             <img className={classes.main_img} src={img.image} alt={'Product image'} width={120} height={120} />
           </li>

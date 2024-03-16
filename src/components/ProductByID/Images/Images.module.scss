@@ -1,11 +1,14 @@
 .wrapper {
+  margin-bottom: 12rem;
   .main_img {
     border-radius: 1.6rem;
+    background-color: $white;
+    object-fit: contain;
   }
 }
 
 .secondary_wrapper {
-  @include flex;
-  gap: 2.4rem;
+  @include flex($jc: flex-start);
+  gap: 3.3rem;
   margin-top: 2.4rem;
 }
