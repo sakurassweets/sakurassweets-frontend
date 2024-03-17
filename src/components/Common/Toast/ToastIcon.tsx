@@ -1,6 +1,6 @@
 import { LuCheck, LuX } from 'react-icons/lu';
-import classes from './toast.module.scss';
 import { TypeOptions } from 'react-toastify';
+import classes from './toast.module.scss';
 
 export declare type ToastType = 'success' | 'error';
 
