@@ -1,6 +1,6 @@
 import React from 'react';
 import { Product } from '../../../types/interfaces/Product';
-import classes from './Description.module.scss';
+import classes from './description.module.scss';
 
 interface DescriptionProps {
   product: Product;

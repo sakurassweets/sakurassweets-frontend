@@ -1,7 +1,7 @@
 import { LuHeart } from 'react-icons/lu';
-
-import classes from './FavoriteBtn.module.scss';
 import classNames from 'classnames';
+
+import classes from './favoriteBtn.module.scss';
 
 interface FavoriteBtnProps {
   isProductPage?: boolean;

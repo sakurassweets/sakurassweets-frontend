@@ -9,7 +9,7 @@ import App from './components/App';
 import './index.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { CustomIcon } from './components/Common/Toast/ToastIcon';
-import classes from '../src/components/Common/Toast/Toast.module.scss';
+import classes from '../src/components/Common/Toast/toast.module.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   //<React.StrictMode>

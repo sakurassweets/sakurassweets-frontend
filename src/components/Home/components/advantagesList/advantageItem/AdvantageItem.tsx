@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import classes from './AdvantageItem.module.scss';
+import classes from './advantageItem.module.scss';
 
 interface AdvantageItemProps {
   advantage: {

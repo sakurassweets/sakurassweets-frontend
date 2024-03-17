@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
-import classes from './ShowBtn.module.scss';
+import classes from './showBtn.module.scss';
 
 interface Props {
   type: string;

@@ -1,5 +1,5 @@
 import { LuMinus, LuPlus } from 'react-icons/lu';
-import classes from './Counter.module.scss';
+import classes from './counter.module.scss';
 
 export const Counter = () => {
   return (

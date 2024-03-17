@@ -1,9 +1,9 @@
 import React from 'react';
 import { LuTruck, LuPhone, LuShoppingBag, LuCircleDollarSign } from 'react-icons/lu';
 import classNames from 'classnames';
-import classes from './AdvantagesList.module.scss';
-
 import { AdvantageItem } from './advantageItem/AdvantageItem';
+
+import classes from './advantagesList.module.scss';
 
 const advantages = [
   {

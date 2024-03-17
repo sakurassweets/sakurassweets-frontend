@@ -13,7 +13,7 @@ import { ROUTERS } from '../../../constants/routers';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import classes from './Slider.module.scss';
+import classes from './slider.module.scss';
 
 interface SliderProps {
   name: string;

@@ -1,4 +1,4 @@
-import classes from './NotFound.module.scss';
+import classes from './notFound.module.scss';
 
 export const NotFound: React.FC = () => {
   return (

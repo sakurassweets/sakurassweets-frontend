@@ -1,6 +1,6 @@
 import { ReactNode, InputHTMLAttributes } from 'react';
 import classNames from 'classnames';
-import classes from './Input.module.scss';
+import classes from './input.module.scss';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
@@ -12,18 +12,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   controlClassName?: string;
 }
 
-export const Input: React.FC<InputProps> = ({
-  id,
-  className,
-  controlClassName,
-  label,
-  error,
-  icon,
-  closeIcon,
-  ...attrs
-}) => {
+export const Input: React.FC<InputProps> = ({ id, className, label, error, icon, closeIcon, ...attrs }) => {
   const styles = classNames(classes.inputContainer, className, { error });
-  // const containerClasses = classNames(classes.formControl, controlClassName);
 
   return (
     <>

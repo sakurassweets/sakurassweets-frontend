@@ -2,7 +2,7 @@ import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { LuStar } from 'react-icons/lu';
 import { Product } from '../../../types/interfaces/Product';
 
-import classes from './Rating.module.scss';
+import classes from './rating.module.scss';
 
 interface RatingProps {
   product: Product;

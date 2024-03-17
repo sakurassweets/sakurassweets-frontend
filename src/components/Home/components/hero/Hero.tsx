@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import { ROUTERS } from '../../../../constants/routers';
 
-import classes from './Hero.module.scss';
+import classes from './hero.module.scss';
 
 export const Hero: React.FC = () => {
   return (

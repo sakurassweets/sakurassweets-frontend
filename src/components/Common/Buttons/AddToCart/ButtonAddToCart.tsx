@@ -1,6 +1,6 @@
 import { FiShoppingCart } from 'react-icons/fi';
 
-import classes from './ButtonAddToCart.module.scss';
+import classes from './buttonAddToCart.module.scss';
 
 export const ButtonAddToCart = () => {
   const onAddToCart = () => {

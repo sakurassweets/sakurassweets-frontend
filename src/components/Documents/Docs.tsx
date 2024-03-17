@@ -4,7 +4,7 @@ import { pdfjs, Document, Page } from 'react-pdf';
 import { Documents } from '../../enums/Documents';
 import { Loader } from '../Common';
 
-import classes from './Docs.module.scss';
+import classes from './docs.module.scss';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 

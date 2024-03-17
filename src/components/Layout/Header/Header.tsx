@@ -5,7 +5,7 @@ import { HeaderControl, SearchForm } from './index';
 import { Logo } from '../../Common/Logo/Logo';
 import { AuthModal } from '../../Authorization/AuthorizationModal';
 
-import classes from './Header.module.scss';
+import classes from './header.module.scss';
 
 export const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { Product } from '../../../types/interfaces/Product';
-import classes from './Discount.module.scss';
 import { calculateDiscountedPrice, hasDiscount } from './helpers';
+import classes from './discount.module.scss';
 
 interface DiscountProps {
   product: Product;

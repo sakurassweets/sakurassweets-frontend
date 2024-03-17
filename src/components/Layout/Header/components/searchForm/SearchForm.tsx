@@ -1,7 +1,8 @@
-import { Input } from '../../../../Common/Inputs/Input';
-import classes from './SearchForm.module.scss';
-import { LuSearch, LuX } from 'react-icons/lu';
 import { useState, ChangeEvent, FormEvent, MouseEvent } from 'react';
+import { LuSearch, LuX } from 'react-icons/lu';
+import { Input } from '../../../../Common/Inputs/Input';
+
+import classes from './searchForm.module.scss';
 
 export const SearchForm: React.FC = () => {
   const [inputValue, setInputValue] = useState('');

@@ -6,7 +6,7 @@ import { Logo } from '../../Common/Logo/Logo';
 import { EMAIL, PHONE_NUMBER } from '../../../constants';
 import { FooterList, SocialNetworks } from './index';
 
-import classes from './Footer.module.scss';
+import classes from './footer.module.scss';
 
 const FOOTER_WORK_SCHEDULE: FooterListItem = {
   header: 'Графік роботи',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from '../../../types/interfaces/Product';
-import classes from './Images.module.scss';
+import classes from './images.module.scss';
 
 interface ImagesProps {
   images: Image[];

@@ -7,7 +7,7 @@ import { FavoriteBtn } from '../Buttons/Favorite/FavoriteBtn';
 import { ButtonAddToCart } from '../Buttons/AddToCart/ButtonAddToCart';
 import { Discount } from '../Discount/Discount';
 
-import classes from './ProductCard.module.scss';
+import classes from './productCard.module.scss';
 
 interface ProductCartProps {
   product: Product;

@@ -9,7 +9,7 @@ import { FavoriteBtn } from '../Common/Buttons/Favorite/FavoriteBtn';
 import { Rating } from '../Common/Raiting/Rating';
 import { Discount } from '../Common/Discount/Discount';
 import { Counter, Description, Images } from './index';
-import classes from './ProductByID.module.scss';
+import classes from './productByID.module.scss';
 
 interface ProductDetailsProps {
   productDetails?: Product;

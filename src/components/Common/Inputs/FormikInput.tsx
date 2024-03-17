@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import { useField } from 'formik';
-import classes from './Input.module.scss';
-
 import { useState } from 'react';
 import { LuEye, LuEyeOff } from 'react-icons/lu';
+
+import classes from './input.module.scss';
 
 interface InputFormikProps {
   label: string;

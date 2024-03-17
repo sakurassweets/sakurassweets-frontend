@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import classes from './PresentationItem.module.scss';
-
 import { ShowBtn } from '../showBtn/ShowBtn';
+
+import classes from './presentationItem.module.scss';
 
 interface Props {
   header?: string;

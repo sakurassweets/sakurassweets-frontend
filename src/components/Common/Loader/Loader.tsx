@@ -1,5 +1,5 @@
 import { InfinitySpin } from 'react-loader-spinner';
-import classes from './Loader.module.scss';
+import classes from './loader.module.scss';
 
 export const Loader = () => {
   return (

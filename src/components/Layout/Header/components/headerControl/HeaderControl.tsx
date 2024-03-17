@@ -1,5 +1,5 @@
-import classes from './HeaderControl.module.scss';
 import { LuUser, LuShoppingCart, LuHeart, LuChevronDown } from 'react-icons/lu';
+import classes from './headerControl.module.scss';
 
 interface HeaderControlProps {
   openModal: () => void;
