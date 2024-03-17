@@ -3,13 +3,13 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { LuX } from 'react-icons/lu';
+import { CustomIcon } from './components/Common';
 import { store } from './redux/store';
 import App from './components/App';
 
 import './index.scss';
 import 'react-toastify/dist/ReactToastify.css';
-import { CustomIcon } from './components/Common/Toast/ToastIcon';
-import classes from '../src/components/Common/Toast/Toast.module.scss';
+import classes from './components/Common/Toast/Toast.module.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   //<React.StrictMode>

@@ -1,0 +1,33 @@
+.header {
+  padding: 1.6rem 0rem;
+  gap: $p_m;
+  background-color: $secondary_background_color;
+
+  &__container {
+    @include flex($jc: space-between);
+  }
+
+  &__catalogBtn {
+    @include flex();
+    gap: 0.8rem;
+    padding: 1.2rem;
+    min-width: 19.4rem;
+    color: $primary_text_color;
+    background-color: $accent_color;
+    border-radius: $gl_radius;
+
+    svg {
+      @include svg;
+    }
+    &:hover,
+    &:focus {
+      background-color: $accent_color_hover;
+    }
+  }
+}
+
+.wrapper {
+  @include flex();
+  margin-right: 23.1rem;
+  gap: $m_m;
+}

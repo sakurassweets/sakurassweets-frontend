@@ -1,0 +1,93 @@
+.thumd {
+  @include flex($ai: flex-start, $jc: flex-start);
+  gap: 2.7rem;
+
+  .title {
+    max-width: 51.2rem;
+    min-height: 8.4rem;
+    margin-bottom: 1.2rem;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+}
+.content {
+  max-width: 51.2rem;
+  width: 100%;
+
+  &_thumb {
+    @include flex($jc: flex-start);
+    gap: 2.4rem;
+    margin-bottom: 1.2rem;
+
+    &__article {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: $gray;
+    }
+  }
+}
+
+.raiting_thumb {
+  @include flex($jc: flex-start);
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  &__text {
+    position: relative;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $gray;
+    &::after {
+      position: absolute;
+      content: ' ';
+      display: block;
+      width: 100%;
+      height: 0.1rem;
+      background-color: $gray;
+      bottom: 0;
+      @include transition_all;
+    }
+  }
+}
+
+.balance_thumb {
+  @include flex($jc: flex-start);
+  gap: 0.8rem;
+  margin-bottom: 2.4rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: $light_red;
+}
+
+.price_thumb {
+  @include flex($jc: space-between, $ai: flex-end);
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  border-bottom: solid 0.1rem $light_pink;
+  color: $primary_text_color;
+
+  &__totalPrice {
+    color: $gray;
+  }
+  &__discountPrice {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+}
+.counter_thumb {
+  @include flex($jc: flex-start);
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.favorite {
+  @include flex($jc: flex-start);
+  gap: 1.2rem;
+  &__text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}

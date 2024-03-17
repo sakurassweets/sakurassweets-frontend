@@ -1,9 +1,7 @@
+import { ProductByID } from '../../components/ProductByID/ProductByID';
+
 const ProductCard = () => {
-  return (
-    <>
-      <h1>Product Card</h1>
-    </>
-  );
+  return <ProductByID />;
 };
 
 export default ProductCard;

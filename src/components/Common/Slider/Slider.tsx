@@ -13,7 +13,7 @@ import { ROUTERS } from '../../../constants/routers';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import classes from './Slider.module.scss';
+import classes from './slider.module.scss';
 
 interface SliderProps {
   name: string;
@@ -38,7 +38,7 @@ const NextArrow: React.FC<ArrProps> = (props) => {
   return <LuChevronRight className={classes.slider__next} onClick={onClick} />;
 };
 
-const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, type, dots, slides }) => {
+export const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, type, dots, slides }) => {
   const settings = {
     dots: dots,
     infinite: true,
@@ -108,5 +108,3 @@ const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBottom, typ
     </section>
   );
 };
-
-export default SliderComponent;

@@ -1,7 +1,7 @@
 import { LuCheck, LuX } from 'react-icons/lu';
 import classNames from 'classnames';
 import { Product } from '../../../types/interfaces/Product';
-import classes from './InStock.module.scss';
+import classes from './inStock.module.scss';
 
 interface InStockProps {
   product: Product;

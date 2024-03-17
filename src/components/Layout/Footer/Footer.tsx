@@ -1,12 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
-import classes from './Footer.module.scss';
-import { Logo } from '../../Common/Logo/Logo';
-import { FooterList } from './FooterList/FooterList';
 import { LuPhone, LuMail } from 'react-icons/lu';
-import { SocialNetworks } from './SocialNetworks/SocialNetworks';
-import { EMAIL, PHONE_NUMBER } from '../../../constants';
 import { FooterListItem } from '../definitions';
+import { Logo } from '../../Common/Logo/Logo';
+import { EMAIL, PHONE_NUMBER } from '../../../constants';
+import { FooterList, SocialNetworks } from './index';
+
+import classes from './footer.module.scss';
 
 const FOOTER_WORK_SCHEDULE: FooterListItem = {
   header: 'Графік роботи',

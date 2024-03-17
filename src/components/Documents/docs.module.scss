@@ -1,0 +1,13 @@
+.wrapper {
+  width: 100%;
+  margin: 1.6rem auto;
+
+  &__document {
+    @include flex();
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  &__page {
+    background-color: $primary_background_color !important;
+  }
+}

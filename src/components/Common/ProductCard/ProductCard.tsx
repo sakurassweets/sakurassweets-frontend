@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-
 import defaultImage from '../../../assets/img/no-image.png';
 import { Product } from '../../../types/interfaces/Product';
 import { Rating } from '../Raiting/Rating';
 import { InStock } from '../InStock/InStock';
 import { FavoriteBtn } from '../Buttons/Favorite/FavoriteBtn';
 import { ButtonAddToCart } from '../Buttons/AddToCart/ButtonAddToCart';
+import { Discount } from '../Discount/Discount';
 
-import classes from './ProductCard.module.scss';
+import classes from './productCard.module.scss';
 
 interface ProductCartProps {
   product: Product;
@@ -39,9 +39,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
 
         <h4 className={classes.card__title}>{product.title}</h4>
         <p className={classes.card__description}>{product.description}</p>
-        {product.price && <p className={classes.card__salePrice}>{product.price} грн</p>}
-        <p className={classes.card__price}>{product.price} грн</p>
-
+        <Discount product={product} />
         <ButtonAddToCart />
       </Link>
     </li>

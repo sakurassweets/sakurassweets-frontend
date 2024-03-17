@@ -1,10 +1,9 @@
 import UserRoutes from './UserRoutes';
-import { useAppDispatch } from '../redux/hook';
 import { useEffect } from 'react';
-import { refreshThunk } from '../redux/auth/operations';
-import { fetchCartThunk } from '../redux/cart/operations';
-import { Layout } from './Layout/Layout';
+import { useAppDispatch } from '../redux/hook';
 import { useLocation } from 'react-router-dom';
+import { refreshThunk } from '../redux/auth/operations';
+import { Layout } from './Layout/Layout';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -12,7 +11,6 @@ function App() {
 
   useEffect(() => {
     dispatch(refreshThunk());
-    dispatch(fetchCartThunk());
   }, [dispatch]);
 
   useEffect(() => {

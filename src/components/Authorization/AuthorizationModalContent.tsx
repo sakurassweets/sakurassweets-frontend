@@ -3,11 +3,9 @@ import { toast } from 'react-toastify';
 import { useAppDispatch } from '../../redux/hook';
 import { loginThunk, registerThunk } from '../../redux/auth/operations';
 import { authFormValues } from '../../models/auth';
+import { LoginControl, RegisterControl } from './index';
 
-import { LoginControl } from './AuthorizationControls/LoginControl';
-import { RegisterControl } from './AuthorizationControls/RegisterControl';
-
-import classes from './AuthorizationModal.module.scss';
+import classes from './authorizationModal.module.scss';
 
 interface AuthModaContentProps {
   title: string;

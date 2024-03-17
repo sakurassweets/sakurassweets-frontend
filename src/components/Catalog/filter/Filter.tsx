@@ -3,9 +3,9 @@ import React from 'react';
 import { Accordion } from './accordion/Accordion';
 import { Price } from './contents/price/Price';
 import { Category } from './contents/category/Category';
+import { Raiting } from './contents/raiting/Raiting';
 
 import styled from './filter.module.scss';
-import { Raiting } from './contents/raiting/Raiting';
 
 export const Filter: React.FC = () => {
   return (

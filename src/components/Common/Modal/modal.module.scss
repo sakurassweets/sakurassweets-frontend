@@ -1,0 +1,75 @@
+.modal {
+  &__overlay {
+    position: fixed;
+    @include flex();
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 999;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    &__active {
+      opacity: 1;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background-color: $primary-background-color;
+    border-radius: 2.4rem;
+    animation: blowUpClose 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+    &__active {
+      animation: blowUpOpen 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    &__closeBtn {
+      position: absolute;
+      top: 3.2rem;
+      right: 2.4rem;
+      @include flex();
+      font-size: 1.6rem;
+      font-weight: 600;
+      gap: 0.8rem;
+      color: $primary_text_color;
+      cursor: pointer;
+      @include transition_all;
+
+      svg {
+        @include svg;
+        stroke-width: 1;
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+  }
+}
+@keyframes blowUpClose {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+
+@keyframes blowUpOpen {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -3,7 +3,7 @@ import { MouseEventHandler, useEffect, useState } from 'react';
 import { LuX } from 'react-icons/lu';
 
 import classNames from 'classnames';
-import classes from './Modal.module.scss';
+import classes from './modal.module.scss';
 
 const rootModal = document.querySelector('#modal-root');
 

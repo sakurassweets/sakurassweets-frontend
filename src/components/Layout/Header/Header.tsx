@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Logo } from '../../Common/Logo/Logo';
-import { NavLink } from 'react-router-dom';
-import { HeaderControl } from './HeaderControl/HeaderControl';
-import { AuthModal } from '../../Authorization/AuthorizationModal';
 import { LuLayoutGrid } from 'react-icons/lu';
-import { SearchForm } from './SearchForm/SearchForm';
-import classes from './Header.module.scss';
+import { NavLink } from 'react-router-dom';
+import { HeaderControl, SearchForm } from './index';
+import { Logo } from '../../Common/Logo/Logo';
+import { AuthModal } from '../../Authorization/AuthorizationModal';
+
+import classes from './header.module.scss';
 
 export const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
