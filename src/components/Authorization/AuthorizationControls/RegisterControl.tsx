@@ -1,7 +1,6 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import { LuSquare, LuChevronDownSquare } from 'react-icons/lu';
-
 import { AuthControlProps } from '../AuthorizationModalContent';
 import { validationRegister } from '../../../schemas/auth-validator';
 import { registerFormFieldsDefault } from '../../utils/auth';
