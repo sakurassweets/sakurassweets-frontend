@@ -3,9 +3,7 @@ import { toast } from 'react-toastify';
 import { useAppDispatch } from '../../redux/hook';
 import { loginThunk, registerThunk } from '../../redux/auth/operations';
 import { authFormValues } from '../../models/auth';
-
-import { LoginControl } from './authorizationControls/LoginControl';
-import { RegisterControl } from './authorizationControls/RegisterControl';
+import { LoginControl, RegisterControl } from './authorizationControls';
 
 import classes from './AuthorizationModal.module.scss';
 
