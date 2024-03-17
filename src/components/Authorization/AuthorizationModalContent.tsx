@@ -5,7 +5,7 @@ import { loginThunk, registerThunk } from '../../redux/auth/operations';
 import { authFormValues } from '../../models/auth';
 import { LoginControl, RegisterControl } from './index';
 
-import classes from './AuthorizationModal.module.scss';
+import classes from './authorizationModal.module.scss';
 
 interface AuthModaContentProps {
   title: string;

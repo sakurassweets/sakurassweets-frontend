@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Form, Formik } from 'formik';
-
 import { AuthControlProps } from '../AuthorizationModalContent';
 import { loginFormFieldsDefault } from '../../utils/auth';
 import { validationLogin } from '../../../schemas/auth-validator';
