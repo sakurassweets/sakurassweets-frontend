@@ -11,7 +11,22 @@ export interface ProductsState {
 
 const initialState: ProductsState = {
   products: [],
-  productDetails: {},
+  productDetails: {
+    id: 0,
+    product_url: '',
+    product_type: '',
+    price_currency: '',
+    images: [],
+    title: '',
+    price: '',
+    description: '',
+    quantity_in_stock: 0,
+    product_quantity: '',
+    discount: '',
+    rating: 0,
+    components: '',
+    price_currency_symbol: '',
+  },
   isLoading: false,
   error: '',
 };

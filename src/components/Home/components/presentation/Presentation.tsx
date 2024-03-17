@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import classes from './Presentation.module.scss';
-import { PresentationItem } from './PresentationItem/PresentationItem';
-import pic1 from '../../../assets/img/presentationPic1.jpg';
-import pic2 from '../../../assets/img/presentationPic2.jpg';
-import pic3 from '../../../assets/img/presentationPic3.jpg';
+import { PresentationItem } from './presentationItem/PresentationItem';
+import pic1 from '../../../../assets/img/presentationPic1.jpg';
+import pic2 from '../../../../assets/img/presentationPic2.jpg';
+import pic3 from '../../../../assets/img/presentationPic3.jpg';
 
 const TYPE = {
   BIG: 'big',

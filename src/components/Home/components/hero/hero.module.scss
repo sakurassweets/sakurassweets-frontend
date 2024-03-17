@@ -1,0 +1,56 @@
+.hero {
+  padding-top: 22.8rem;
+  padding-bottom: 21.2rem;
+  width: 100%;
+  background-image: url('../../../../assets/img/background.jpg');
+  background-image: image-set(
+    url('../../../../assets/img/background.webp') 1x,
+    url('../../../../assets/img/background@2x.webp') 2x
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &_content {
+    height: 100%;
+    margin: 0 auto;
+    @include flex($ai: flex-start);
+    flex-direction: column;
+  }
+
+  &_title {
+    margin-bottom: 0.6rem;
+    width: 62.5rem;
+    font-weight: 800;
+    font-size: 4.8rem;
+    line-height: 1.17;
+    text-transform: uppercase;
+  }
+
+  &_text {
+    width: 62.5rem;
+    margin-bottom: 2.4rem;
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
+
+  &_btn {
+    max-width: 30.4rem;
+    width: 100%;
+    padding: 1.2rem 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    border-radius: 0.8rem;
+    background-color: $dark_pink;
+
+    &:hover {
+      background-color: $accent_color_hover;
+    }
+
+    &:focus {
+      background-color: $dark_pink;
+    }
+  }
+}

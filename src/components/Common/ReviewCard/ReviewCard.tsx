@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import classes from './ReviewCard.module.scss';
 
 import { Review } from '../../../types/interfaces/Review';
-import { StarRating } from './StarRating/StarRating';
+import { StarRating } from './starRating/StarRating';
 
 interface ReviewCardProps {
   review: Review;

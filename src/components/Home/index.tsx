@@ -1,5 +1,5 @@
-import { Hero } from './Hero/Hero';
-import { AdvantagesList } from './AdvantagesList/AdvantagesList';
-import { Presentation } from './Presentation/Presentation';
+import { Hero } from './components/hero/Hero';
+import { AdvantagesList } from './components/advantagesList/AdvantagesList';
+import { Presentation } from './components/presentation/Presentation';
 
 export { Hero, AdvantagesList, Presentation };

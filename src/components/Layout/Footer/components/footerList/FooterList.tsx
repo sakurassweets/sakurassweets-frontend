@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import classes from './FooterList.module.scss';
-import { FooterListItem } from '../../definitions';
+import { FooterListItem } from '../../../definitions';
 
 interface FooterListProps {
   content: FooterListItem;

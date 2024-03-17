@@ -3,18 +3,16 @@ import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchProductByIdThunk } from '../../redux/products/operations';
 import { Product } from '../../types/interfaces/Product';
-import { Images } from './Images/Images';
 import { InStock } from '../Common/InStock/InStock';
 import { ButtonAddToCart } from '../Common/Buttons/AddToCart/ButtonAddToCart';
 import { FavoriteBtn } from '../Common/Buttons/Favorite/FavoriteBtn';
-import classes from './ProductByID.module.scss';
 import { Rating } from '../Common/Raiting/Rating';
 import { Discount } from '../Common/Discount/Discount';
-import { Counter } from './Counter/Counter';
-import { Description } from './Description/Description';
+import { Counter, Description, Images } from './index';
+import classes from './ProductByID.module.scss';
 
 interface ProductDetailsProps {
-  productDetails: Product;
+  productDetails?: Product;
 }
 
 export const ProductByID: React.FC<ProductDetailsProps> = () => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './SocialNetworks.module.scss';
 import classNames from 'classnames';
-import TelegramIcon from '../../../../assets/icons/telegram.svg?react';
+import TelegramIcon from '../../../../../assets/icons/telegram.svg?react';
 import { LuInstagram, LuFacebook } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
-import { FACEBOOK, INSTAGRAM, TELEGRAM } from '../../../../constants';
+import { FACEBOOK, INSTAGRAM, TELEGRAM } from '../../../../../constants';
 
 //Todo вставити коректні посилання
 export const SocialNetworks: React.FC = () => {

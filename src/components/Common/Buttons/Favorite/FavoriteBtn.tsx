@@ -4,7 +4,7 @@ import classes from './FavoriteBtn.module.scss';
 import classNames from 'classnames';
 
 interface FavoriteBtnProps {
-  isProductPage: boolean;
+  isProductPage?: boolean;
 }
 
 export const FavoriteBtn: React.FC<FavoriteBtnProps> = ({ isProductPage }) => {

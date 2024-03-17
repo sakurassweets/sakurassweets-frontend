@@ -4,7 +4,7 @@ import { fetchAllProductsThunk } from '../../redux/products/operations';
 import { cloneProducts } from '../../helpers';
 import { Review } from '../../types/interfaces/Review';
 import { Hero, AdvantagesList, Presentation } from './index';
-import SliderComponent from '../Common/Slider/Slider';
+import { SliderComponent } from '../Common';
 
 export const TYPE = {
   PRODUCT: 'product',

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import classes from './PresentationItem.module.scss';
 
-import { ShowBtn } from '../ShowBtn/ShowBtn';
+import { ShowBtn } from '../showBtn/ShowBtn';
 
 interface Props {
   header?: string;

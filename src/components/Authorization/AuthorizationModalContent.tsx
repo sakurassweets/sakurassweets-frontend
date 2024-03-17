@@ -4,8 +4,8 @@ import { useAppDispatch } from '../../redux/hook';
 import { loginThunk, registerThunk } from '../../redux/auth/operations';
 import { authFormValues } from '../../models/auth';
 
-import { LoginControl } from './AuthorizationControls/LoginControl';
-import { RegisterControl } from './AuthorizationControls/RegisterControl';
+import { LoginControl } from './authorizationControls/LoginControl';
+import { RegisterControl } from './authorizationControls/RegisterControl';
 
 import classes from './AuthorizationModal.module.scss';
 

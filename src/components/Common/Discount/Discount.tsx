@@ -5,7 +5,7 @@ import { calculateDiscountedPrice, hasDiscount } from './helpers';
 
 interface DiscountProps {
   product: Product;
-  isProductPage: boolean;
+  isProductPage?: boolean;
 }
 
 export const Discount: React.FC<DiscountProps> = ({ product, isProductPage }) => {

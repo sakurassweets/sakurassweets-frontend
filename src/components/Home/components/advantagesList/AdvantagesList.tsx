@@ -3,7 +3,7 @@ import { LuTruck, LuPhone, LuShoppingBag, LuCircleDollarSign } from 'react-icons
 import classNames from 'classnames';
 import classes from './AdvantagesList.module.scss';
 
-import { AdvantageItem } from './AdvantageItem/AdvantageItem';
+import { AdvantageItem } from './advantageItem/AdvantageItem';
 
 const advantages = [
   {
