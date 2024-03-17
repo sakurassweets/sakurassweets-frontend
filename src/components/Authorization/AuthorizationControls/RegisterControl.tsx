@@ -7,7 +7,7 @@ import { registerFormFieldsDefault } from '../../utils/auth';
 import { InputFormik } from '../../Common/Inputs/FormikInput';
 import { Button } from '../../Common/Buttons/Global/Button';
 import { PASS_MAX, INPUT_LENGTH } from '../../../constants/index';
-import classes from '../AuthorizationModal.module.scss';
+import classes from '../authorizationModal.module.scss';
 
 export const RegisterControl: React.FC<AuthControlProps> = ({ handleSubmit, ...props }) => {
   const [isChecked, setIsChecked] = useState(false);
