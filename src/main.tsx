@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { LuX } from 'react-icons/lu';
-import { CustomIcon } from './components/Common/Toast/ToastIcon';
+import { CustomIcon } from './components/Common';
 import { store } from './redux/store';
 import App from './components/App';
 
