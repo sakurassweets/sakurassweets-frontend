@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import classes from './StarRating.module.scss';
 import { StarImg } from './starImg/StarImg';
+
+import classes from './StarRating.module.scss';
 
 interface Props {
   rating: number;
