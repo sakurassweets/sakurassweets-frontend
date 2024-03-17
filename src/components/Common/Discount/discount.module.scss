@@ -1,0 +1,41 @@
+.card {
+  &__totalPrice_product {
+    text-align: right;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: line-through;
+    color: $gray;
+  }
+
+  &__discountPrice_product {
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $primary_text_color;
+  }
+}
+
+.totalPrice_home {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: line-through;
+  color: $accent_color_hover;
+}
+.discountPrice_home {
+  margin-top: 0.4rem;
+  margin-bottom: $m_m;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $primary_text_color;
+}
+.notDiscountPrice_home {
+  font-size: 2.4rem;
+  margin-top: 4.8rem;
+  margin-bottom: $m_m;
+}
