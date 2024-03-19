@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
-
+import { fetchAllProductsThunk } from '../../redux/products/operations';
 import { cloneProducts } from '../../helpers';
 import { Review } from '../../types/interfaces/Review';
 import { Hero, AdvantagesList, Presentation } from './index';
 import { SliderComponent } from '../Common';
-import { fetchAllProductsThunk } from '../../redux/products/operations';
 
 export const TYPE = {
   PRODUCT: 'product',

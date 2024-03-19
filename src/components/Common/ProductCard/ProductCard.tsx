@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { hasDiscount } from '../Discount/helpers';
 import defaultImage from '../../../assets/img/no-image.png';
 import { Product } from '../../../types/interfaces/Product';
 import { Rating } from '../Raiting/Rating';
@@ -8,7 +9,6 @@ import { ButtonAddToCart } from '../Buttons/AddToCart/ButtonAddToCart';
 import { Discount } from '../Discount/Discount';
 
 import classes from './productCard.module.scss';
-import { hasDiscount } from '../Discount/helpers';
 
 interface ProductCartProps {
   product: Product;
