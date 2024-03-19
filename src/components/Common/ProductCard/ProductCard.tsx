@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { hasDiscount } from '../Discount/helpers';
 import defaultImage from '../../../assets/img/no-image.png';
 import { Product } from '../../../types/interfaces/Product';
 import { Rating } from '../Raiting/Rating';
@@ -9,6 +10,9 @@ import { Discount } from '../Discount/Discount';
 
 import classes from './productCard.module.scss';
 
+
+
+
 interface ProductCartProps {
   product: Product;
 }
@@ -17,7 +21,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
   return (
     <li className={classes.card}>
       <Link to={`/product/${product.id}`} rel="prefetch">
-        {product.discount && (
+        {hasDiscount(product.discount) && (
           <div className={classes.card__sale}>
             <p>{product.discount.replace(/\s/g, '')} ЗНИЖКА</p>
           </div>

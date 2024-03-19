@@ -79,7 +79,7 @@ export const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBott
     ],
   };
 
-  const { isLoading, error, products } = useAppSelector((state) => state.products);
+  const { error, products } = useAppSelector((state) => state.products);
 
   return (
     <section>
@@ -93,7 +93,7 @@ export const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBott
             </Link>
           </div>
           <Slider {...settings}>
-            {isLoading || error || !products.length
+            {error || !products.length
               ? Array.from({ length: 4 }).map((_, index) => <SkeletonProductCard key={index} />)
               : items.map((item, index) =>
                   type === 'product' ? (
