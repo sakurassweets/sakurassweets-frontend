@@ -8,6 +8,7 @@ import { ButtonAddToCart } from '../Buttons/AddToCart/ButtonAddToCart';
 import { Discount } from '../Discount/Discount';
 
 import classes from './productCard.module.scss';
+import { hasDiscount } from '../Discount/helpers';
 
 interface ProductCartProps {
   product: Product;
@@ -17,7 +18,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
   return (
     <li className={classes.card}>
       <Link to={`/product/${product.id}`} rel="prefetch">
-        {product.discount && (
+        {hasDiscount(product.discount) && (
           <div className={classes.card__sale}>
             <p>{product.discount.replace(/\s/g, '')} ЗНИЖКА</p>
           </div>
