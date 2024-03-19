@@ -9,7 +9,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: ReactNode;
   closeIcon?: ReactNode;
   className?: string;
-  controlClassName?: string;
+  controlclassname?: string;
 }
 
 export const Input: React.FC<InputProps> = ({ id, className, label, error, icon, closeIcon, ...attrs }) => {

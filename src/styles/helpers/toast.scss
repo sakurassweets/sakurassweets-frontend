@@ -10,3 +10,10 @@ body .Toastify__toast-theme--dark {
 body .Toastify__progress-bar--success {
   border-bottom: 4px solid rgb(64, 176, 107);
 }
+body .Toastify__progress-bar--error {
+  border-bottom: 4px solid rgb(186, 30, 38);
+}
+body .Toastify--animate-icon {
+  width: 24px;
+  height: 24px;
+}
