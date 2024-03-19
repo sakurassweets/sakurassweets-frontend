@@ -2,7 +2,6 @@ import { LuCheck } from 'react-icons/lu';
 import { RiAlertFill } from 'react-icons/ri';
 import { TypeOptions } from 'react-toastify';
 import classes from './toast.module.scss';
-import classes from './toast.module.scss';
 
 export declare type ToastType = 'success' | 'error';
 
