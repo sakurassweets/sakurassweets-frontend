@@ -10,9 +10,6 @@ import { Discount } from '../Discount/Discount';
 
 import classes from './productCard.module.scss';
 
-
-
-
 interface ProductCartProps {
   product: Product;
 }

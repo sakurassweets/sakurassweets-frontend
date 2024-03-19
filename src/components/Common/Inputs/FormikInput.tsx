@@ -8,7 +8,7 @@ import classes from './input.module.scss';
 interface InputFormikProps {
   label: string;
   name: string;
-  controlClassName?: string;
+  controlclassname?: string;
   className?: string;
   type?: string;
   placeholder?: string;
