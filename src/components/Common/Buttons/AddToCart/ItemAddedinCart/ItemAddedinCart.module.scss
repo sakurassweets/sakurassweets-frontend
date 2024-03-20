@@ -1,0 +1,11 @@
+.modul__wrapper {
+  @include flex();
+  position: absolute;
+  top: 90px;
+  right: 10px;
+  gap: 16px;
+  padding: 16px 16px 16px;
+  background-color: $dark_blue;
+  border-radius: 8px;
+  border-bottom: solid $green;
+}
