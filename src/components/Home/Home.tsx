@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchAllProductsThunk } from '../../redux/products/operations';
-import { cloneProducts } from '../../helpers';
 import { Review } from '../../types/interfaces/Review';
 import { Hero, AdvantagesList, Presentation } from './index';
 import { SliderComponent } from '../Common';
@@ -36,7 +35,6 @@ function createCollectReviews(): Review[] {
 export const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const { products } = useAppSelector((state) => state.products);
-  const clonedProducts = cloneProducts(products, 3);
 
   useEffect(() => {
     dispatch(fetchAllProductsThunk());
@@ -47,40 +45,48 @@ export const Home: React.FC = () => {
       <Hero />
       <AdvantagesList />
 
-      <SliderComponent
-        name="Акції"
-        items={clonedProducts}
-        marginBottom={62}
-        type={TYPE.PRODUCT}
-        dots={true}
-        slides={4}
-      />
-
-      <SliderComponent
-        name="Хіт продажу"
-        items={clonedProducts}
-        marginBottom={98}
-        type={TYPE.PRODUCT}
-        dots={true}
-        slides={4}
-      />
+      <section>
+        <div className="container">
+          <SliderComponent name="Акції" items={products} marginBottom={62} type={TYPE.PRODUCT} dots={true} slides={4} />
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <SliderComponent
+            name="Хіт продажу"
+            items={products}
+            marginBottom={98}
+            type={TYPE.PRODUCT}
+            dots={true}
+            slides={4}
+          />
+        </div>
+      </section>
       <Presentation />
-      <SliderComponent
-        name="Рекомендуємо"
-        items={clonedProducts}
-        marginBottom={100}
-        type={TYPE.PRODUCT}
-        dots={true}
-        slides={4}
-      />
-      <SliderComponent
-        name="Відгуки"
-        items={createCollectReviews()}
-        marginBottom={148}
-        type={TYPE.REVIEW}
-        dots={true}
-        slides={3}
-      />
+      <section>
+        <div className="container">
+          <SliderComponent
+            name="Рекомендуємо"
+            items={products}
+            marginBottom={100}
+            type={TYPE.PRODUCT}
+            dots={true}
+            slides={4}
+          />
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <SliderComponent
+            name="Відгуки"
+            items={createCollectReviews()}
+            marginBottom={148}
+            type={TYPE.REVIEW}
+            dots={true}
+            slides={3}
+          />
+        </div>
+      </section>
     </>
   );
 };

@@ -65,7 +65,7 @@
   margin-bottom: 1.6rem;
   font-size: 1.6rem;
   line-height: 1.5;
-  border-bottom: solid 0.1rem $light_pink;
+  border-bottom: solid 0.1rem rgba(255, 234, 236, 0.4);
   color: $primary_text_color;
 
   &__totalPrice {
@@ -90,4 +90,12 @@
     font-size: 1.2rem;
     line-height: 1.5;
   }
+}
+
+.tabs_wrapper {
+  @include flex($jc: flex-start);
+  gap: 4rem;
+  margin-bottom: 5.6rem;
+  width: 73.4rem;
+  border-bottom: solid 0.1rem rgba(255, 234, 236, 0.4);
 }

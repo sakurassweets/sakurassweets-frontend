@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
-import { fetchProductByIdThunk } from '../../redux/products/operations';
+import { fetchAllProductsThunk, fetchProductByIdThunk } from '../../redux/products/operations';
 import { Product } from '../../types/interfaces/Product';
 import { InStock } from '../Common/InStock/InStock';
 import { ButtonAddToCart } from '../Common/Buttons/AddToCart/ButtonAddToCart';
@@ -10,21 +10,26 @@ import { Rating } from '../Common/Raiting/Rating';
 import { Discount } from '../Common/Discount/Discount';
 import { Counter, Description, Images } from './index';
 import classes from './productByID.module.scss';
+import { SliderComponent } from '../Common';
+import { TYPE } from '../Home/Home';
+import { Tab } from './components/tabs/Tab';
+import { Reviews } from './components/reviews/Reviews';
 
 interface ProductDetailsProps {
   productDetails?: Product;
 }
 
-export const ProductByID: React.FC<ProductDetailsProps> = () => {
+export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
   const dispatch = useAppDispatch();
+  const [activeTab, setActiveTab] = useState('description');
 
   const { id } = useParams();
   const productDetails = useAppSelector((state) => state.products.productDetails);
-
-  console.log('productDetails', productDetails);
+  const { products } = useAppSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(fetchProductByIdThunk(id as string));
+    dispatch(fetchAllProductsThunk());
   }, [dispatch, id]);
 
   return (
@@ -62,8 +67,22 @@ export const ProductByID: React.FC<ProductDetailsProps> = () => {
             </div>
           </div>
         </div>
-        <Description product={productDetails} />
+        <div className={classes.tabs_wrapper}>
+          <Tab onClick={() => setActiveTab('description')} isActive={activeTab === 'description'} name="Опис" />
+          <Tab onClick={() => setActiveTab('reviews')} isActive={activeTab === 'reviews'} name="Відгуки" />
+        </div>
+        {activeTab === 'description' && <Description product={productDetails} />}
+        {activeTab === 'reviews' && <Reviews />}
+
+        <SliderComponent
+          name="Рекомендуємо"
+          items={products}
+          marginBottom={100}
+          type={TYPE.PRODUCT}
+          dots={true}
+          slides={4}
+        />
       </div>
     </section>
   );
-};
+});
