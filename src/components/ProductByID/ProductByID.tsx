@@ -2,18 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchAllProductsThunk, fetchProductByIdThunk } from '../../redux/products/operations';
+import { TYPE } from '../Home/Home';
 import { Product } from '../../types/interfaces/Product';
 import { InStock } from '../Common/InStock/InStock';
 import { ButtonAddToCart } from '../Common/Buttons/AddToCart/ButtonAddToCart';
 import { FavoriteBtn } from '../Common/Buttons/Favorite/FavoriteBtn';
 import { Rating } from '../Common/Raiting/Rating';
 import { Discount } from '../Common/Discount/Discount';
-import { Counter, Description, Images } from './index';
-import classes from './productByID.module.scss';
+import { Counter, Description, Images, Reviews, Tab } from './index';
 import { SliderComponent } from '../Common';
-import { TYPE } from '../Home/Home';
-import { Tab } from './components/tabs/Tab';
-import { Reviews } from './components/reviews/Reviews';
+
+import classes from './productByID.module.scss';
 
 interface ProductDetailsProps {
   productDetails?: Product;

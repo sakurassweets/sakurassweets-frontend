@@ -6,9 +6,7 @@
     max-width: 51.2rem;
     min-height: 8.4rem;
     margin-bottom: 1.2rem;
-    font-size: 3.2rem;
-    font-weight: 600;
-    line-height: 1.3;
+    @include title_global;
   }
 }
 .content {

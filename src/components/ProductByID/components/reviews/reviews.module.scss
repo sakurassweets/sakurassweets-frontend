@@ -1,0 +1,93 @@
+.reviews {
+  max-width: 73.7rem;
+  margin-bottom: 12rem;
+
+  &__item_wrapper {
+    @include flex();
+    gap: 1.2rem;
+    margin-bottom: 2.4rem;
+    padding: 2.4rem;
+    max-width: 73.7rem;
+    border-radius: 0.8rem;
+    background-color: $secondary_background_color;
+    box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.08);
+  }
+  &__item_img {
+    width: 7.7rem;
+    height: 7.7rem;
+    border-radius: 0.8rem;
+    object-fit: cover;
+  }
+  &__item_title {
+    margin-bottom: 0.4rem;
+    @include subtitle;
+  }
+  &__item_text {
+    width: 100%;
+    max-width: 60rem;
+    @include text;
+  }
+
+  &__title_wrapper {
+    @include flex($jc: space-between);
+    margin-bottom: 3.2rem;
+  }
+  &__title {
+    @include flex($ai: stretch);
+    gap: 16px;
+    @include title_global;
+
+    span {
+      padding: 0.9rem 0;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+
+  &__btn {
+    position: relative;
+
+    font-size: 1.6rem;
+    line-height: 1.3;
+    color: $secondary_text_color;
+    cursor: pointer;
+    @include transition_all;
+
+    &::after {
+      position: absolute;
+      content: ' ';
+      display: block;
+      width: 100%;
+      height: 0.1rem;
+      background-color: $secondary_text_color;
+      transition: $transition;
+    }
+
+    &:hover,
+    &:focus {
+      color: $accent_color;
+    }
+
+    &:hover::after {
+      background-color: $accent_color;
+    }
+  }
+}
+
+.fullStar,
+.halfStar {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: $accent_color_stars;
+  fill: $accent_color_stars;
+  margin-right: 0.2rem;
+}
+
+.emptyStar {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: $accent_color_stars;
+  fill: transparent;
+}

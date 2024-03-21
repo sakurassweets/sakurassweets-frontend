@@ -1,4 +1,4 @@
-import { Product } from '../../../types/interfaces/Product';
+import { Product } from '../../../../types/interfaces/Product';
 
 interface BoxSizeProps {
   productDetails: Product;
