@@ -6,9 +6,7 @@
     max-width: 51.2rem;
     min-height: 8.4rem;
     margin-bottom: 1.2rem;
-    font-size: 3.2rem;
-    font-weight: 600;
-    line-height: 1.3;
+    @include title_global;
   }
 }
 .content {
@@ -65,7 +63,7 @@
   margin-bottom: 1.6rem;
   font-size: 1.6rem;
   line-height: 1.5;
-  border-bottom: solid 0.1rem $light_pink;
+  border-bottom: solid 0.1rem rgba(255, 234, 236, 0.4);
   color: $primary_text_color;
 
   &__totalPrice {
@@ -90,4 +88,12 @@
     font-size: 1.2rem;
     line-height: 1.5;
   }
+}
+
+.tabs_wrapper {
+  @include flex($jc: flex-start);
+  gap: 4rem;
+  margin-bottom: 5.6rem;
+  width: 73.4rem;
+  border-bottom: solid 0.1rem rgba(255, 234, 236, 0.4);
 }

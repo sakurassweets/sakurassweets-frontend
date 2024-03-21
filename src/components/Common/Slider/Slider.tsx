@@ -82,29 +82,25 @@ export const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBott
   const { error, products } = useAppSelector((state) => state.products);
 
   return (
-    <section>
-      <div className="container">
-        <div className={classes.slider} style={{ marginBottom: `${marginBottom}px` }}>
-          <div className={classes.slider__title_wrapper}>
-            <p className={classes.slider__title}>{name}</p>
-            {/* NavLink can be replaced with your routing component */}
-            <Link to={ROUTERS.CATALOG} className={classes.slider__link}>
-              Бачити все
-            </Link>
-          </div>
-          <Slider {...settings}>
-            {error || !products.length
-              ? Array.from({ length: 4 }).map((_, index) => <SkeletonProductCard key={index} />)
-              : items.map((item, index) =>
-                  type === 'product' ? (
-                    <ProductCard product={item as Product} key={index} />
-                  ) : (
-                    <ReviewCard review={item as Review} key={index} />
-                  )
-                )}
-          </Slider>
-        </div>
+    <div className={classes.slider} style={{ marginBottom: `${marginBottom}px` }}>
+      <div className={classes.slider__title_wrapper}>
+        <p className={classes.slider__title}>{name}</p>
+        {/* NavLink can be replaced with your routing component */}
+        <Link to={ROUTERS.CATALOG} className={classes.slider__link}>
+          Бачити все
+        </Link>
       </div>
-    </section>
+      <Slider {...settings}>
+        {error || !products.length
+          ? Array.from({ length: 4 }).map((_, index) => <SkeletonProductCard key={index} />)
+          : items.map((item, index) =>
+              type === 'product' ? (
+                <ProductCard product={item as Product} key={index} />
+              ) : (
+                <ReviewCard review={item as Review} key={index} />
+              )
+            )}
+      </Slider>
+    </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '../../../types/interfaces/Product';
+import { Product } from '../../../../types/interfaces/Product';
 import classes from './description.module.scss';
 
 interface DescriptionProps {

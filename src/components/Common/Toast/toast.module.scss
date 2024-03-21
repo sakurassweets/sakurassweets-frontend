@@ -19,8 +19,6 @@
   }
 
   &__icon--error {
-    padding: 0;
-    background: transparent;
-    fill: $red;
+    background: $outOfStock;
   }
 }

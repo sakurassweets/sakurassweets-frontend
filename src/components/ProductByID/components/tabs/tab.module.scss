@@ -1,0 +1,19 @@
+.tabs {
+  border: none;
+  background-color: transparent;
+
+  &__isActive {
+    padding: 0 1.6rem;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: 700;
+    color: $accent_color;
+    border-bottom: solid 0.4rem $accent_color;
+  }
+  &__secondary {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $secondary_text_color;
+  }
+}
