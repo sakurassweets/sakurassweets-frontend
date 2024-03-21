@@ -1,5 +1,7 @@
-import { LuCheck, LuX } from 'react-icons/lu';
+import { LuCheck } from 'react-icons/lu';
+import { RiAlertFill } from 'react-icons/ri';
 import { TypeOptions } from 'react-toastify';
+
 import classes from './toast.module.scss';
 
 export declare type ToastType = 'success' | 'error';
@@ -15,7 +17,11 @@ export const CustomIcon = (props: CustomIconProps) => {
     case 'success':
       return <LuCheck className={iconClassName} />;
     case 'error':
-      return <LuX className={iconClassName} />;
+      return (
+        <>
+          <RiAlertFill className={iconClassName} />
+        </>
+      );
 
     default:
       return undefined;

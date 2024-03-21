@@ -1,0 +1,34 @@
+.counter {
+  @include flex($jc: space-between);
+
+  max-width: 19.3rem;
+  width: 100%;
+
+  border-radius: 8px;
+  border: 1px solid $pink;
+
+  button {
+    @include flex();
+    padding: 1.2rem;
+    cursor: pointer;
+    @include transition_all;
+  }
+  svg:hover {
+    @include svg;
+  }
+
+  &__icon {
+    color: $primary_text_color;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  span {
+    width: 19.3rem;
+    padding: 1.2rem 0;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-align: center;
+    border-right: 1px solid $pink;
+    border-left: 1px solid $pink;
+  }
+}
