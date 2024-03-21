@@ -1,5 +1,6 @@
-import classes from './Reviews.module.scss';
 import { ReviewItem, Title } from './index';
+
+import classes from './reviews.module.scss';
 
 interface ReviewsProps {}
 export const Reviews: React.FC<ReviewsProps> = () => {
