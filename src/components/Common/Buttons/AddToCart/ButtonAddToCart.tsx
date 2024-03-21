@@ -1,6 +1,6 @@
 import { FiShoppingCart } from 'react-icons/fi';
-import { ItemAddedinCart } from './ItemAddedinCart/ItemAddedinCart';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import classes from './buttonAddToCart.module.scss';
 
@@ -19,14 +19,12 @@ export const ButtonAddToCart = () => {
     return () => clearTimeout(timer);
   }, [showPopUp]);
 
-  let popup = null;
   if (showPopUp) {
-    popup = <ItemAddedinCart />;
+    toast.success(`Товар успішно доданий`);
   }
 
   return (
     <>
-      {popup}
       <button className={classes.button} onClick={onAddToCart}>
         <FiShoppingCart className={classes.button__icon} />
         Додати до кошика
