@@ -11,7 +11,6 @@ interface HeaderControlProps {
 export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
   const navigate = useNavigate();
   const { isLoggedIn } = useAppSelector((state) => state.auth);
-  console.log('isLoggedIn', isLoggedIn);
 
   const buttons = [
     { icon: <LuHeart />, onClick: () => navigate(ROUTERS.FAVORITES), id: 'heart-id' },
