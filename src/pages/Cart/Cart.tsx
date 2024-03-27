@@ -1,7 +1,9 @@
+import { InProgress } from '../../components/Common/InProgress/InProgress';
+
 const Cart = () => {
   return (
     <>
-      <h1>Cart</h1>
+      <InProgress />
     </>
   );
 };

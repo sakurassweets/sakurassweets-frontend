@@ -1,7 +1,9 @@
+import { InProgress } from '../../components/Common/InProgress/InProgress';
+
 const AboutUs = () => {
   return (
     <>
-      <h1>About Us</h1>
+      <InProgress />
     </>
   );
 };
