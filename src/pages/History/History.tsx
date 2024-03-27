@@ -1,7 +1,7 @@
 import { InProgress } from '../../components/Common/InProgress/InProgress';
 
-const UserAccount = () => {
+const History = () => {
   return <InProgress />;
 };
 
-export default UserAccount;
+export default History;
