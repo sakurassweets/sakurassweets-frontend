@@ -1,15 +1,22 @@
+import { useNavigate } from 'react-router-dom';
 import { LuUser, LuShoppingCart, LuHeart, LuChevronDown } from 'react-icons/lu';
+import { ROUTERS } from '../../../../../constants/routers';
 import classes from './headerControl.module.scss';
+import { useAppSelector } from '../../../../../redux/hook';
 
 interface HeaderControlProps {
   openModal: () => void;
 }
 
 export const HeaderControl: React.FC<HeaderControlProps> = ({ openModal }) => {
+  const navigate = useNavigate();
+  const { isLoggedIn } = useAppSelector((state) => state.auth);
+  console.log('isLoggedIn', isLoggedIn);
+
   const buttons = [
-    { icon: <LuHeart />, onClick: () => console.log('Favorite clicked'), id: 'heart-id' },
-    { icon: <LuShoppingCart />, onClick: () => console.log('Cart clicked'), id: 'shopping-id' },
-    { icon: <LuUser />, onClick: openModal, id: 'user-id' },
+    { icon: <LuHeart />, onClick: () => navigate(ROUTERS.FAVORITES), id: 'heart-id' },
+    { icon: <LuShoppingCart />, onClick: () => navigate(ROUTERS.CART), id: 'shopping-id' },
+    { icon: <LuUser />, onClick: isLoggedIn ? () => navigate(ROUTERS.ACCOUNT) : openModal, id: 'user-id' },
   ];
 
   return (
