@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../Buttons';
-import classes from './InProgress.module.scss';
+import classes from './inProgress.module.scss';
 
 export const InProgress = () => {
   const navigate = useNavigate();
