@@ -41,8 +41,8 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
         <h4 className={classes.card__title}>{product.title}</h4>
         <p className={classes.card__description}>{product.description}</p>
         <Discount product={product} />
-        <ButtonAddToCart />
       </Link>
+      <ButtonAddToCart />
     </li>
   );
 };
