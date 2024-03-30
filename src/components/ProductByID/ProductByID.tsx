@@ -4,15 +4,11 @@ import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchAllProductsThunk, fetchProductByIdThunk } from '../../redux/products/operations';
 import { TYPE } from '../Home/Home';
 import { Product } from '../../types/interfaces/Product';
-import { InStock } from '../Common/InStock/InStock';
-import { ButtonAddToCart } from '../Common/Buttons/AddToCart/ButtonAddToCart';
-import { FavoriteBtn } from '../Common/Buttons/Favorite/FavoriteBtn';
-import { Rating } from '../Common/Raiting/Rating';
-import { Discount } from '../Common/Discount/Discount';
+import { Discount, InStock, Rating, SliderComponent } from '../Common/index';
 import { Counter, Description, Images, Reviews, Tab } from './index';
-import { SliderComponent } from '../Common';
 
 import classes from './productByID.module.scss';
+import { ButtonAddToCart, FavoriteBtn } from '../Common/Buttons';
 
 interface ProductDetailsProps {
   productDetails?: Product;
@@ -58,7 +54,7 @@ export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
             </div>
             <div className={classes.counter_thumb}>
               <Counter />
-              <ButtonAddToCart />
+              <ButtonAddToCart product={productDetails} />
             </div>
             <div className={classes.favorite}>
               <FavoriteBtn isProductPage={true} />

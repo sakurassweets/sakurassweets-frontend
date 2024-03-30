@@ -2,6 +2,7 @@ import { LuHeart } from 'react-icons/lu';
 import classNames from 'classnames';
 
 import classes from './favoriteBtn.module.scss';
+import { toast } from 'react-toastify';
 
 interface FavoriteBtnProps {
   isProductPage?: boolean;
@@ -23,7 +24,7 @@ export const FavoriteBtn: React.FC<FavoriteBtnProps> = ({ isProductPage }) => {
         {product.favorite ? <LuHeart className={classes.favorite__icon} /> : <LuHeart className={classes.favorite__favIcon} />}
       </button> */}
       <button className={buttonClass}>
-        <LuHeart className={iconClass} />
+        <LuHeart className={iconClass} onClick={() => toast.success('Товар успішно доданий')} />
       </button>
     </>
   );

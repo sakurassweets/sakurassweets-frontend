@@ -17,22 +17,21 @@ interface ProductCartProps {
 export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
   return (
     <li className={classes.card}>
-      <Link to={`/product/${product.id}`} rel="prefetch">
-        {hasDiscount(product.discount) && (
-          <div className={classes.card__sale}>
-            <p>{product.discount.replace(/\s/g, '')} ЗНИЖКА</p>
-          </div>
-        )}
-
-        <div className={classes.card__img_wrapper}>
-          {product.images.length > 0 ? (
-            <img src={product.images[0].image} alt={product.title} width={254} height={180} />
-          ) : (
-            <img src={defaultImage} alt="default Image" width={254} height={180} />
-          )}
-          <FavoriteBtn />
+      {hasDiscount(product.discount) && (
+        <div className={classes.card__sale}>
+          <p>{product.discount.replace(/\s/g, '')} ЗНИЖКА</p>
         </div>
+      )}
 
+      <div className={classes.card__img_wrapper}>
+        {product.images.length > 0 ? (
+          <img src={product.images[0].image} alt={product.title} width={254} height={180} />
+        ) : (
+          <img src={defaultImage} alt="default Image" width={254} height={180} />
+        )}
+        <FavoriteBtn />
+      </div>
+      <Link to={`/product/${product.id}`} rel="prefetch">
         <div className={classes.rating_instock_wrapper}>
           <Rating product={product} />
           <InStock product={product} />
@@ -42,7 +41,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
         <p className={classes.card__description}>{product.description}</p>
         <Discount product={product} />
       </Link>
-      <ButtonAddToCart />
+      <ButtonAddToCart product={product} />
     </li>
   );
 };
