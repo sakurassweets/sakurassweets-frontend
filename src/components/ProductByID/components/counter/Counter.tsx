@@ -18,12 +18,17 @@ export const Counter = () => {
   return (
     <>
       <div className={classes.counter}>
-        <button type="button">
-          <LuMinus className={classes.counter__icon} onClick={decrementCounter} />
+        <button
+          type="button"
+          className={`${classes.counter__minus} ${count === 1 ? classes.counter__minus_disabled : ''}`}
+          onClick={decrementCounter}
+          disabled={count === 1}
+        >
+          <LuMinus className={`${classes.counter__icon} ${count === 1 ? classes.counter__icon_disabled : ''}`} />
         </button>
         <span id="value">{count}</span>
-        <button type="button">
-          <LuPlus className={classes.counter__icon} onClick={incrementCounter} />
+        <button type="button" className={classes.counter__plus} onClick={incrementCounter}>
+          <LuPlus className={classes.counter__icon} />
         </button>
       </div>
     </>

@@ -12,6 +12,12 @@
     color: $accent_color_hover;
     cursor: pointer;
     @include transition_all;
+    &:hover {
+      color: $accent_color;
+    }
+    &:active {
+      color: $accent_color_hover;
+    }
 
     svg {
       @include svg;

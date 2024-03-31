@@ -16,18 +16,15 @@
     background-color: $primary_background_color;
   }
 
-  svg:hover {
-    @include svg;
-  }
-
   &__icon {
     color: $primary_text_color;
     width: 2rem;
     height: 2rem;
   }
 
-  &__favIcon {
+  &__addedIcon {
     fill: $secondary_text_color;
+    stroke: $secondary_text_color;
     width: 2rem;
     height: 2rem;
   }
@@ -47,17 +44,13 @@
     background-color: $primary_background_color;
   }
 
-  svg:hover {
-    @include svg;
-  }
-
   &__icon {
     color: $primary_text_color;
     width: 2.4rem;
     height: 2.4rem;
   }
 
-  &__favIcon {
+  &__addedIcon {
     fill: $secondary_text_color;
     width: 2rem;
     height: 2rem;

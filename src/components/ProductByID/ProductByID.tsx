@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchAllProductsThunk, fetchProductByIdThunk } from '../../redux/products/operations';
@@ -17,7 +17,7 @@ interface ProductDetailsProps {
 export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
   const dispatch = useAppDispatch();
   const [activeTab, setActiveTab] = useState('description');
-
+  const reviewRef = useRef<HTMLDivElement>(null);
   const { id } = useParams();
   const productDetails = useAppSelector((state) => state.products.productDetails);
   const { products } = useAppSelector((state) => state.products);
@@ -26,6 +26,10 @@ export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
     dispatch(fetchProductByIdThunk(id as string));
     dispatch(fetchAllProductsThunk());
   }, [dispatch, id]);
+
+  const scrollToContent = () => {
+    reviewRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section className="section">
@@ -40,7 +44,9 @@ export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
             </div>
             <div className={classes.raiting_thumb}>
               <Rating product={productDetails} />
-              <p className={classes.raiting_thumb__text}>4 відгуки</p>
+              <p className={classes.raiting_thumb__text} onClick={scrollToContent}>
+                17 відгуків
+              </p>
             </div>
 
             <div className={classes.balance_thumb}>
@@ -57,17 +63,17 @@ export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
               <ButtonAddToCart product={productDetails} />
             </div>
             <div className={classes.favorite}>
-              <FavoriteBtn isProductPage={true} />
+              <FavoriteBtn isProductPage={true} id={id || ''} />
               <p className={classes.favorite__text}>Додати до обраного</p>
             </div>
           </div>
         </div>
-        <div className={classes.tabs_wrapper}>
+        <div className={classes.tabs_wrapper} id="reviews" ref={reviewRef}>
           <Tab onClick={() => setActiveTab('description')} isActive={activeTab === 'description'} name="Опис" />
           <Tab onClick={() => setActiveTab('reviews')} isActive={activeTab === 'reviews'} name="Відгуки" />
         </div>
         {activeTab === 'description' && <Description product={productDetails} />}
-        {activeTab === 'reviews' && <Reviews />}
+        {activeTab === 'reviews' && <Reviews id="reviews" ref={reviewRef} />}
 
         <SliderComponent
           name="Рекомендуємо"

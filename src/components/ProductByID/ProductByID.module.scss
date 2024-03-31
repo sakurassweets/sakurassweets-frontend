@@ -37,6 +37,7 @@
     font-size: 1.2rem;
     line-height: 1.5;
     color: $gray;
+    cursor: pointer;
     &::after {
       position: absolute;
       content: ' ';
