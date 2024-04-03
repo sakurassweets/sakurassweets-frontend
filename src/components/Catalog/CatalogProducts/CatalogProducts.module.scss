@@ -1,0 +1,50 @@
+.pagination {
+  list-style: none;
+  margin-top: 3.2rem;
+  @include flex();
+  justify-content: right;
+  align-items: center;
+  margin-top: 0.2rem;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #ef7fa5;
+  border-radius: 0.8rem;
+}
+
+.pageitem {
+  min-height: 4.8rem;
+  min-width: 4.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+.catalog__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  justify-content: right;
+  .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+  }
+  .select__wrapper {
+    width: 30.2rem;
+    align-self: flex-end;
+    z-index: 1000;
+    color: $dark-blue;
+    background-color: $dark-blue !important;
+    body .css-t3ipsp-control {
+      border: 0.2rem solid #ef7fa5 !important;
+      color: green !important;
+      background-color: red !important;
+    }
+    &--menu-is-open {
+      border-color: #ef7fa5 !important;
+    }
+  }
+}

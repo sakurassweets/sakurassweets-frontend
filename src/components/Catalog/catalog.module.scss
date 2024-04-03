@@ -1,3 +1,7 @@
 .wrapper {
-  padding: 120px 75px;
+  @include flex($jc: space-between);
+  padding: 12rem 7.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
 }
