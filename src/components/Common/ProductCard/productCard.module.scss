@@ -18,8 +18,11 @@
   &__img_wrapper {
     @include flex;
     position: relative;
+    background-color: $white;
+    border-radius: 0.4rem;
     img {
       border-radius: 0.4rem;
+      object-fit: scale-down;
     }
   }
   &__title {
