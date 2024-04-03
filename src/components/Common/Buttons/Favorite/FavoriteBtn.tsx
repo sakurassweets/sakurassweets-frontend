@@ -42,10 +42,13 @@ export const FavoriteBtn: React.FC<FavoriteBtnProps> = ({ isProductPage, id }) =
   });
 
   return (
-    <>
+    <div className={classes.wrapper}>
       <button className={buttonClass} onClick={toggleFavourite}>
         {isFavourite ? <LuHeart className={classes.favorite__addedIcon} /> : <LuHeart className={iconClass} />}
       </button>
-    </>
+      {isProductPage && (
+        <p className={classes.wrapper__text}>{!isFavourite ? 'Додати до обраного' : 'Прибрати з обраного'}</p>
+      )}
+    </div>
   );
 };

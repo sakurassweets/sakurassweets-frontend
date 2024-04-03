@@ -1,3 +1,11 @@
+.wrapper {
+  @include flex($jc: flex-start);
+  gap: 1.2rem;
+  &__text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}
 .favorite {
   @include flex;
   position: absolute;

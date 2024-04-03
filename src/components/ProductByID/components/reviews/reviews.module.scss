@@ -73,6 +73,9 @@
     &:hover::after {
       background-color: $accent_color;
     }
+    &:active::after {
+      background-color: $accent_color;
+    }
   }
 }
 
