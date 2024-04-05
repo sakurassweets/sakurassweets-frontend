@@ -1,5 +1,4 @@
 .description {
-  margin-bottom: 12rem;
   max-width: 73.4rem;
   font-size: 1.6rem;
   line-height: 1.5;
@@ -22,6 +21,9 @@
 
   &__text {
     font-weight: 400;
+    border-bottom: none;
+  }
+  &__ingredients {
     border-bottom: none;
   }
 
