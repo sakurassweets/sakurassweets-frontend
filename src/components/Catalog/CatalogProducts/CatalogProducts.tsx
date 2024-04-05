@@ -6,13 +6,14 @@ import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { fetchAllProductsThunk } from '../../../redux/products/operations';
 import { Items } from './Items/Items';
 import Select from 'react-select';
+import customStyles from '../helpers/helper';
 
 export const PaginatedItems = ({ itemsPerPage }) => {
   const options: [{ label: string; value: string }] = [
     { label: 'Спочатку дорожче', value: 'price' },
     { label: 'За популярністю', value: 'popular' },
     { label: 'За назвою', value: 'byname' },
-    { label: 'Спочатку новинки', value: 'new' },
+    { label: 'Спочатку знижки ', value: 'discount' },
   ];
 
   const [currentItems, setCurrentItems] = useState([]);
@@ -28,14 +29,35 @@ export const PaginatedItems = ({ itemsPerPage }) => {
 
   const { products } = useAppSelector((state) => state.products);
 
-  const multProducts = Array.from({ length: 9 }, () => products).flat();
-
   useEffect(() => {
-    const endOffset = Math.min(itemOffset + itemsPerPage, multProducts.length);
-    setCurrentItems(multProducts.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(multProducts.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, products]);
+    const filteredProducts = applyFilter(products);
+    const endOffset = Math.min(itemOffset + itemsPerPage, filteredProducts.length);
+    setCurrentItems(filteredProducts.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(filteredProducts.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, products, selectedOption]);
 
+  const applyFilter = (products) => {
+    if (!selectedOption) return products;
+
+    switch (selectedOption.value) {
+      case 'price':
+        return products.slice().sort((b, a) => a.price - b.price);
+      case 'popular':
+        return products.slice().sort((b, a) => a.rating - b.rating);
+      case 'byname':
+        return products.slice().sort((a, b) => {
+          const firstLetterA = a.title.charAt(0).toLowerCase();
+          const firstLetterB = b.title.charAt(0).toLowerCase();
+          if (firstLetterA < firstLetterB) return -1;
+          if (firstLetterA > firstLetterB) return 1;
+          return 0;
+        });
+      case 'discount':
+        return products.slice().sort((b, a) => parseInt(a.discount.split('%')) - parseInt(b.discount.split('%')));
+      default:
+        return products;
+    }
+  };
   const handlePageClick = (event: { selected: number }) => {
     const newOffset = event.selected * itemsPerPage;
     setItemOffset(newOffset);
@@ -43,13 +65,7 @@ export const PaginatedItems = ({ itemsPerPage }) => {
 
   return (
     <div className={clases.catalog__wrapper}>
-      <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-        className={clases.select__wrapper}
-        classNamePrefix="custom_select"
-      />
+      <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} styles={customStyles} />
       <Items currentItems={currentItems} />
       <ReactPaginate
         nextLabel={<LuChevronRight />}

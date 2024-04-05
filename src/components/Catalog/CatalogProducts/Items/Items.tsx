@@ -8,7 +8,7 @@ export const Items = ({ currentItems }) => {
   return (
     <div className={clases.items}>
       {!currentItems.length
-        ? Array.from({ length: 4 }).map((_, index) => <SkeletonProductCard key={index} />)
+        ? Array.from({ length: 12 }).map((_, index) => <SkeletonProductCard key={index} />)
         : currentItems.map((item: Product, index: Key | null | undefined) => (
             <div key={index}>
               <ProductCard product={item} />

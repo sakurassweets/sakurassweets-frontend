@@ -9,7 +9,7 @@ export const Catalog: React.FC = () => {
   return (
     <div className={styled.wrapper}>
       <Filter />
-      <PaginatedItems itemsPerPage={12} />
+      <PaginatedItems itemsPerPage={6} />
     </div>
   );
 };
