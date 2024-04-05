@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from '../../../../types/interfaces/Product';
+import defaultImage from '../../../../assets/img/no-image.png';
 import classes from './images.module.scss';
 
 interface ImagesProps {
@@ -9,8 +10,10 @@ interface ImagesProps {
 export const Images: React.FC<ImagesProps> = ({ images = [] }) => {
   return (
     <div className={classes.wrapper}>
-      {images.length > 0 && (
+      {images.length > 0 ? (
         <img className={classes.main_img} src={images[0].image} alt={'Product image'} width={734} height={547} />
+      ) : (
+        <img src={defaultImage} alt="default Image" width={734} height={547} />
       )}
 
       <ul className={classes.secondary_wrapper}>
