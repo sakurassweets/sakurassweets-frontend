@@ -1,7 +1,7 @@
 import { InProgress } from '../../components/Common/InProgress/InProgress';
 
-const UserAccount = () => {
+const Delivery = () => {
   return <InProgress />;
 };
 
-export default UserAccount;
+export default Delivery;

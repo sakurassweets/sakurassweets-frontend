@@ -1,7 +1,9 @@
+import { InProgress } from '../../components/Common/InProgress/InProgress';
+
 const Favorites = () => {
   return (
     <>
-      <h1>Favorites</h1>
+      <InProgress />
     </>
   );
 };

@@ -1,4 +1,5 @@
 .thumd {
+  position: relative;
   @include flex($ai: flex-start, $jc: flex-start);
   gap: 2.7rem;
 
@@ -9,7 +10,12 @@
     @include title_global;
   }
 }
+// Styles for fixing the slider
 .content {
+  border: solid 5px greenyellow;
+  position: fixed;
+  right: 7.9rem;
+  top: auto;
   max-width: 51.2rem;
   width: 100%;
 
@@ -25,6 +31,25 @@
     }
   }
 }
+.content_absolute {
+  border: solid 5px yellow;
+  position: absolute;
+  bottom: auto;
+  right: 0;
+  max-width: 51.2rem;
+  width: 100%;
+}
+
+.test {
+  position: relative;
+  border: solid 5px red;
+}
+
+.fixedSlider {
+  border: solid 5px blue;
+}
+
+// Styles for fixing the slider
 
 .raiting_thumb {
   @include flex($jc: flex-start);
@@ -35,6 +60,7 @@
     font-size: 1.2rem;
     line-height: 1.5;
     color: $gray;
+    cursor: pointer;
     &::after {
       position: absolute;
       content: ' ';
@@ -96,4 +122,10 @@
   margin-bottom: 5.6rem;
   width: 73.4rem;
   border-bottom: solid 0.1rem rgba(255, 234, 236, 0.4);
+}
+
+.box {
+  width: 100%;
+  // height: 400px;
+  background-color: red;
 }

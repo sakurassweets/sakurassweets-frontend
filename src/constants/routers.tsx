@@ -7,5 +7,7 @@ export const ROUTERS = {
   PRODUCT: '/product/:id',
   ACCOUNT: '/account',
   DOCS: '/docs/:name',
+  HISTORY: '/history',
+  DELIVERY: '/delivery',
   NOT_FOUND: '*',
 };

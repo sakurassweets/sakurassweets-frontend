@@ -21,4 +21,8 @@
     width: 1.8rem;
     height: 1.8rem;
   }
+  &:disabled {
+    background-color: $disable_background_color;
+    cursor: not-allowed;
+  }
 }

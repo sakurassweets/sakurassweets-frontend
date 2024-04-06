@@ -1,23 +1,21 @@
-import { FiShoppingCart } from 'react-icons/fi';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { FiShoppingCart } from 'react-icons/fi';
 
 import classes from './buttonAddToCart.module.scss';
+import { Product } from '../../../../types/interfaces/Product';
 
-export const ButtonAddToCart = () => {
+interface ButtonAddToCartProps {
+  product: Product;
+}
+
+export const ButtonAddToCart: React.FC<ButtonAddToCartProps> = ({ product }) => {
+  const [showPopUp, setShowPopUp] = useState(false);
+
   const onAddToCart = () => {
     console.log('Added to cart');
     setShowPopUp(true);
   };
-
-  const [showPopUp, setShowPopUp] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopUp(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, [showPopUp]);
 
   if (showPopUp) {
     toast.success(`Товар успішно доданий`);
@@ -25,7 +23,7 @@ export const ButtonAddToCart = () => {
 
   return (
     <>
-      <button className={classes.button} onClick={onAddToCart}>
+      <button className={classes.button} onClick={onAddToCart} disabled={!product.quantity_in_stock}>
         <FiShoppingCart className={classes.button__icon} />
         Додати до кошика
       </button>
