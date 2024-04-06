@@ -11,10 +11,9 @@ export const Filter: React.FC = () => {
   return (
     <div className={styled.filter__wrapper}>
       <h1 className={styled.title}>Фільтри</h1>
-      <Accordion title="Ціна" content={<Price minValue={0} maxValue={2000} />} id={1} />
+      <Accordion title="Ціна" content={<Price minValue={0} maxValue={1000} />} id={1} />
       <Accordion title="Категорія" content={<Category />} id={2} />
       <Accordion title="Рейтинг" content={<Raiting minValue={0} maxValue={5} />} id={3} />
-      <button className={styled.button}>Filter items</button>
     </div>
   );
 };

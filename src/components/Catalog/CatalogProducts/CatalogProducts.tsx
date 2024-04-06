@@ -7,8 +7,15 @@ import { fetchAllProductsThunk } from '../../../redux/products/operations';
 import { Items } from './Items/Items';
 import Select from 'react-select';
 import customStyles from '../helpers/helper';
+import { useSelector } from 'react-redux';
 
 export const PaginatedItems = ({ itemsPerPage }) => {
+  const priceFrom: number = useSelector((state) => state.filterForCatalog.byPriceFrom);
+  const priceTo: number = useSelector((state) => state.filterForCatalog.byPriceTo);
+  const ratingFrom: number = useSelector((state) => state.filterForCatalog.byRatingFrom);
+  const ratingTo: number = useSelector((state) => state.filterForCatalog.byRatingTo);
+  const category = useSelector((state) => state.filterForCatalog.byCategory);
+
   const options: [{ label: string; value: string }] = [
     { label: 'Спочатку дорожче', value: 'price' },
     { label: 'За популярністю', value: 'popular' },
@@ -28,17 +35,35 @@ export const PaginatedItems = ({ itemsPerPage }) => {
   }, [dispatch]);
 
   const { products } = useAppSelector((state) => state.products);
-
   useEffect(() => {
     const filteredProducts = applyFilter(products);
-    const endOffset = Math.min(itemOffset + itemsPerPage, filteredProducts.length);
-    setCurrentItems(filteredProducts.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(filteredProducts.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, products, selectedOption]);
+    const filteredData = itemsFilter(filteredProducts);
+    const endOffset = Math.min(itemOffset + itemsPerPage, filteredData.length);
+    setCurrentItems(filteredData.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(filteredData.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, products, selectedOption, priceFrom, priceTo, ratingFrom, ratingTo, category]);
+
+  const itemsFilter = (products) => {
+    return products
+      .filter((item) => {
+        return +item.price >= priceFrom && +item.price <= priceTo;
+      })
+      .filter((item) => {
+        return +item.rating >= ratingFrom && +item.rating <= ratingTo;
+      })
+      .filter((item) => {
+        return (
+          +item.price >= priceFrom &&
+          +item.price <= priceTo &&
+          +item.rating >= ratingFrom &&
+          +item.rating <= ratingTo &&
+          (category.length === 0 || category.includes(item.product_type))
+        );
+      });
+  };
 
   const applyFilter = (products) => {
     if (!selectedOption) return products;
-
     switch (selectedOption.value) {
       case 'price':
         return products.slice().sort((b, a) => a.price - b.price);
