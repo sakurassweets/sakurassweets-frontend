@@ -1,4 +1,6 @@
-const customStyles = {
+import { StylesConfig } from 'react-select';
+
+export const customStyles: StylesConfig = {
   container: () => ({
     alignSelf: 'flex-end',
   }),
@@ -44,5 +46,3 @@ const customStyles = {
     transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0)',
   }),
 };
-
-export default customStyles;

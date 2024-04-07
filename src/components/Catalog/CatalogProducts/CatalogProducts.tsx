@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { fetchAllProductsThunk } from '../../../redux/products/operations';
 import { Items } from './items/items';
 import Select from 'react-select';
-import customStyles from '../helpers/selectorStyles';
+import { customStyles } from '../helpers/selectorStyles';
 import { useSelector } from 'react-redux';
 import { Pagination } from '../../Common/Pagination/Pagination';
 
