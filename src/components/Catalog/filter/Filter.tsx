@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Accordion } from './accordion/Accordion';
 import { Price } from './contents/price/Price';
 import { Category } from './contents/category/Category';

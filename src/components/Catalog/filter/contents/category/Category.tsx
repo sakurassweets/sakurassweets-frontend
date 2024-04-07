@@ -5,13 +5,19 @@ import { filterByCategory } from '../../../../../redux/filters/filter';
 
 import styled from './category.module.scss';
 
-export const Category = () => {
-  const [categoryItem, setCategoryItem] = useState([]);
+interface CategoryProps {}
+
+interface CategoryState {
+  categoryItem: string[];
+}
+
+export const Category: React.FC<CategoryProps> = () => {
+  const [categoryItem, setCategoryItem] = useState<CategoryState['categoryItem']>([]);
   const categoryList: string[] = ['Мочі', 'Печиво', 'Батончики', 'Льодяники', 'Набори', 'Напої'];
 
   const dispatch = useDispatch();
 
-  function handleChange(item) {
+  function handleChange(item: string) {
     if (categoryItem.includes(item)) {
       setCategoryItem(categoryItem.filter((category) => category !== item));
     } else {
@@ -22,7 +28,6 @@ export const Category = () => {
     dispatch(filterByCategory(categoryItem));
   }, [dispatch, categoryItem]);
 
-  console.log(categoryItem);
   const content = categoryList.map((item, index) => (
     <label key={index} className={styled.list}>
       <Checkbox checked={categoryItem.includes(item)} onChange={() => handleChange(item)} />

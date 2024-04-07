@@ -2,7 +2,13 @@ import clases from './pagination.module.scss';
 import ReactPaginate from 'react-paginate';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 
-export const Pagination = ({ pageCount, handlePageClick }) => {
+export const Pagination = ({
+  pageCount,
+  handlePageClick,
+}: {
+  pageCount: number;
+  handlePageClick: (event: { selected: number }) => void;
+}) => {
   return (
     <ReactPaginate
       nextLabel={<LuChevronRight />}

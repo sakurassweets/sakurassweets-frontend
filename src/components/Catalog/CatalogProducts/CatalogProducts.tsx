@@ -1,32 +1,54 @@
 import { useState, useEffect } from 'react';
-import ReactPaginate from 'react-paginate';
-import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
+import { useLocation } from 'react-router-dom';
 import clases from './CatalogProducts.module.scss';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { fetchAllProductsThunk } from '../../../redux/products/operations';
-import { Items } from './Items/Items';
+import { Items } from './items/items';
 import Select from 'react-select';
-import customStyles from '../helpers/helper';
+import customStyles from '../helpers/selectorStyles';
 import { useSelector } from 'react-redux';
+import { Pagination } from '../../Common/Pagination/Pagination';
 
-export const PaginatedItems = ({ itemsPerPage }) => {
-  const priceFrom: number = useSelector((state) => state.filterForCatalog.byPriceFrom);
-  const priceTo: number = useSelector((state) => state.filterForCatalog.byPriceTo);
-  const ratingFrom: number = useSelector((state) => state.filterForCatalog.byRatingFrom);
-  const ratingTo: number = useSelector((state) => state.filterForCatalog.byRatingTo);
-  const category = useSelector((state) => state.filterForCatalog.byCategory);
+interface RootState {
+  filterForCatalog: {
+    byPriceFrom: number;
+    byPriceTo: number;
+    byRatingFrom: number;
+    byRatingTo: number;
+    byCategory: string[];
+  };
+}
 
-  const options: [{ label: string; value: string }] = [
+interface Product {
+  price: number;
+  rating: number;
+  product_type: string;
+  discount: string;
+  title: string;
+}
+
+export const PaginatedItems = ({ itemsPerPage }: { itemsPerPage: number }) => {
+  const { products } = useAppSelector((state) => state.products);
+  const priceFrom: number = useSelector((state: RootState) => state.filterForCatalog.byPriceFrom);
+  const priceTo: number = useSelector((state: RootState) => state.filterForCatalog.byPriceTo);
+  const ratingFrom: number = useSelector((state: RootState) => state.filterForCatalog.byRatingFrom);
+  const ratingTo: number = useSelector((state: RootState) => state.filterForCatalog.byRatingTo);
+  const category: string[] = useSelector((state: RootState) => state.filterForCatalog.byCategory);
+
+  const options: {
+    label: string;
+    value: string;
+  }[] = [
     { label: 'Спочатку дорожче', value: 'price' },
     { label: 'За популярністю', value: 'popular' },
     { label: 'За назвою', value: 'byname' },
     { label: 'Спочатку знижки ', value: 'discount' },
   ];
 
-  const [currentItems, setCurrentItems] = useState([]);
-  const [pageCount, setPageCount] = useState(0);
-  const [itemOffset, setItemOffset] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [currentItems, setCurrentItems] = useState<Product[]>([]);
+  const [pageCount, setPageCount] = useState<number>(0);
+  const [itemOffset, setItemOffset] = useState<number>(0);
+  const [selectedOption, setSelectedOption] = useState<{ label: string; value: string } | null>(null);
 
   const dispatch = useAppDispatch();
 
@@ -34,7 +56,6 @@ export const PaginatedItems = ({ itemsPerPage }) => {
     dispatch(fetchAllProductsThunk());
   }, [dispatch]);
 
-  const { products } = useAppSelector((state) => state.products);
   useEffect(() => {
     const filteredProducts = applyFilter(products);
     const filteredData = itemsFilter(filteredProducts);
@@ -43,7 +64,7 @@ export const PaginatedItems = ({ itemsPerPage }) => {
     setPageCount(Math.ceil(filteredData.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, products, selectedOption, priceFrom, priceTo, ratingFrom, ratingTo, category]);
 
-  const itemsFilter = (products) => {
+  const itemsFilter = (products: Product[]): Product[] => {
     return products
       .filter((item) => {
         return +item.price >= priceFrom && +item.price <= priceTo;
@@ -62,7 +83,7 @@ export const PaginatedItems = ({ itemsPerPage }) => {
       });
   };
 
-  const applyFilter = (products) => {
+  const applyFilter = (products: Product[]): Product[] => {
     if (!selectedOption) return products;
     switch (selectedOption.value) {
       case 'price':
@@ -78,40 +99,27 @@ export const PaginatedItems = ({ itemsPerPage }) => {
           return 0;
         });
       case 'discount':
-        return products.slice().sort((b, a) => parseInt(a.discount.split('%')) - parseInt(b.discount.split('%')));
+        return products.slice().sort((b, a) => parseInt(a.discount.split('%')[0]) - parseInt(b.discount.split('%')[0]));
       default:
         return products;
     }
   };
-  const handlePageClick = (event: { selected: number }) => {
+  const handlePageClick = (event: { selected: number }): void => {
     const newOffset = event.selected * itemsPerPage;
     setItemOffset(newOffset);
   };
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname, itemOffset]);
 
   return (
     <div className={clases.catalog__wrapper}>
       <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} styles={customStyles} />
       <Items currentItems={currentItems} />
-      <ReactPaginate
-        nextLabel={<LuChevronRight />}
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={2}
-        pageCount={pageCount}
-        previousLabel={<LuChevronLeft />}
-        pageClassName={clases.pageitem}
-        pageLinkClassName="page-link"
-        previousClassName="page-item"
-        previousLinkClassName="page-link"
-        nextClassName="page-item"
-        nextLinkClassName="page-link"
-        breakLabel="..."
-        breakClassName="page-item"
-        breakLinkClassName="page-link"
-        containerClassName={clases.pagination}
-        activeClassName={clases.active}
-        renderOnZeroPageCount={null}
-      />
+      <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
     </div>
   );
 };

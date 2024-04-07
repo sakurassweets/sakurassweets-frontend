@@ -1,28 +1,38 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export const filterForCatalogSlice = createSlice({
+interface FilterForCatalogState {
+  byPriceFrom: number;
+  byPriceTo: number;
+  byRatingFrom: number;
+  byRatingTo: number;
+  byCategory: string[];
+}
+
+const initialState: FilterForCatalogState = {
+  byPriceFrom: 0,
+  byPriceTo: 2000,
+  byCategory: [],
+  byRatingFrom: 0,
+  byRatingTo: 5,
+};
+
+const filterForCatalogSlice = createSlice({
   name: 'filterForCatalog',
-  initialState: {
-    byPriceFrom: 0,
-    byPriceTo: 2000,
-    byCategory: [],
-    byRatingFrom: 0,
-    byRatingTo: 5,
-  },
+  initialState,
   reducers: {
-    filterByPriceFrom: (state, action) => {
+    filterByPriceFrom: (state, action: PayloadAction<number>) => {
       state.byPriceFrom = action.payload;
     },
-    filterByPriceTo: (state, action) => {
+    filterByPriceTo: (state, action: PayloadAction<number>) => {
       state.byPriceTo = action.payload;
     },
-    filterByCategory: (state, action) => {
+    filterByCategory: (state, action: PayloadAction<string[]>) => {
       state.byCategory = action.payload;
     },
-    filterByRatingFrom: (state, action) => {
+    filterByRatingFrom: (state, action: PayloadAction<number>) => {
       state.byRatingFrom = action.payload;
     },
-    filterByRatingTo: (state, action) => {
+    filterByRatingTo: (state, action: PayloadAction<number>) => {
       state.byRatingTo = action.payload;
     },
   },
