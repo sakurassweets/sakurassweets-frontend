@@ -1,0 +1,28 @@
+.inProgress {
+  margin: 0 auto;
+  padding: 16.6rem 0;
+  width: 57.9rem;
+
+  &__title {
+    @include title_global;
+    text-align: center;
+  }
+  &__img {
+    margin: 10.2rem auto;
+    height: 29.1rem;
+    width: 29.1rem;
+    background-image: url('../../../assets/img/inProgress.png');
+    background-image: image-set(
+      url('../../../assets/img/inProgress.webp') 1x,
+      url('../../../assets/img/inProgress@2x.png') 2x,
+      url('../../../assets/img/inProgress@2x.webp') 2x
+    );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &__btn {
+    margin: 0 auto;
+    max-width: 25.4rem;
+  }
+}

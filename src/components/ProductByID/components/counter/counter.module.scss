@@ -1,9 +1,7 @@
 .counter {
   @include flex($jc: space-between);
-
   max-width: 19.3rem;
   width: 100%;
-
   border-radius: 8px;
   border: 1px solid $pink;
 
@@ -12,15 +10,39 @@
     padding: 1.2rem;
     cursor: pointer;
     @include transition_all;
+    &:hover {
+      color: $primary_text_color;
+      background-color: $pink_hover;
+    }
+    &:active {
+      background-color: $pink_active;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: $gray;
+      background-color: transparent;
+    }
   }
-  svg:hover {
-    @include svg;
+  &__minus {
+    border-radius: 8px 0px 0px 8px;
+    &_disabled {
+      svg {
+        stroke: $gray;
+      }
+    }
+  }
+  &__plus {
+    border-radius: 0px 8px 8px 0px;
   }
 
   &__icon {
     color: $primary_text_color;
     width: 2.4rem;
     height: 2.4rem;
+
+    &_disabled {
+      stroke: $gray;
+    }
   }
   span {
     width: 19.3rem;

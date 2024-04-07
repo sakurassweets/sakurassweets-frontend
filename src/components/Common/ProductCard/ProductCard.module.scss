@@ -4,7 +4,6 @@
   background-color: $secondary_background_color;
   border-radius: 0.8rem;
   max-width: 18.875em;
-  cursor: pointer;
 
   &__sale {
     @include flex();
@@ -19,6 +18,12 @@
   &__img_wrapper {
     @include flex;
     position: relative;
+    background-color: $white;
+    border-radius: 0.4rem;
+    img {
+      border-radius: 0.4rem;
+      object-fit: scale-down;
+    }
   }
   &__title {
     margin-top: $m_m;

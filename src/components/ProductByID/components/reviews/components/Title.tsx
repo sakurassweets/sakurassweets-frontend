@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import classes from '../reviews.module.scss';
 
 export const Title = () => {
@@ -6,7 +7,16 @@ export const Title = () => {
       <h2 className={classes.reviews__title}>
         Відгуки <span>(17)</span>
       </h2>
-      <button className={classes.reviews__btn}>Написати відгук</button>
+      <button
+        className={classes.reviews__btn}
+        onClick={() =>
+          toast.info('Cторінка в розробці', {
+            icon: '🚀',
+          })
+        }
+      >
+        Написати відгук
+      </button>
     </div>
   );
 };
