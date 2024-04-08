@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchAllProductsThunk, fetchProductByIdThunk } from '../../redux/products/operations';
@@ -8,6 +9,8 @@ import { SliderComponent } from '../Common/index';
 import { Content, Images, Tab } from './index';
 
 import classes from './productByID.module.scss';
+import { ButtonAddToCart, FavoriteBtn } from '../Common/Buttons';
+// import classNames from 'classnames';
 
 interface ProductDetailsProps {
   productDetails?: Product;
