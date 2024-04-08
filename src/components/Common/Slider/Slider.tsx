@@ -1,14 +1,14 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../../redux/hook';
+// import { useAppSelector } from '../../../redux/hook';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 
 import { Product } from '../../../types/interfaces/Product';
 import { Review } from '../../../types/interfaces/Review';
 import { ReviewCard } from '../ReviewCard/ReviewCard';
 import { ProductCard } from '../ProductCard/ProductCard';
-import { SkeletonProductCard } from '../Skeleton/SkeletonProductCard';
+// import { SkeletonProductCard } from '../Skeleton/SkeletonProductCard';
 import { ROUTERS } from '../../../constants/routers';
 
 import 'slick-carousel/slick/slick.css';
@@ -79,7 +79,7 @@ export const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBott
     ],
   };
 
-  const { error, products } = useAppSelector((state) => state.products);
+  // const { isLoading, error, products } = useAppSelector((state) => state.products);
 
   return (
     <div className={classes.slider} style={{ marginBottom: `${marginBottom}px` }}>
@@ -91,16 +91,18 @@ export const SliderComponent: React.FC<SliderProps> = ({ name, items, marginBott
         </Link>
       </div>
       <Slider {...settings}>
-        {error || !products.length
-          ? Array.from({ length: 4 }).map((_, index) => <SkeletonProductCard key={index} />)
-          : items.map((item, index) =>
-              type === 'product' ? (
-                <ProductCard product={item as Product} key={index} />
-              ) : (
-                <ReviewCard review={item as Review} key={index} />
-              )
-            )}
+        {items.map((item, index) =>
+          type === 'product' ? (
+            <ProductCard product={item as Product} key={index} />
+          ) : (
+            <ReviewCard review={item as Review} key={index} />
+          )
+        )}
       </Slider>
     </div>
   );
 };
+
+// isLoading || error || !products.length
+//           ? Array.from({ length: 4 }).map((_, index) => <SkeletonProductCard key={index} />)
+//           :

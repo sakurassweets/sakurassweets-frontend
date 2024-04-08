@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchAllProductsThunk, fetchProductByIdThunk } from '../../redux/products/operations';
@@ -14,9 +14,10 @@ interface ProductDetailsProps {
 }
 
 export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
-  const dispatch = useAppDispatch();
+  const [activeTab, setActiveTab] = useState('description');
   const reviewRef = useRef<HTMLDivElement>(null);
   const { id } = useParams();
+  const dispatch = useAppDispatch();
   const productDetails = useAppSelector((state) => state.products.productDetails);
   const { products } = useAppSelector((state) => state.products);
 
@@ -26,7 +27,8 @@ export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
   }, [dispatch, id]);
 
   const scrollToContent = () => {
-    reviewRef.current?.scrollIntoView({ behavior: 'smooth' });
+    setActiveTab('reviews');
+    reviewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -36,7 +38,7 @@ export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
           <div className={classes.wrapper}>
             <Images images={productDetails.images} />
             <Content productDetails={productDetails} id={id} scrollToContent={scrollToContent} />
-            <Tab product={productDetails} ref={reviewRef} />
+            <Tab product={productDetails} ref={reviewRef} activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>
 
           <SliderComponent
