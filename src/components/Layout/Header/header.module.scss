@@ -1,7 +1,10 @@
 .header {
+  position: sticky;
+  top: 0;
   padding: 1.6rem 0rem;
   gap: $p_m;
   background-color: $secondary_background_color;
+  z-index: 10;
 
   &__container {
     @include flex($jc: space-between);
