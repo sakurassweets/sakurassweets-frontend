@@ -1,6 +1,3 @@
-<<<<<<<<< Temporary merge branch 1
-import { LegacyRef, forwardRef, useState, RefAttributes, ForwardRefExoticComponent } from 'react';
-=========
 import { forwardRef, useState } from 'react';
 import { ReviewItem, Title } from './index';
 
@@ -30,4 +27,3 @@ export const Reviews = forwardRef<HTMLDivElement>((_props, ref) => {
     </div>
   );
 });
->>>>>>>>> Temporary merge branch 2
