@@ -4,10 +4,13 @@ import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchAllProductsThunk, fetchProductByIdThunk } from '../../redux/products/operations';
 import { TYPE } from '../Home/Home';
 import { Product } from '../../types/interfaces/Product';
+
 import { SliderComponent } from '../Common/index';
 import { Content, Images, Tab } from './index';
 
 import classes from './productByID.module.scss';
+import { ButtonAddToCart, FavoriteBtn } from '../Common/Buttons';
+// import classNames from 'classnames';
 
 interface ProductDetailsProps {
   productDetails?: Product;
@@ -49,6 +52,7 @@ export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
             dots={true}
             slides={4}
           />
+
         </div>
       </section>
     </>

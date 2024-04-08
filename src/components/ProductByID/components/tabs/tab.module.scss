@@ -6,6 +6,8 @@
   border-bottom: solid 0.1rem rgba(255, 234, 236, 0.4);
 }
 .tabs {
+
+
   &__isActive,
   &__secondary {
     padding: 0 1.6rem;
@@ -15,6 +17,7 @@
     background-color: transparent;
     border-radius: 0;
     border-bottom: solid 0.4rem transparent;
+
   }
   &__isActive {
     font-weight: 700;
