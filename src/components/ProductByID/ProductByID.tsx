@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import { fetchAllProductsThunk, fetchProductByIdThunk } from '../../redux/products/operations';
 import { TYPE } from '../Home/Home';
 import { Product } from '../../types/interfaces/Product';
+
 import { SliderComponent } from '../Common/index';
 import { Content, Images, Tab } from './index';
 
