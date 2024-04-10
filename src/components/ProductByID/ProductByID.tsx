@@ -38,7 +38,7 @@ export const ProductByID: React.FC<ProductDetailsProps> = React.memo(() => {
         <div className="container">
           <div className={classes.wrapper}>
             <Images images={productDetails.images} />
-            <Content productDetails={productDetails} id={id} scrollToContent={scrollToContent} />
+            <Content productDetails={productDetails} scrollToContent={scrollToContent} />
             <Tab product={productDetails} ref={reviewRef} activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>
 
