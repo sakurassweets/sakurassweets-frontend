@@ -1,123 +1,88 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import clases from './CatalogProducts.module.scss';
+import Select from 'react-select';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { fetchAllProductsThunk } from '../../../redux/products/operations';
-import { Items } from './items/items';
-import Select from 'react-select';
-import { customStyles } from '../helpers/selectorStyles';
-import { useSelector } from 'react-redux';
+import { Product } from '../../../types/interfaces/Product';
 import { Pagination } from '../../Common/Pagination/Pagination';
+import { Items } from './Items/Items';
 
-interface RootState {
-  filterForCatalog: {
-    byPriceFrom: number;
-    byPriceTo: number;
-    byRatingFrom: number;
-    byRatingTo: number;
-    byCategory: string[];
-  };
-}
-
-interface Product {
-  price: number;
-  rating: number;
-  product_type: string;
-  discount: string;
-  title: string;
-}
+import { customStyles } from '../helpers/selectorStyles';
+import clases from './CatalogProducts.module.scss';
 
 export const PaginatedItems = ({ itemsPerPage }: { itemsPerPage: number }) => {
+  const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
   const { products } = useAppSelector((state) => state.products);
-  const priceFrom: number = useSelector((state: RootState) => state.filterForCatalog.byPriceFrom);
-  const priceTo: number = useSelector((state: RootState) => state.filterForCatalog.byPriceTo);
-  const ratingFrom: number = useSelector((state: RootState) => state.filterForCatalog.byRatingFrom);
-  const ratingTo: number = useSelector((state: RootState) => state.filterForCatalog.byRatingTo);
-  const category: string[] = useSelector((state: RootState) => state.filterForCatalog.byCategory);
+  const filter = useAppSelector((state) => state.filterForCatalog);
+  const [currentItems, setCurrentItems] = useState<Product[]>([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const [selectedOption, setSelectedOption] = useState<{ label: string; value: string } | null>(null);
 
-  const options: {
-    label: string;
-    value: string;
-  }[] = [
+  const options = [
     { label: 'Спочатку дорожче', value: 'price' },
     { label: 'За популярністю', value: 'popular' },
     { label: 'За назвою', value: 'byname' },
-    { label: 'Спочатку знижки ', value: 'discount' },
+    { label: 'Спочатку знижки', value: 'discount' },
   ];
-
-  const [currentItems, setCurrentItems] = useState<Product[]>([]);
-  const [pageCount, setPageCount] = useState<number>(0);
-  const [itemOffset, setItemOffset] = useState<number>(0);
-  const [selectedOption, setSelectedOption] = useState<{ label: string; value: string } | null>(null);
-
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchAllProductsThunk());
   }, [dispatch]);
 
   useEffect(() => {
-    const filteredProducts = applyFilter(products);
-    const filteredData = itemsFilter(filteredProducts);
-    const endOffset = Math.min(itemOffset + itemsPerPage, filteredData.length);
-    setCurrentItems(filteredData.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(filteredData.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, products, selectedOption, priceFrom, priceTo, ratingFrom, ratingTo, category]);
-
-  const itemsFilter = (products: Product[]): Product[] => {
-    return products
-      .filter((item) => {
-        return +item.price >= priceFrom && +item.price <= priceTo;
-      })
-      .filter((item) => {
-        return +item.rating >= ratingFrom && +item.rating <= ratingTo;
-      })
-      .filter((item) => {
+    // Combine filter and sort logic into a single function
+    const filteredAndSortedProducts = products
+      .filter((product) => {
         return (
-          +item.price >= priceFrom &&
-          +item.price <= priceTo &&
-          +item.rating >= ratingFrom &&
-          +item.rating <= ratingTo &&
-          (category.length === 0 || category.includes(item.product_type))
+          Number(product.price) >= filter.byPriceFrom &&
+          Number(product.price) <= filter.byPriceTo &&
+          product.rating >= filter.byRatingFrom &&
+          product.rating <= filter.byRatingTo &&
+          (filter.byCategory.length === 0 || filter.byCategory.includes(product.product_type))
         );
+      })
+      .sort((a, b) => {
+        switch (selectedOption?.value) {
+          case 'price':
+            return Number(b.price) - Number(a.price);
+          case 'popular':
+            return b.rating - a.rating;
+          case 'byname':
+            return a.title.localeCompare(b.title);
+          case 'discount':
+            return parseInt(b.discount.split('%')[0], 10) - parseInt(a.discount.split('%')[0], 10);
+          default:
+            return 0;
+        }
       });
-  };
 
-  const applyFilter = (products: Product[]): Product[] => {
-    if (!selectedOption) return products;
-    switch (selectedOption.value) {
-      case 'price':
-        return products.slice().sort((b, a) => a.price - b.price);
-      case 'popular':
-        return products.slice().sort((b, a) => a.rating - b.rating);
-      case 'byname':
-        return products.slice().sort((a, b) => {
-          const firstLetterA = a.title.charAt(0).toLowerCase();
-          const firstLetterB = b.title.charAt(0).toLowerCase();
-          if (firstLetterA < firstLetterB) return -1;
-          if (firstLetterA > firstLetterB) return 1;
-          return 0;
-        });
-      case 'discount':
-        return products.slice().sort((b, a) => parseInt(a.discount.split('%')[0]) - parseInt(b.discount.split('%')[0]));
-      default:
-        return products;
-    }
-  };
+    // Calculate current items and page count
+    const endOffset = itemOffset + itemsPerPage;
+    setCurrentItems(filteredAndSortedProducts.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(filteredAndSortedProducts.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, products, selectedOption, filter]);
+
   const handlePageClick = (event: { selected: number }): void => {
-    const newOffset = event.selected * itemsPerPage;
-    setItemOffset(newOffset);
+    setItemOffset(event.selected * itemsPerPage);
   };
 
-  const { pathname } = useLocation();
-
+  // Scroll to the top on page change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname, itemOffset]);
 
   return (
     <div className={clases.catalog__wrapper}>
-      <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} styles={customStyles} />
+      <Select
+        value={selectedOption}
+        onChange={(newValue) => setSelectedOption(newValue as { label: string; value: string } | null)}
+        options={options}
+        styles={customStyles}
+        placeholder={selectedOption?.label || 'Спочатку дорожче'}
+        aria-label="Оберіть варіант фільтрації"
+      />
       <Items currentItems={currentItems} />
       <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
     </div>

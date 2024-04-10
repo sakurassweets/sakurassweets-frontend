@@ -1,6 +1,7 @@
-import clases from './pagination.module.scss';
 import ReactPaginate from 'react-paginate';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
+
+import clases from './pagination.module.scss';
 
 export const Pagination = ({
   pageCount,

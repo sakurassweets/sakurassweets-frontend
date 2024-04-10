@@ -2,7 +2,11 @@ import { ProductCard } from '../../../Common';
 import clases from './items.module.scss';
 import { Product } from '../../../../types/interfaces/Product';
 
-export const Items = ({ currentItems }: { currentItems: [] }) => {
+interface ItemsProps {
+  currentItems: Product[];
+}
+
+export const Items = ({ currentItems }: ItemsProps) => {
   return (
     <div className={clases.items}>
       {!currentItems.length ? (
@@ -10,11 +14,7 @@ export const Items = ({ currentItems }: { currentItems: [] }) => {
           <h2>No items found</h2>
         </div>
       ) : (
-        currentItems.map((item: Product, index: number) => (
-          <div key={index}>
-            <ProductCard product={item} />
-          </div>
-        ))
+        currentItems.map((item: Product, index: number) => <ProductCard product={item} key={index} />)
       )}
     </div>
   );
