@@ -1,9 +1,9 @@
-import { InProgress } from '../../components/Common/InProgress/InProgress';
+import { FavoritesPage } from '../../components/Favorites/Favorites';
 
 const Favorites = () => {
   return (
     <>
-      <InProgress />
+      <FavoritesPage />
     </>
   );
 };
