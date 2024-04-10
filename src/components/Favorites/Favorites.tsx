@@ -5,6 +5,7 @@ import { LuXCircle } from 'react-icons/lu';
 import { ProductCard } from '../Common';
 import { Product } from '../../types/interfaces/Product';
 import { Button } from '../Common/Buttons';
+import { getWordForm } from './helpers/wordCount';
 
 export const FavoritesPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -27,7 +28,10 @@ export const FavoritesPage = () => {
         <div className={classes.fav}>
           <div className={classes.fav__wrapper}>
             <h2 className={classes.fav__title}>
-              Список бажань <span className={classes.fav__amount}>{products.length} продуктів</span>
+              Список бажань
+              <span className={classes.fav__amount}>
+                {products.length} {getWordForm(products.length)}
+              </span>
             </h2>
 
             {products.length ? (
