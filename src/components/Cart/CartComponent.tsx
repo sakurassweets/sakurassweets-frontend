@@ -9,7 +9,7 @@ export const CartComponent = () => {
       <div className="container">
         <Title className={classes.title}>Кошик</Title>
         <FreeDelivery />
-        <CartStub></CartStub>
+        <CartStub />
       </div>
     </section>
   );
