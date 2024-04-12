@@ -1,0 +1,23 @@
+.stub {
+  @include flex();
+  flex-direction: column;
+  gap: 7.3rem;
+  &__title {
+    @include title_global;
+    text-align: center;
+  }
+  &__img {
+    margin: 0 auto;
+    height: 29.4rem;
+    width: 29.4rem;
+    background-image: url('../stub/img/EmptyCart@2x.png');
+    background-image: image-set(url('../stub/img/EmptyCart@2x.webp') 2x);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__btn {
+    max-width: 25.4rem;
+  }
+}

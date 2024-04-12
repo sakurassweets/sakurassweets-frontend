@@ -6,3 +6,4 @@ export const FACEBOOK: string = 'https://www.facebook.com/';
 export const TELEGRAM: string = '/';
 export const EMAIL: string = 'sakurasweets.help@gmail.com';
 export const PHONE_NUMBER: string = '+ 38 (000) 000-00-00';
+export const FREE: string = '1200.00';
