@@ -6,11 +6,10 @@ import { Product } from '../../../../types/interfaces/Product';
 
 interface ProductDetailsProps {
   productDetails: Product;
-  id?: string;
   scrollToContent: () => void;
 }
 
-export const Content: React.FC<ProductDetailsProps> = ({ productDetails, id, scrollToContent }) => {
+export const Content: React.FC<ProductDetailsProps> = ({ productDetails, scrollToContent }) => {
   return (
     <div className={classes.content}>
       <h1 className={classes.title}>{productDetails.title}</h1>
@@ -38,7 +37,7 @@ export const Content: React.FC<ProductDetailsProps> = ({ productDetails, id, scr
         <Counter />
         <ButtonAddToCart product={productDetails} />
       </div>
-      <FavoriteBtn isProductPage={true} id={id || ''} />
+      <FavoriteBtn isProductPage={true} product={productDetails} />
     </div>
   );
 };

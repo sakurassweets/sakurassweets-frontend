@@ -29,7 +29,7 @@ export const ProductCard: React.FC<ProductCartProps> = ({ product }) => {
         ) : (
           <img src={defaultImage} alt="default Image" width={254} height={180} />
         )}
-        <FavoriteBtn id={product.id} />
+        <FavoriteBtn product={product} />
       </div>
       <Link to={`/product/${product.id}`} rel="prefetch">
         <div className={classes.rating_instock_wrapper}>
