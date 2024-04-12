@@ -1,0 +1,59 @@
+.wrapper {
+  margin: 0 auto;
+  margin-bottom: 7.3rem;
+  max-width: 62.8rem;
+
+  .text_thumb {
+    @include flex;
+    gap: 1.2rem;
+    margin-bottom: 1.6rem;
+  }
+  .text {
+    max-width: 55.6rem;
+    @include text;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .svg {
+    width: 6rem;
+    height: 6rem;
+    stroke-width: 1;
+  }
+}
+.progress_thumb {
+  position: relative;
+  .progress {
+    display: block;
+    width: 100%;
+    height: 1.6rem;
+    background-color: $dark_pink;
+    border-radius: 4px;
+  }
+  .progress::-webkit-progress-bar {
+    height: 1.6rem;
+    background-color: $light_pink;
+    border-radius: 4px;
+  }
+  .progress::-webkit-progress-value {
+    height: 1.6rem;
+    background-color: $dark_pink;
+    border-radius: 4px;
+  }
+  .progress::-moz-progress-bar {
+    background-color: $dark_pink;
+    border-radius: 4px;
+  }
+  p {
+    @include text;
+    text-align: right;
+  }
+  span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include text;
+    text-align: right;
+    color: $black;
+  }
+}

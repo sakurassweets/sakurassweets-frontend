@@ -1,9 +1,9 @@
-import { InProgress } from '../../components/Common/InProgress/InProgress';
+import { CartComponent } from '../../components/Cart/CartComponent';
 
 const Cart = () => {
   return (
     <>
-      <InProgress />
+      <CartComponent />
     </>
   );
 };
