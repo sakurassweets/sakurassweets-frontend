@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FiShoppingCart } from 'react-icons/fi';
 
@@ -10,16 +10,27 @@ interface ButtonAddToCartProps {
 }
 
 export const ButtonAddToCart: React.FC<ButtonAddToCartProps> = ({ product }) => {
-  const [showPopUp, setShowPopUp] = useState(false);
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      setProducts(JSON.parse(storedCart));
+    }
+  }, []);
 
   const onAddToCart = () => {
-    console.log('Added to cart');
-    setShowPopUp(true);
+    setProducts((prevProducts) => {
+      if (prevProducts.some((p) => p.id === product.id)) {
+        toast.warning('Товар уже доданий до кошика');
+        return prevProducts;
+      }
+      const updatedProducts = [...prevProducts, product];
+      localStorage.setItem('cart', JSON.stringify(updatedProducts));
+      toast.success(`Товар успішно доданий`);
+      return updatedProducts;
+    });
   };
-
-  if (showPopUp) {
-    toast.success(`Товар успішно доданий`);
-  }
 
   return (
     <>

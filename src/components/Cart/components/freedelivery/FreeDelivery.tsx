@@ -1,16 +1,14 @@
 import { LuTruck } from 'react-icons/lu';
 import classes from './freeDelivery.module.scss';
 import { FREE } from '../../../../constants';
-import { useEffect, useState } from 'react';
 
-export const FreeDelivery = () => {
+interface FreeDeliveryProps {
+  currentAmount: number;
+}
+export const FreeDelivery: React.FC<FreeDeliveryProps> = ({ currentAmount }) => {
   const totalForFreeDelivery: number = 1200;
-  const [currentAmount, setCurrentAmount] = useState(0);
-  const remainingAmount = totalForFreeDelivery - currentAmount;
 
-  useEffect(() => {
-    setCurrentAmount(0);
-  }, []);
+  const remainingAmount = totalForFreeDelivery - (currentAmount ?? 0);
 
   return (
     <div className={classes.wrapper}>
