@@ -50,8 +50,7 @@
   span {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 1.2rem;
     @include text;
     text-align: right;
     color: $black;
