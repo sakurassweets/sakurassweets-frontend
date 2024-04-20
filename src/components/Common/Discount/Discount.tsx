@@ -7,9 +7,11 @@ import classes from './discount.module.scss';
 interface DiscountProps {
   product: Product;
   isProductPage?: boolean;
+  isCartPage?: boolean;
+  className?: string;
 }
 
-export const Discount: React.FC<DiscountProps> = ({ product, isProductPage }) => {
+export const Discount: React.FC<DiscountProps> = ({ product, isProductPage, isCartPage, className }) => {
   const discountValue = product.discount ? product.discount.replace('%', '') : '0';
   const finalPrice = calculateDiscountedPrice(product.price, discountValue);
 
@@ -25,9 +27,15 @@ export const Discount: React.FC<DiscountProps> = ({ product, isProductPage }) =>
   });
 
   return (
-    <div>
-      {hasDiscount(product.discount) && <p className={totalPriceClass}> {product.price} грн</p>}
-      <p className={priceClass}>{finalPrice} грн</p>
-    </div>
+    <>
+      {!isCartPage && (
+        <div>
+          {hasDiscount(product.discount) && <p className={totalPriceClass}> {product.price} грн</p>}
+          <p className={priceClass}>{finalPrice} грн</p>
+        </div>
+      )}
+
+      {isCartPage && <p className={className}>{finalPrice} грн</p>}
+    </>
   );
 };

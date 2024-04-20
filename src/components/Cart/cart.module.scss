@@ -5,6 +5,7 @@
   position: relative;
   @include flex($jc: flex-start);
   gap: 1.2rem;
+  margin-bottom: 1.2rem;
   margin-left: auto;
   padding: 0;
 
@@ -38,5 +39,32 @@
     width: 2.4rem;
     height: 2.4rem;
     stroke-width: 1.5;
+  }
+}
+
+.cart {
+  padding: 3.2rem;
+  background-color: $secondary_background_color;
+  border-radius: 0.8rem;
+  &__list {
+    margin-bottom: 2.4rem;
+    padding: 2.4rem 0;
+    border-top: 1px solid $light_pink;
+    border-bottom: 1px solid $light_pink;
+  }
+  &__total {
+    @include subtitle;
+    text-align: right;
+    margin-bottom: 1.6rem;
+  }
+  &__amount {
+    margin-left: 1.2rem;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  &__btn {
+    max-width: 30.4rem;
+    margin-left: auto;
   }
 }

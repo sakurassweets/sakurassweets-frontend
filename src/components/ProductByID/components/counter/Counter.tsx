@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { LuMinus, LuPlus } from 'react-icons/lu';
 import classes from './counter.module.scss';
-import { useState } from 'react';
 
-export const Counter = () => {
+interface CounterProps {
+  className: string;
+}
+
+export const Counter = ({ className }: CounterProps) => {
   const [count, setCount] = useState(1);
 
   const incrementCounter = () => {
@@ -17,7 +21,7 @@ export const Counter = () => {
 
   return (
     <>
-      <div className={classes.counter}>
+      <div className={`${classes.counter} ${className}`}>
         <button
           type="button"
           className={`${classes.counter__minus} ${count === 1 ? classes.counter__minus_disabled : ''}`}

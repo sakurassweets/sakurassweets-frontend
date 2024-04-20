@@ -2,17 +2,17 @@ import { LuTruck } from 'react-icons/lu';
 import classes from './freeDelivery.module.scss';
 import { FREE } from '../../../../constants';
 import { Product } from '../../../../types/interfaces/Product';
+import { calculateTotalAmount } from '../../helpers/total';
 
 interface FreeDeliveryProps {
   products: Product[];
 }
 export const FreeDelivery: React.FC<FreeDeliveryProps> = ({ products }) => {
   const totalForFreeDelivery: number = FREE;
-
-  const currentAmount = products.reduce((total, product) => total + Number(product.price), 0);
+  const currentAmount = calculateTotalAmount(products);
 
   const remainingAmount = totalForFreeDelivery - currentAmount;
-  console.log('currentAmount', currentAmount);
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.text_thumb}>
