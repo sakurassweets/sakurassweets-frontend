@@ -1,4 +1,4 @@
-import { Counter } from './components/counter/Counter';
+import { Counter } from '../Common/Counter/Counter';
 import { Description } from './components/description/Description';
 import { Images } from './components/images/Images';
 import { Reviews } from './components/reviews/Reviews';

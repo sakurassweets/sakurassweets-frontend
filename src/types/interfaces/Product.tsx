@@ -12,11 +12,13 @@ export interface Product {
   price: string;
   description: string;
   quantity_in_stock: number;
+  quantity: number;
   product_quantity: string;
   discount: string;
   rating: number;
   components: string;
   price_currency_symbol: string;
+  priceWithDiscount?: number;
 }
 
 export interface TestProduct {

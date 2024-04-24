@@ -1,0 +1,98 @@
+//Table
+table {
+  margin-bottom: 2.4rem;
+  width: 121.6rem;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: transparent;
+}
+
+th,
+td {
+  border-bottom: 0.5px solid $light_pink;
+  text-align: left;
+}
+
+th {
+  padding: 2rem 0;
+}
+
+td {
+  text-align: center;
+}
+
+tbody {
+  border-top: 0.1rem solid $light_pink;
+  border-bottom: 0.1rem solid $light_pink;
+}
+.cart {
+  &__header {
+    padding-top: 0;
+    @include subtitle;
+    text-align: center;
+  }
+  &__header:first-of-type {
+    text-align: left;
+  }
+  &__wrapper {
+    @include flex($jc: flex-start, $ai: flex-start);
+    gap: 3rem;
+    max-width: 48.7rem;
+  }
+  &__img_wrapper {
+    background-color: $white;
+    border-radius: 0.8rem;
+  }
+  &__img {
+    border-radius: 0.8rem;
+    object-fit: scale-down;
+  }
+  &__text_wrapper {
+    @include flex($ai: flex-start);
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  &__title {
+    max-width: 25rem;
+    @include text;
+    font-size: 1.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+  }
+  &__total {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+  }
+  &__discount {
+    @include subtitle;
+    font-weight: 400;
+  }
+  &__counter {
+    margin: 0 auto;
+  }
+}
+.clear_btn {
+  margin-left: auto;
+  padding: 0;
+  width: 3.2rem;
+  height: 3.2rem;
+  color: $border_color;
+  background-color: transparent;
+  &:focus,
+  &:hover,
+  &:active {
+    color: $accent_color_hover;
+    background-color: transparent;
+  }
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+    stroke-width: 1.5;
+  }
+}

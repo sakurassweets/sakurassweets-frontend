@@ -6,6 +6,7 @@ import { ProductCard } from '../Common';
 import { Product } from '../../types/interfaces/Product';
 import { Button } from '../Common/Buttons';
 import { getWordForm } from './helpers/wordCount';
+import { calculateDiscountedPrice, hasDiscount } from '../Common/Discount/helpers';
 
 export const FavoritesPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -13,12 +14,19 @@ export const FavoritesPage = () => {
   useEffect(() => {
     const storedFavorites = localStorage.getItem('favourites');
     if (storedFavorites) {
-      setProducts(JSON.parse(storedFavorites));
+      const parsedProducts = JSON.parse(storedFavorites);
+      const updatedProducts: Product[] = parsedProducts.map((product: Product) => ({
+        ...product,
+        priceWithDiscount: hasDiscount(product.discount)
+          ? calculateDiscountedPrice(product.price, product.discount)
+          : parseFloat(product.price),
+      }));
+      setProducts(updatedProducts);
     }
   }, []);
 
   const clearLocalStorage = () => {
-    localStorage.clear();
+    localStorage.removeItem('favourites');
     setProducts([]);
   };
 
