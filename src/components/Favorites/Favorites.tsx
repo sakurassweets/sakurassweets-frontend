@@ -26,7 +26,7 @@ export const FavoritesPage = () => {
   }, []);
 
   const clearLocalStorage = () => {
-    localStorage.clear();
+    localStorage.removeItem('favourites');
     setProducts([]);
   };
 

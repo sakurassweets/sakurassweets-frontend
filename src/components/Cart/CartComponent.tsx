@@ -22,8 +22,19 @@ export const CartComponent = () => {
   }, []);
 
   const clearLocalStorage = () => {
-    localStorage.clear();
+    localStorage.removeItem('cart');
     setProducts([]);
+  };
+
+  const totalByID = (products: Product[], id: number) => {
+    const product = products.find((p) => p.id === id);
+    if (!product) {
+      return 0;
+    }
+
+    const price = product.priceWithDiscount ?? parseFloat(product.price);
+    const total = price * product.quantity;
+    return total;
   };
 
   return (
@@ -42,8 +53,7 @@ export const CartComponent = () => {
               </Button>
             ) : null}
             <div className={classes.cart}>
-              <CartTable setProducts={setProducts} />
-
+              <CartTable totalByID={totalByID} />
               <p className={classes.cart__total}>
                 Всього: <span className={classes.cart__amount}>{currentAmount}.00 грн</span>
               </p>

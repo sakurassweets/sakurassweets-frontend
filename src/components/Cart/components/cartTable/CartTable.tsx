@@ -8,14 +8,12 @@ import classes from './cartTable.module.scss';
 import useCart from '../../../../helpers/hooks/useCart';
 
 interface CartTableProps {
-  setProducts: (products: Product[]) => void;
+  totalByID: (products: Product[], id: number) => number;
 }
 
-export const CartTable: React.FC<CartTableProps> = () => {
+export const CartTable: React.FC<CartTableProps> = ({ totalByID }) => {
   const tableHeaders = ['Товар', 'Ціна', 'Кількість', 'Всього', ' '];
   const { products, updateQuantity, removeProductById } = useCart();
-
-  console.log('CartTable', products);
 
   return (
     <table>
@@ -64,10 +62,7 @@ export const CartTable: React.FC<CartTableProps> = () => {
               />
             </td>
             <td>
-              <p className={classes.cart__total}>
-                {product.quantity ? product.quantity * product.priceWithDiscount : product.quantity * product.price}
-                грн
-              </p>
+              <p className={classes.cart__total}>{totalByID(products, product.id)} грн</p>
             </td>
             <td>
               <Button className={classes.clear_btn} onClick={() => removeProductById(product.id)}>

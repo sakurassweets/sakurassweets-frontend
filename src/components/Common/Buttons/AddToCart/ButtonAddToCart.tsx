@@ -10,7 +10,7 @@ interface ButtonAddToCartProps {
 }
 
 export const ButtonAddToCart: React.FC<ButtonAddToCartProps> = ({ product }) => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const storedCart = localStorage.getItem('cart');

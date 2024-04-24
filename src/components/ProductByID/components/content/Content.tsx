@@ -1,9 +1,9 @@
 import { Discount, InStock, Rating } from '../../../Common';
 import { ButtonAddToCart, FavoriteBtn } from '../../../Common/Buttons';
-import { Counter } from '../counter/Counter';
-import classes from './content.module.scss';
+import { Counter } from '../../../Common/Counter/Counter';
 import { Product } from '../../../../types/interfaces/Product';
 import useCart from '../../../../helpers/hooks/useCart';
+import classes from './content.module.scss';
 
 interface ProductDetailsProps {
   productDetails: Product;
@@ -37,7 +37,11 @@ export const Content: React.FC<ProductDetailsProps> = ({ productDetails, scrollT
         <Discount product={productDetails} isProductPage={true} />
       </div>
       <div className={classes.counter_thumb}>
-        <Counter quantity={1} setQuantity={(newQuantity) => updateQuantity(productDetails.id, newQuantity)} />
+        <Counter
+          byID={true}
+          quantity={productDetails.quantity}
+          setQuantity={(newQuantity) => updateQuantity(productDetails.id, newQuantity)}
+        />
         <ButtonAddToCart product={productDetails} />
       </div>
       <FavoriteBtn isProductPage={true} product={productDetails} />
