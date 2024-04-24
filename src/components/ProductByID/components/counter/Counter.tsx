@@ -1,21 +1,20 @@
-import { useState } from 'react';
 import { LuMinus, LuPlus } from 'react-icons/lu';
 import classes from './counter.module.scss';
 
 interface CounterProps {
-  className: string;
+  className?: string;
+  quantity: number;
+  setQuantity: (quantity: number) => void;
 }
 
-export const Counter = ({ className }: CounterProps) => {
-  const [count, setCount] = useState(1);
-
+export const Counter: React.FC<CounterProps> = ({ className, quantity = 1, setQuantity }) => {
   const incrementCounter = () => {
-    setCount(count + 1);
+    setQuantity(quantity + 1);
   };
 
   const decrementCounter = () => {
-    if (count > 1) {
-      setCount(count - 1);
+    if (quantity > 1 && setQuantity) {
+      setQuantity(quantity - 1);
     }
   };
 
@@ -24,13 +23,13 @@ export const Counter = ({ className }: CounterProps) => {
       <div className={`${classes.counter} ${className}`}>
         <button
           type="button"
-          className={`${classes.counter__minus} ${count === 1 ? classes.counter__minus_disabled : ''}`}
+          className={`${classes.counter__minus} ${quantity === 1 ? classes.counter__minus_disabled : ''}`}
           onClick={decrementCounter}
-          disabled={count === 1}
+          disabled={quantity === 1}
         >
-          <LuMinus className={`${classes.counter__icon} ${count === 1 ? classes.counter__icon_disabled : ''}`} />
+          <LuMinus className={`${classes.counter__icon} ${quantity === 1 ? classes.counter__icon_disabled : ''}`} />
         </button>
-        <span id="value">{count}</span>
+        <span id="value">{quantity}</span>
         <button type="button" className={classes.counter__plus} onClick={incrementCounter}>
           <LuPlus className={classes.counter__icon} />
         </button>

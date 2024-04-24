@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import { LuXCircle } from 'react-icons/lu';
 import { Product } from '../../types/interfaces/Product';
 import { CartStub } from './components/stub/CartStub';
 import { Title } from '../Common/Title/Title';
 import { FreeDelivery } from './components/freedelivery/FreeDelivery';
-import classes from './cart.module.scss';
 import { Button } from '../Common/Buttons';
-import { LuXCircle } from 'react-icons/lu';
-import { toast } from 'react-toastify';
-import { calculateTotalAmount } from './helpers/total';
 import { CartTable } from './components/cartTable/CartTable';
-// import useStorage from '../../helpers/hooks/useStorage';
+import { calculateTotalAmount } from './helpers/total';
+import classes from './cart.module.scss';
 
 export const CartComponent = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -27,8 +26,6 @@ export const CartComponent = () => {
     setProducts([]);
   };
 
-  // const currentAmount = products.reduce((total, product) => total + Number(product.price), 0);
-
   return (
     <section className="section">
       <div className="container">
@@ -45,7 +42,7 @@ export const CartComponent = () => {
               </Button>
             ) : null}
             <div className={classes.cart}>
-              <CartTable products={products} currentAmount={currentAmount} />
+              <CartTable setProducts={setProducts} />
 
               <p className={classes.cart__total}>
                 Всього: <span className={classes.cart__amount}>{currentAmount}.00 грн</span>

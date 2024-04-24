@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { API } from '../../config/config';
 import { Product } from '../../types/interfaces/Product';
+import { priceWithDiscount, productWithDiscount } from '../../helpers/index';
 
 //GetAllProducts
 export const fetchAllProductsThunk = createAsyncThunk<Product[], undefined, { rejectValue: string }>(
@@ -8,7 +9,7 @@ export const fetchAllProductsThunk = createAsyncThunk<Product[], undefined, { re
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await API.get('/products/');
-      return data.results;
+      return priceWithDiscount(data.results);
     } catch (error) {
       if (error instanceof Error) {
         return rejectWithValue(error.message);
@@ -23,7 +24,7 @@ export const fetchProductByIdThunk = createAsyncThunk<Product, string, { rejectV
   async (id, { rejectWithValue }) => {
     try {
       const { data } = await API.get(`/products/${id}`);
-      return data;
+      return productWithDiscount(data);
     } catch (error) {
       if (error instanceof Error) {
         return rejectWithValue(error.message);

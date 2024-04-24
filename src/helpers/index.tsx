@@ -1,4 +1,8 @@
 import { cloneProducts } from './cloneProducts';
-import { clearLocalStorage } from './clearLocalStorage';
+import { calculateTotalPrice } from './calculateTotalPrice';
+import { finalPrice } from './finalPrice';
+import { discountValue } from './discountValue';
+import { priceWithDiscount } from './priceWithDiscount';
+import { productWithDiscount } from './productWithDiscount';
 
-export { cloneProducts, clearLocalStorage };
+export { cloneProducts, calculateTotalPrice, finalPrice, discountValue, priceWithDiscount, productWithDiscount };

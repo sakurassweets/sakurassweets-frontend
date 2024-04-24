@@ -1,19 +1,22 @@
+import { LuXCircle } from 'react-icons/lu';
 import { Product } from '../../../../types/interfaces/Product';
 import { Discount, InStock } from '../../../Common';
+import { Button } from '../../../Common/Buttons';
 import { Counter } from '../../../ProductByID';
 import defaultImage from '../../../../assets/img/no-image.png';
 import classes from './cartTable.module.scss';
-import { Button } from '../../../Common/Buttons';
-import { toast } from 'react-toastify';
-import { LuXCircle } from 'react-icons/lu';
+import useCart from '../../../../helpers/hooks/useCart';
 
 interface CartTableProps {
-  products: Product[];
-  currentAmount?: number;
+  setProducts: (products: Product[]) => void;
 }
 
-export const CartTable: React.FC<CartTableProps> = ({ products }) => {
+export const CartTable: React.FC<CartTableProps> = () => {
   const tableHeaders = ['Товар', 'Ціна', 'Кількість', 'Всього', ' '];
+  const { products, updateQuantity, removeProductById } = useCart();
+
+  console.log('CartTable', products);
+
   return (
     <table>
       <thead>
@@ -52,21 +55,22 @@ export const CartTable: React.FC<CartTableProps> = ({ products }) => {
             <td>
               <Discount product={product} isCartPage={true} className={classes.cart__discount} />
             </td>
+
             <td>
-              <Counter className={classes.cart__counter} />
+              <Counter
+                quantity={product.quantity}
+                setQuantity={(newQuantity) => updateQuantity(product.id, newQuantity)}
+                className={classes.cart__counter}
+              />
             </td>
             <td>
-              <p className={classes.cart__total}>500.00 грн</p>
+              <p className={classes.cart__total}>
+                {product.quantity ? product.quantity * product.priceWithDiscount : product.quantity * product.price}
+                грн
+              </p>
             </td>
             <td>
-              <Button
-                className={classes.clear_btn}
-                onClick={() =>
-                  toast.info('Функціонал в розробці', {
-                    icon: '🚀',
-                  })
-                }
-              >
+              <Button className={classes.clear_btn} onClick={() => removeProductById(product.id)}>
                 <LuXCircle />
               </Button>
             </td>

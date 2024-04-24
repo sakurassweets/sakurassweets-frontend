@@ -21,6 +21,7 @@ const initialState: ProductsState = {
     price: '',
     description: '',
     quantity_in_stock: 0,
+    quantity: 1,
     product_quantity: '',
     discount: '',
     rating: 0,
