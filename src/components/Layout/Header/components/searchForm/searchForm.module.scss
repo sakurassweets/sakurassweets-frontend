@@ -1,8 +1,7 @@
 .searchForm {
   @include flex($jc: space-between);
-  align-self: stretch;
   gap: 0.8rem;
-  padding: 0 1.6rem;
+  padding: 1.2rem 1.6rem;
   min-width: 41rem;
   background-color: $input_background_color;
   border-radius: $gl_radius;
