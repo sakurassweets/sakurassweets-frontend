@@ -11,7 +11,6 @@ interface AuthModaContentProps {
   title: string;
   buttonTitle: string;
   buttonSwithTitle: string;
-  img: string;
   onModalSwith: () => void;
   isLogin?: boolean;
   onClose: () => void;
@@ -26,7 +25,6 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
   title,
   buttonTitle,
   buttonSwithTitle,
-  img,
   onModalSwith,
   ...props
 }) => {
@@ -77,7 +75,6 @@ export const AuthModaContent: React.FC<AuthModaContentProps> = ({
           </div>
         </div>
       </div>
-      <img src={img} className={classes.modalImg} alt="modal image" />
     </>
   );
 };

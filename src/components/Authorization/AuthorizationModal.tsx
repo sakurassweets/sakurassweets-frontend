@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import modalImg from '../../assets/img/modal.png';
-import { Modal } from '../Common/Modal/Modal';
+import { Modal, ModalImage } from '../Common/index';
 import { AuthModaContent } from './AuthorizationModalContent';
 import { FormType } from '../../enums/auth.enum';
 
@@ -27,7 +26,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
           title={'Вхід'}
           buttonTitle={'Увійти'}
           buttonSwithTitle={'Зареєструватися'}
-          img={modalImg}
           onModalSwith={switchToRegistration}
           isLogin={formType === FormType.Login}
           onClose={onClose}
@@ -37,11 +35,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
           title={'Реєстрація'}
           buttonTitle={'Зареєструватися'}
           buttonSwithTitle={'Вхід'}
-          img={modalImg}
           onModalSwith={switchToLogin}
           onClose={onClose}
         />
       )}
+      <ModalImage />
     </Modal>
   );
 };
