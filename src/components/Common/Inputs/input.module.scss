@@ -28,11 +28,9 @@
   font-weight: 500;
 
   input {
-    width: 100%;
-    padding: 1.2rem 0;
     border: none;
     color: $input-text-color;
-    background-color: $input_background_color;
+    background-color: transparent;
   }
 
   input:focus {
