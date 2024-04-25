@@ -158,13 +158,6 @@ q {
   outline: 0;
 }
 
-input[type='text'],
-textarea {
-  &::-ms-clear {
-    display: none;
-  }
-}
-
 input,
 textarea {
   border-radius: 0;
@@ -175,17 +168,17 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   width: 100%;
-  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
   -webkit-text-fill-color: $input_text_color !important;
-  background-color: $input_background_color !important;
+  background-color: transparent !important;
   border-radius: $gl_radius;
   border: transparent;
   outline: transparent;
 }
 
-input:-internal-autofill-selected {
+body input:-internal-autofill-selected {
   appearance: none !important;
-  background-color: $input_background_color !important;
+  background-color: transparent !important;
   color: $input_text_color !important;
 }
 
