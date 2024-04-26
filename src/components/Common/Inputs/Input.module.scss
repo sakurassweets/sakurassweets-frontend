@@ -19,7 +19,7 @@
 
 .inputContainer {
   position: relative;
-  @include flex();
+  @include flex($jc: flex-start);
   width: 100%;
   gap: 0.8rem;
   background-color: $primary-text-color;

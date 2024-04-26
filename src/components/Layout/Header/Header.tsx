@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
         </div>
         <HeaderControl openModal={toggleModal} />
       </div>
-      <AuthModal onClose={onModalClose} open={isModalOpen}></AuthModal>
+      <AuthModal onClose={onModalClose} open={isModalOpen} />
     </header>
   );
 };

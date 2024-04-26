@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
 import { LuXCircle } from 'react-icons/lu';
 import { Product } from '../../types/interfaces/Product';
-import { CartStub } from './components/stub/CartStub';
-import { Title } from '../Common/Title/Title';
-import { FreeDelivery } from './components/freedelivery/FreeDelivery';
-import { Button } from '../Common/Buttons';
-import { CartTable } from './components/cartTable/CartTable';
+import { Title, Button } from '../Common/index';
+import { CartTable, FreeDelivery, CartStub } from './components/index';
 import { calculateTotalAmount } from './helpers/total';
+import { OrderSuccess } from '../OrderSuccess/OrderSuccess';
 import classes from './cart.module.scss';
 
 export const CartComponent = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const currentAmount = calculateTotalAmount(products);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const storedCart = localStorage.getItem('cart');
@@ -57,16 +55,10 @@ export const CartComponent = () => {
               <p className={classes.cart__total}>
                 Всього: <span className={classes.cart__amount}>{currentAmount}.00 грн</span>
               </p>
-              <Button
-                className={classes.cart__btn}
-                onClick={() =>
-                  toast.info('Cторінка в розробці', {
-                    icon: '🚀',
-                  })
-                }
-              >
+              <Button className={classes.cart__btn} onClick={() => setIsOpen(true)}>
                 Оформити замовлення
               </Button>
+              {isOpen && <OrderSuccess onClose={() => setIsOpen(false)} open={isOpen} />}
             </div>
           </div>
         )}
