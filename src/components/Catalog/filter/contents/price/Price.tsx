@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { filterByPriceFrom, filterByPriceTo } from '../../../../../redux/filters/filter';
 
 import styled from './price.module.scss';
 
@@ -10,6 +12,8 @@ interface PriceProps {
 export const Price: React.FC<PriceProps> = ({ minValue, maxValue }) => {
   const [startValue, setStartValue] = useState(minValue);
   const [endValue, setEndValue] = useState(maxValue);
+
+  const dispatch = useDispatch();
 
   const handleStartChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setStartValue(parseInt(event.target.value, 10));
@@ -30,6 +34,11 @@ export const Price: React.FC<PriceProps> = ({ minValue, maxValue }) => {
     setEndValue(value);
     setStartValue(Math.min(value, startValue));
   };
+
+  useEffect(() => {
+    dispatch(filterByPriceFrom(startValue));
+    dispatch(filterByPriceTo(endValue));
+  }, [dispatch, startValue, endValue]);
 
   return (
     <div className={styled.content}>

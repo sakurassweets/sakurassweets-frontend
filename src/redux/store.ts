@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth/slice';
 import productsReducer from './products/slice';
+import filterForCatalogReducer from './filters/filter';
+
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     products: productsReducer,
+    filterForCatalog: filterForCatalogReducer,
   },
 });
 // для типізації редакса
