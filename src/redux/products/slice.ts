@@ -27,6 +27,7 @@ const initialState: ProductsState = {
     rating: 0,
     components: '',
     price_currency_symbol: '',
+    manufacturer: '',
   },
   isLoading: false,
   error: '',
