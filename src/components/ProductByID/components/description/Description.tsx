@@ -20,7 +20,7 @@ export const Description: React.FC<DescriptionProps> = ({ product }) => {
         <li>
           <p className={classes.description__supplier}>
             Виробник:
-            <span>Lotte Japan</span>
+            <span>{product.manufacturer}</span>
           </p>
         </li>
         <li>

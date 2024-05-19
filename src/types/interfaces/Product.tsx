@@ -19,6 +19,7 @@ export interface Product {
   components: string;
   price_currency_symbol: string;
   priceWithDiscount?: number;
+  manufacturer: string;
 }
 
 export interface TestProduct {

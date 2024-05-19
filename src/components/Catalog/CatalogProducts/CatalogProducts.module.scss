@@ -1,10 +1,8 @@
 .catalog__wrapper {
   max-width: 128rem;
-  height: 100vh;
-  display: flex;
+  @include flex($jc: flex-end, $ai: flex-end);
   flex-direction: column;
   gap: 3.2rem;
-  justify-content: right;
 }
 .select__wrapper {
   width: 30.2rem;
