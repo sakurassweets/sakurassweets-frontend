@@ -32,4 +32,7 @@
     font-weight: 400;
     text-transform: lowercase;
   }
+  &__supplier > span {
+    text-transform: capitalize;
+  }
 }

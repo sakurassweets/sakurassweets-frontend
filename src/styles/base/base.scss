@@ -18,3 +18,8 @@ body {
   color: $primary_text_color;
   background-color: $primary_background_color;
 }
+
+.root {
+  @include flex();
+  flex-direction: column;
+}
