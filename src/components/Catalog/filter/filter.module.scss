@@ -1,5 +1,35 @@
-.title {
-  margin-bottom: 24px;
-  font-size: 24px;
-  font-weight: normal;
+.filter__wrapper {
+  max-width: 30.2rem;
+  .title {
+    width: 30.2rem;
+    margin-bottom: 2.4rem;
+    font-size: 2.4rem;
+    font-weight: normal;
+  }
+}
+
+.button {
+  @include flex;
+  height: 4.8rem;
+  width: 100%;
+  background-color: $accent_color;
+  color: $primary_text_color;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+  @include transition_all;
+
+  &:hover {
+    background-color: $accent_color_hover;
+  }
+  &:active {
+    background-color: $disable_background_color;
+  }
+  &__icon {
+    margin-right: 0.8rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }

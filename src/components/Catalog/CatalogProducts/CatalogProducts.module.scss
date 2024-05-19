@@ -1,0 +1,15 @@
+.catalog__wrapper {
+  max-width: 128rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  justify-content: right;
+}
+.select__wrapper {
+  width: 30.2rem;
+  align-self: flex-end;
+  z-index: 1000;
+  color: $dark-blue;
+  background-color: $dark-blue !important;
+}
